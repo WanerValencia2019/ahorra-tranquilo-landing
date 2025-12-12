@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Badge } from '../components/ui/Badge';
+import { Button } from '../components/ui/Button';
+import { Card, CardContent } from '../components/ui/Card';
+---
+
+<Layout title="Quiénes Somos - Ahorra Tranquilo" description="Conoce al equipo detrás de Ahorra Tranquilo. Nuestra misión es democratizar la educación financiera en Colombia.">
+  <Navbar />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 overflow-hidden">
+      <!-- Background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-success/5"></div>
+      <div class="absolute top-20 -left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 -right-20 w-96 h-96 bg-success/20 rounded-full blur-3xl"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-8">
+          <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+          <span>/</span>
+          <span class="text-foreground">Quiénes Somos</span>
+        </nav>
+
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <Badge client:load variant="default" className="gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            Hecho en Colombia 🇨🇴
+          </Badge>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+            Transformando <span class="text-primary">finanzas personales</span> en Colombia
+          </h1>
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Somos un equipo apasionado por democratizar la educación financiera y ayudar a los colombianos a tomar el control de su dinero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-16 md:py-24 bg-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Misión -->
+          <Card client:load className="border-2 hover:border-primary/50 transition-all">
+            <CardContent className="p-8">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-6 shadow-lg shadow-primary/30">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold mb-4">Nuestra Misión</h2>
+              <p class="text-muted-foreground leading-relaxed">
+                Empoderar a cada colombiano con las herramientas necesarias para gestionar sus finanzas personales de manera inteligente, accesible y sin complicaciones. Creemos que la libertad financiera no debería ser un privilegio, sino un derecho al alcance de todos.
+              </p>
+            </CardContent>
+          </Card>
+
+          <!-- Visión -->
+          <Card client:load className="border-2 hover:border-success/50 transition-all">
+            <CardContent className="p-8">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-success to-success/60 flex items-center justify-center mb-6 shadow-lg shadow-success/30">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold mb-4">Nuestra Visión</h2>
+              <p class="text-muted-foreground leading-relaxed">
+                Ser la plataforma líder de gestión de finanzas personales en Latinoamérica, reconocida por nuestra simplicidad, innovación y compromiso con la educación financiera. Soñamos con un futuro donde cada persona tenga el conocimiento y las herramientas para alcanzar sus metas financieras.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 md:py-24 bg-accent/30">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <Badge client:load variant="outline" className="mb-4">
+              Nuestra Historia
+            </Badge>
+            <h2 class="text-3xl md:text-4xl font-bold">Cómo empezó todo</h2>
+          </div>
+          
+          <div class="prose prose-lg dark:prose-invert mx-auto">
+            <div class="bg-card rounded-2xl p-8 md:p-12 border shadow-lg">
+              <p class="text-muted-foreground leading-relaxed mb-6">
+                Ahorra Tranquilo nació de una necesidad personal. Como muchos colombianos, me encontré luchando por llevar un control efectivo de mis gastos e ingresos. Las hojas de cálculo eran complicadas, las apps existentes no se adaptaban a nuestra realidad colombiana, y la falta de educación financiera hacía todo más difícil.
+              </p>
+              <p class="text-muted-foreground leading-relaxed mb-6">
+                Fue entonces cuando decidí crear la herramienta que yo mismo necesitaba: una aplicación simple, intuitiva y diseñada específicamente para colombianos. Una plataforma que no solo te ayude a registrar tus gastos, sino que te enseñe a tomar mejores decisiones financieras.
+              </p>
+              <p class="text-muted-foreground leading-relaxed mb-6">
+                Hoy, Ahorra Tranquilo es más que una aplicación. Es una comunidad de personas que, como tú, quieren tomar el control de su dinero y construir un futuro financiero más tranquilo.
+              </p>
+              <div class="flex items-center gap-4 pt-6 border-t">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-success flex items-center justify-center text-white font-bold text-xl">
+                  WV
+                </div>
+                <div>
+                  <p class="font-semibold text-foreground">Waner Andrés Valencia Moreno</p>
+                  <p class="text-sm text-muted-foreground">Fundador & CEO de Ahorra Tranquilo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-16 md:py-24 bg-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <Badge client:load variant="outline" className="mb-4">
+            Lo que nos define
+          </Badge>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Valores</h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            Los principios que guían cada decisión que tomamos
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <!-- Simplicidad -->
+          <div class="text-center p-6 rounded-2xl bg-card border hover:border-primary/50 transition-all group">
+            <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+              <svg class="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Simplicidad</h3>
+            <p class="text-sm text-muted-foreground">
+              Hacemos que lo complejo sea fácil de entender y usar. Sin jerga financiera innecesaria.
+            </p>
+          </div>
+
+          <!-- Transparencia -->
+          <div class="text-center p-6 rounded-2xl bg-card border hover:border-success/50 transition-all group">
+            <div class="w-16 h-16 rounded-2xl bg-success/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
+              <svg class="w-8 h-8 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Transparencia</h3>
+            <p class="text-sm text-muted-foreground">
+              Somos honestos sobre lo que hacemos, cómo protegemos tus datos y hacia dónde vamos.
+            </p>
+          </div>
+
+          <!-- Accesibilidad -->
+          <div class="text-center p-6 rounded-2xl bg-card border hover:border-info/50 transition-all group">
+            <div class="w-16 h-16 rounded-2xl bg-info/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-info/20 transition-colors">
+              <svg class="w-8 h-8 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Accesibilidad</h3>
+            <p class="text-sm text-muted-foreground">
+              La educación financiera debe estar al alcance de todos, sin importar su nivel de ingresos.
+            </p>
+          </div>
+
+          <!-- Empatía -->
+          <div class="text-center p-6 rounded-2xl bg-card border hover:border-warning/50 transition-all group">
+            <div class="w-16 h-16 rounded-2xl bg-warning/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-warning/20 transition-colors">
+              <svg class="w-8 h-8 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Empatía</h3>
+            <p class="text-sm text-muted-foreground">
+              Entendemos tus desafíos financieros porque los hemos vivido. Estamos aquí para ayudarte.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-success">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center text-white">
+          <div>
+            <p class="text-4xl md:text-5xl font-extrabold mb-2">500+</p>
+            <p class="text-white/80">Usuarios Activos</p>
+          </div>
+          <div>
+            <p class="text-4xl md:text-5xl font-extrabold mb-2">$2M+</p>
+            <p class="text-white/80">COP Gestionados</p>
+          </div>
+          <div>
+            <p class="text-4xl md:text-5xl font-extrabold mb-2">15K+</p>
+            <p class="text-white/80">Transacciones</p>
+          </div>
+          <div>
+            <p class="text-4xl md:text-5xl font-extrabold mb-2">4.8</p>
+            <p class="text-white/80">Satisfacción</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 md:py-24 bg-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Tienes preguntas?</h2>
+          <p class="text-lg text-muted-foreground mb-8">
+            Nos encantaría saber de ti. Escríbenos y te responderemos lo antes posible.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/contacto">
+              <Button client:load size="lg" className="font-semibold">
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Contactar
+              </Button>
+            </a>
+            <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer">
+              <Button client:load size="lg" variant="outline" className="font-semibold">
+                Probar la App Gratis
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

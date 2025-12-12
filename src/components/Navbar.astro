@@ -3,65 +3,78 @@ import { Button } from './ui/Button';
 ---
 
 <nav
-  class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+  class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl border-b border-border/40"
 >
   <div class="container flex h-16 items-center justify-between">
+    <!-- Logo con efecto hover -->
     <div class="flex items-center gap-2">
-      <a href="/" class="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity">
-        <img src="/favicon.png" alt="Ahorra Tranquilo" class="w-10 h-10" />
-        <span class="hidden sm:inline bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Ahorra Tranquilo</span>
+      <a href="/" class="flex items-center gap-3 font-bold text-xl group">
+        <div class="relative">
+          <div class="absolute inset-0 bg-primary/20 rounded-xl blur-lg group-hover:blur-xl transition-all opacity-0 group-hover:opacity-100"></div>
+          <img src="/favicon.png" alt="Ahorra Tranquilo" class="w-10 h-10 relative group-hover:scale-110 transition-transform" />
+        </div>
+        <span class="hidden sm:inline font-extrabold bg-gradient-to-r from-primary via-primary to-success bg-clip-text text-transparent group-hover:from-success group-hover:to-primary transition-all">
+          Ahorra Tranquilo
+        </span>
       </a>
     </div>
 
-    <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-6">
-      <a
-        href="/#features"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Funcionalidades
+    <!-- Desktop Navigation con efectos modernos -->
+    <div class="hidden md:flex items-center gap-1">
+      <a href="/funcionalidades" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+        </svg>
+        <span>Funcionalidades</span>
       </a>
-      <a
-        href="/herramientas"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Herramientas
+      <a href="/herramientas" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-success opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+        </svg>
+        <span>Herramientas</span>
       </a>
-      <a
-        href="/planes"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Planes
+      <a href="/planes" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-warning opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <span>Planes</span>
       </a>
-      <a
-        href="/blog"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Blog
+      <a href="/blog" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-info opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+        </svg>
+        <span>Blog</span>
       </a>
-      <a
-        href="/quienes-somos"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Quiénes Somos
+      <a href="/quienes-somos" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <span>Nosotros</span>
       </a>
-      <a
-        href="/contacto"
-        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-      >
-        Contacto
+      <a href="/contacto" class="nav-link group">
+        <span class="nav-link-bg"></span>
+        <svg class="w-4 h-4 mr-1.5 text-success opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span>Contacto</span>
       </a>
     </div>
 
     <!-- CTA Buttons -->
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-3">
       <button
         id="theme-toggle"
         aria-label="Toggle dark mode"
-        class="p-2 rounded-md hover:bg-accent transition-colors"
+        class="relative p-2.5 rounded-xl hover:bg-accent/80 transition-all group overflow-hidden"
       >
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-success/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <svg
-          class="w-5 h-5 dark:hidden"
+          class="w-5 h-5 dark:hidden relative z-10 group-hover:rotate-12 transition-transform"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -74,7 +87,7 @@ import { Button } from './ui/Button';
           ></path>
         </svg>
         <svg
-          class="w-5 h-5 hidden dark:block"
+          class="w-5 h-5 hidden dark:block relative z-10 group-hover:rotate-90 transition-transform"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -88,14 +101,61 @@ import { Button } from './ui/Button';
         </svg>
       </button>
 
-      <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer">
-        <Button client:load variant="default" size="sm">
-          Ir a la App
+      <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer" class="group">
+        <Button client:load variant="default" size="sm" className="relative overflow-hidden font-semibold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
+          <span class="relative z-10 flex items-center gap-2">
+            Ir a la App
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
         </Button>
       </a>
     </div>
   </div>
 </nav>
+
+<style>
+  .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    transition: all 0.2s;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .nav-link:hover {
+    color: hsl(var(--foreground));
+  }
+  
+  .nav-link-bg {
+    position: absolute;
+    inset: 0;
+    background-color: hsl(var(--accent) / 0.5);
+    transform: scale(0);
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+  }
+  
+  .nav-link:hover .nav-link-bg {
+    transform: scale(1);
+  }
+  
+  .nav-link span:last-child {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .nav-link svg {
+    position: relative;
+    z-index: 10;
+  }
+</style>
 
 <script>
   const themeToggle = document.getElementById('theme-toggle');

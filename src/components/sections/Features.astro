@@ -1,263 +1,133 @@
 ---
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
 import { Badge } from '../ui/Badge';
+import { Button } from '../ui/Button';
 ---
 
 <section id="features" class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-      <Badge client:load variant="outline" className="mb-4">Funciones</Badge>
+    <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+      <Badge client:load variant="outline" className="mb-4">Funciones Principales</Badge>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
         Todo lo que necesitas para <span class="text-primary">gestionar tu dinero</span>
       </h2>
       <p class="text-lg text-muted-foreground">
-        Potentes funciones diseñadas para simplificar tu vida financiera
+        Descubre las herramientas más potentes para tu finanza personal
       </p>
     </div>
 
-    <!-- Features Bento Grid -->
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Feature 1: Dashboard -->
-      <Card
-        client:load
-        className="group md:col-span-2 hover:shadow-xl transition-all duration-300"
-      >
-        <CardHeader>
-          <div class="flex items-start justify-between">
-            <div>
-              <CardTitle>Dashboard Financiero</CardTitle>
-              <CardDescription>Vista general de tu situación financiera en tiempo real</CardDescription>
+    <!-- Features Overview Grid - Compact -->
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-12">
+      <!-- Feature 1 -->
+      <div class="group p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg hover:shadow-primary/10">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Dashboard Inteligente</h3>
+        <p class="text-sm text-muted-foreground">Vista 360° de tus finanzas en tiempo real</p>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="group p-6 rounded-2xl bg-gradient-to-br from-success/5 to-success/10 border border-success/20 hover:border-success/40 transition-all hover:shadow-lg hover:shadow-success/10">
+        <div class="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Tracking Automático</h3>
+        <p class="text-sm text-muted-foreground">Registra ingresos y gastos en segundos</p>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="group p-6 rounded-2xl bg-gradient-to-br from-info/5 to-info/10 border border-info/20 hover:border-info/40 transition-all hover:shadow-lg hover:shadow-info/10">
+        <div class="w-12 h-12 rounded-xl bg-info/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Reportes Visuales</h3>
+        <p class="text-sm text-muted-foreground">Gráficos hermosos y análisis detallados</p>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="group p-6 rounded-2xl bg-gradient-to-br from-warning/5 to-warning/10 border border-warning/20 hover:border-warning/40 transition-all hover:shadow-lg hover:shadow-warning/10">
+        <div class="w-12 h-12 rounded-xl bg-warning/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Metas de Ahorro</h3>
+        <p class="text-sm text-muted-foreground">Define objetivos y alcánzalos paso a paso</p>
+      </div>
+    </div>
+
+    <!-- Main Feature Highlight -->
+    <div class="grid lg:grid-cols-2 gap-8 items-center mb-12">
+      <div class="space-y-6">
+        <Badge client:load variant="default" className="gap-1">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          Función Destacada
+        </Badge>
+        <h3 class="text-3xl font-bold">Dashboard Financiero Completo</h3>
+        <p class="text-lg text-muted-foreground">
+          Visualiza tu salud financiera de un vistazo. Balance actual, tendencias de gastos, 
+          progreso de metas y más, todo en una interfaz intuitiva y hermosa.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
             </div>
-            <svg
-              class="w-8 h-8 text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-              ></path>
-            </svg>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <!-- 
-            PLACEHOLDER: Screenshot completo del dashboard principal
-            Tamaño recomendado: 800x600px (ratio 4:3)
-            Formato: PNG o WebP optimizado (< 150KB)
-          -->
-          <div class="rounded-lg overflow-hidden border border-border bg-muted">
-            <img
-              src="https://placehold.co/800x600/14b8a6/ffffff?text=Dashboard+(800x600)"
-              alt="Dashboard de Ahorra Tranquilo"
-              class="w-full h-auto group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
-          </div>
-        </CardContent>
-      </Card>
-
-      <!-- Feature 2: Tracking -->
-      <Card client:load className="group hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
-            <svg
-              class="w-6 h-6 text-success"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 4v16m8-8H4"></path>
-            </svg>
-          </div>
-          <CardTitle>Ingresos y Gastos</CardTitle>
-          <CardDescription>Registra transacciones en segundos</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Vista de tracking de transacciones - 400x300px (ratio 4:3) -->
-          <img
-            src="https://placehold.co/400x300/10b981/ffffff?text=Tracking+(400x300)"
-            alt="Seguimiento de transacciones"
-            class="w-full h-auto rounded-lg border border-border"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
-
-      <!-- Feature 3: Goals -->
-      <Card client:load className="group hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="w-12 h-12 rounded-lg bg-savings/10 flex items-center justify-center mb-4">
-            <svg
-              class="w-6 h-6 text-savings"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              ></path>
-            </svg>
-          </div>
-          <CardTitle>Metas de Ahorro</CardTitle>
-          <CardDescription>Define y alcanza tus objetivos</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Vista de metas de ahorro - 400x300px (ratio 4:3) -->
-          <img
-            src="https://placehold.co/400x300/10b981/ffffff?text=Savings+(400x300)"
-            alt="Metas de ahorro"
-            class="w-full h-auto rounded-lg border border-border"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
-
-      <!-- Feature 4: Reports -->
-      <Card client:load className="group md:col-span-2 hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="flex items-start justify-between">
-            <div>
-              <CardTitle>Reportes y Gráficos</CardTitle>
-              <CardDescription>Análisis detallados con visualizaciones hermosas</CardDescription>
+            <span>Resumen de balance en tiempo real</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
             </div>
-            <svg
-              class="w-8 h-8 text-info"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              ></path>
-            </svg>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Reportes y gráficas (wide) - 800x400px (ratio 2:1) -->
-          <img
-            src="https://placehold.co/800x400/0ea5e9/ffffff?text=Reports+(800x400)"
-            alt="Reportes y gráficos"
-            class="w-full h-auto rounded-lg border border-border group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
+            <span>Gráficos de tendencias mensuales</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-success/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <span>Alertas inteligentes de gastos</span>
+          </li>
+        </ul>
+      </div>
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-success/20 blur-2xl rounded-3xl"></div>
+        <img 
+          src="https://placehold.co/600x400/14b8a6/ffffff?text=Dashboard+(600x400)" 
+          alt="Dashboard Preview"
+          class="relative rounded-2xl shadow-2xl border-2 border-border/50"
+        />
+      </div>
+    </div>
 
-      <!-- Feature 5: Categories -->
-      <Card client:load className="group hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="w-12 h-12 rounded-lg bg-warning/10 flex items-center justify-center mb-4">
-            <svg
-              class="w-6 h-6 text-warning"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"
-              ></path>
-            </svg>
-          </div>
-          <CardTitle>Categorías Personalizadas</CardTitle>
-          <CardDescription>Organiza a tu manera</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Vista de categorías - 400x300px (ratio 4:3) -->
-          <img
-            src="https://placehold.co/400x300/f59e0b/ffffff?text=Categories+(400x300)"
-            alt="Categorías personalizadas"
-            class="w-full h-auto rounded-lg border border-border"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
-
-      <!-- Feature 6: Security -->
-      <Card client:load className="group hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mb-4">
-            <svg
-              class="w-6 h-6 text-success"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-              ></path>
-            </svg>
-          </div>
-          <CardTitle>Cifrado de Nivel Bancario</CardTitle>
-          <CardDescription>Tus datos 100% seguros</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Vista de seguridad - 400x300px (ratio 4:3) -->
-          <img
-            src="https://placehold.co/400x300/22c55e/ffffff?text=Security+(400x300)"
-            alt="Seguridad"
-            class="w-full h-auto rounded-lg border border-border"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
-
-      <!-- Feature 7: Demo Mode -->
-      <Card client:load className="group hover:shadow-xl transition-all duration-300">
-        <CardHeader>
-          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-            <svg
-              class="w-6 h-6 text-primary"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-              ></path>
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <CardTitle>Modo Demo</CardTitle>
-          <CardDescription>Prueba sin registrarte</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <!-- PLACEHOLDER: Vista modo demo - 400x300px (ratio 4:3) -->
-          <img
-            src="https://placehold.co/400x300/14b8a6/ffffff?text=Demo+(400x300)"
-            alt="Modo demo"
-            class="w-full h-auto rounded-lg border border-border"
-            loading="lazy"
-          />
-        </CardContent>
-      </Card>
+    <!-- CTA to full features page -->
+    <div class="text-center">
+      <a href="/funcionalidades">
+        <Button client:load size="lg" variant="outline" className="group">
+          <span>Ver todas las funcionalidades</span>
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </Button>
+      </a>
+      <p class="text-sm text-muted-foreground mt-3">
+        +15 funcionalidades para gestionar tus finanzas
+      </p>
     </div>
   </div>
 </section>
