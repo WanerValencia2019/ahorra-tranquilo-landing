@@ -6,14 +6,10 @@ import Hero from '../components/sections/Hero.astro';
 import ValueProposition from '../components/sections/ValueProposition.astro';
 import Features from '../components/sections/Features.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
-import Pricing from '../components/sections/Pricing.astro';
-import Testimonials from '../components/sections/Testimonials.astro';
-// import FAQ from '../components/sections/FAQ.astro'; // Temporalmente deshabilitado - problema con Accordion SSR
-import Blog from '../components/sections/Blog.astro';
-import Tools from '../components/Tools';
-import MiniGame from '../components/MiniGame';
-import Roadmap from '../components/Roadmap';
-import Contact from '../components/sections/Contact.astro';
+import { Button } from '../components/ui/Button';
+import { Card, CardContent, CardDescription, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lucide-react';
 ---
 
 <Layout
@@ -22,18 +18,143 @@ import Contact from '../components/sections/Contact.astro';
 >
   <Navbar />
   <main id="main-content">
+    <!-- Hero Section -->
     <Hero />
+    
+    <!-- Value Proposition -->
     <ValueProposition />
+    
+    <!-- Features Overview -->
     <Features />
+    
+    <!-- How It Works -->
     <HowItWorks />
-    <Pricing />
-    <Testimonials />
-    <!-- <FAQ /> --> <!-- Temporalmente deshabilitado - problema con Accordion SSR -->
-    <Tools client:load />
-    <MiniGame client:load />
-    <Blog />
-    <Roadmap client:load />
-    <Contact />
+
+    <!-- Quick Links to Other Pages -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-accent/30 to-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <Badge variant="outline" class="mb-4">
+            <Sparkles class="size-3" />
+            Descubre Más
+          </Badge>
+          <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+            Explora todo lo que tenemos para ti
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Herramientas, recursos y contenido para mejorar tus finanzas
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <!-- Calculadoras -->
+          <a href="/herramientas" class="block group">
+            <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-primary/50">
+              <CardContent className="p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Calculator class="size-8 text-primary" />
+                </div>
+                <CardTitle className="mb-2 group-hover:text-primary transition-colors">
+                  Calculadoras
+                </CardTitle>
+                <CardDescription className="mb-4">
+                  Herramientas financieras gratis e interactivas
+                </CardDescription>
+                <Button client:load variant="ghost" size="sm" className="gap-2">
+                  Explorar
+                  <ArrowRight class="size-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </a>
+
+          <!-- Mini Juego -->
+          <a href="/juego" class="block group">
+            <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-success/50">
+              <CardContent className="p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
+                  <Gamepad2 class="size-8 text-success" />
+                </div>
+                <CardTitle className="mb-2 group-hover:text-success transition-colors">
+                  Mini Juego
+                </CardTitle>
+                <CardDescription className="mb-4">
+                  Aprende finanzas jugando y divirtiéndote
+                </CardDescription>
+                <Button client:load variant="ghost" size="sm" className="gap-2">
+                  Jugar
+                  <ArrowRight class="size-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </a>
+
+          <!-- Blog -->
+          <a href="/blog" class="block group">
+            <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-info/50">
+              <CardContent className="p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-info/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-info/20 transition-colors">
+                  <BookOpen class="size-8 text-info" />
+                </div>
+                <CardTitle className="mb-2 group-hover:text-info transition-colors">
+                  Blog
+                </CardTitle>
+                <CardDescription className="mb-4">
+                  Guías, tips y consejos financieros
+                </CardDescription>
+                <Button client:load variant="ghost" size="sm" className="gap-2">
+                  Leer
+                  <ArrowRight class="size-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </a>
+
+          <!-- Roadmap -->
+          <a href="/roadmap" class="block group">
+            <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-warning/50">
+              <CardContent className="p-6 text-center">
+                <div class="w-16 h-16 rounded-full bg-warning/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-warning/20 transition-colors">
+                  <Rocket class="size-8 text-warning" />
+                </div>
+                <CardTitle className="mb-2 group-hover:text-warning transition-colors">
+                  Roadmap
+                </CardTitle>
+                <CardDescription className="mb-4">
+                  Vota por las próximas funciones
+                </CardDescription>
+                <Button client:load variant="ghost" size="sm" className="gap-2">
+                  Ver más
+                  <ArrowRight class="size-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-primary to-primary/80">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          ¿Listo para tomar control de tus finanzas?
+        </h2>
+        <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          Únete a miles de personas que ya están mejorando su salud financiera con Ahorra Tranquilo
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button client:load size="lg" variant="secondary" className="gap-2">
+            Ir a la App
+            <ArrowRight class="size-4" />
+          </Button>
+          <Button client:load size="lg" variant="outline" className="gap-2 bg-white/10 hover:bg-white/20 text-white border-white/30">
+            Probar Demo
+            <Sparkles class="size-4" />
+          </Button>
+        </div>
+      </div>
+    </section>
   </main>
   <Footer />
 </Layout>

@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Roadmap from '../components/Roadmap';
+import { Badge } from '../components/ui/badge';
+import { Rocket, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Roadmap - Futuro de Ahorra Tranquilo"
+  description="Conoce las próximas funciones y vota por las que más te interesan. Ayúdanos a construir la mejor app financiera."
+>
+  <Navbar />
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="py-12 md:py-16 bg-gradient-to-b from-warning/5 to-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <ArrowLeft class="size-4" />
+          Volver al inicio
+        </a>
+        <div class="text-center max-w-3xl mx-auto">
+          <Badge variant="outline" class="mb-4">
+            <Rocket class="size-3" />
+            Roadmap
+          </Badge>
+          <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            El Futuro de Ahorra Tranquilo
+          </h1>
+          <p class="text-muted-foreground text-lg">
+            Vota por las funciones que más te interesan y ayúdanos a priorizarlas
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Component -->
+    <Roadmap client:load />
+  </main>
+  <Footer />
+</Layout>

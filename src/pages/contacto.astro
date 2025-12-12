@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Contact from '../components/sections/Contact.astro';
+import { Badge } from '../components/ui/badge';
+import { Mail, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Contacto | Ahorra Tranquilo"
+  description="¿Tienes preguntas? Estamos aquí para ayudarte. Contáctanos por email, WhatsApp o chat en vivo."
+>
+  <Navbar />
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <ArrowLeft class="size-4" />
+          Volver al inicio
+        </a>
+        <div class="text-center max-w-3xl mx-auto">
+          <Badge variant="outline" class="mb-4">
+            <Mail class="size-3" />
+            Contacto
+          </Badge>
+          <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Estamos Aquí Para Ayudarte
+          </h1>
+          <p class="text-muted-foreground text-lg">
+            ¿Tienes preguntas, sugerencias o necesitas soporte? Nuestro equipo está listo para escucharte
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Component -->
+    <Contact />
+
+    <!-- Additional Info -->
+    <section class="py-16 md:py-24 bg-accent/30">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-center">
+            Otros Canales de Contacto
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center p-6 rounded-lg bg-card border">
+              <div class="text-4xl mb-3">📧</div>
+              <h3 class="font-semibold mb-2">Email General</h3>
+              <p class="text-muted-foreground text-sm">hola@ahorratranquilo.com</p>
+            </div>
+            <div class="text-center p-6 rounded-lg bg-card border">
+              <div class="text-4xl mb-3">🛠️</div>
+              <h3 class="font-semibold mb-2">Soporte Técnico</h3>
+              <p class="text-muted-foreground text-sm">soporte@ahorratranquilo.com</p>
+            </div>
+            <div class="text-center p-6 rounded-lg bg-card border">
+              <div class="text-4xl mb-3">💼</div>
+              <h3 class="font-semibold mb-2">Empresas</h3>
+              <p class="text-muted-foreground text-sm">empresas@ahorratranquilo.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

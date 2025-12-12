@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import MiniGame from '../components/MiniGame';
+import { Badge } from '../components/ui/badge';
+import { Gamepad2, ArrowLeft } from 'lucide-react';
+---
+
+<Layout
+  title="Mini Juego Financiero | Ahorra Tranquilo"
+  description="Aprende educación financiera jugando. Clasifica transacciones y mejora tu conocimiento sobre ingresos y gastos."
+>
+  <Navbar />
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="py-12 md:py-16 bg-gradient-to-b from-success/5 to-background">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
+          <ArrowLeft class="size-4" />
+          Volver al inicio
+        </a>
+        <div class="text-center max-w-3xl mx-auto">
+          <Badge variant="outline" class="mb-4">
+            <Gamepad2 class="size-3" />
+            Mini Juego
+          </Badge>
+          <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Aprende Finanzas Jugando 🎮
+          </h1>
+          <p class="text-muted-foreground text-lg">
+            Pon a prueba tus conocimientos financieros clasificando transacciones. ¿Podrás obtener el puntaje perfecto?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Component -->
+    <MiniGame client:load />
+
+    <!-- Tips -->
+    <section class="py-16 md:py-24 bg-accent/30">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-center">
+            💡 Tips para el Juego
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 rounded-lg bg-card border">
+              <h3 class="font-semibold text-lg mb-2">💰 Ingresos</h3>
+              <p class="text-muted-foreground">
+                Cualquier dinero que recibes: salario, bonos, ventas, freelance, etc.
+              </p>
+            </div>
+            <div class="p-6 rounded-lg bg-card border">
+              <h3 class="font-semibold text-lg mb-2">💸 Gastos</h3>
+              <p class="text-muted-foreground">
+                Todo lo que pagas: compras, servicios, entretenimiento, transporte, etc.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
