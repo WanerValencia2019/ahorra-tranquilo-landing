@@ -5,17 +5,27 @@ import { Badge } from '../ui/Badge';
 
 <section
   id="hero"
-  class="relative overflow-hidden min-h-[90vh] max-h-[95vh] flex items-center bg-gradient-to-br from-background via-primary/5 to-background pt-6 pb-12 md:pt-8 md:pb-16"
+  class="relative overflow-hidden min-h-[90vh] max-h-[95vh] flex items-center bg-background pt-6 pb-12 md:pt-8 md:pb-16"
 >
-  <!-- Animated background elements -->
-  <div class="absolute inset-0">
-    <!-- Gradient orbs -->
-    <div class="absolute top-20 -left-20 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-float opacity-70"></div>
-    <div class="absolute bottom-20 -right-20 w-96 h-96 bg-success/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-300 opacity-70"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-info/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-50"></div>
+  <!-- Aurora/Mesh Gradient Background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Base gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-success/5"></div>
     
-    <!-- Grid pattern -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
+    <!-- Animated mesh blobs -->
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-primary/30 to-primary/5 blur-[100px] animate-aurora-1"></div>
+    <div class="absolute top-1/3 -right-20 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-success/25 to-info/10 blur-[80px] animate-aurora-2"></div>
+    <div class="absolute -bottom-20 left-1/3 w-[350px] h-[350px] rounded-full bg-gradient-to-br from-info/20 to-primary/10 blur-[90px] animate-aurora-3"></div>
+    <div class="absolute top-1/2 left-1/4 w-[250px] h-[250px] rounded-full bg-gradient-to-r from-primary/15 to-success/15 blur-[70px] animate-aurora-4"></div>
+    
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 bg-dot-pattern opacity-[0.03]"></div>
+    
+    <!-- Radial gradient spotlight -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-radial from-primary/10 via-transparent to-transparent opacity-60"></div>
+    
+    <!-- Noise texture -->
+    <div class="absolute inset-0 bg-noise opacity-[0.015]"></div>
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -181,9 +191,50 @@ import { Badge } from '../ui/Badge';
 </section>
 
 <style>
-  .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(var(--border), 0.1) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(var(--border), 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+  /* Dot pattern */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
+  
+  /* Radial gradient */
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+  }
+  
+  /* Noise texture */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  
+  /* Aurora animations */
+  @keyframes aurora-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    25% { transform: translate(30px, -20px) scale(1.05); opacity: 0.4; }
+    50% { transform: translate(60px, 20px) scale(1.1); opacity: 0.35; }
+    75% { transform: translate(20px, 40px) scale(1.02); opacity: 0.45; }
+  }
+  
+  @keyframes aurora-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+    33% { transform: translate(-40px, 30px) scale(1.08); opacity: 0.35; }
+    66% { transform: translate(-20px, -40px) scale(0.95); opacity: 0.3; }
+  }
+  
+  @keyframes aurora-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
+    50% { transform: translate(50px, -30px) scale(1.15); opacity: 0.35; }
+  }
+  
+  @keyframes aurora-4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; }
+    25% { transform: translate(-30px, 20px) rotate(90deg); opacity: 0.25; }
+    50% { transform: translate(20px, 40px) rotate(180deg); opacity: 0.2; }
+    75% { transform: translate(40px, -20px) rotate(270deg); opacity: 0.3; }
+  }
+  
+  .animate-aurora-1 { animation: aurora-1 20s ease-in-out infinite; }
+  .animate-aurora-2 { animation: aurora-2 25s ease-in-out infinite; }
+  .animate-aurora-3 { animation: aurora-3 18s ease-in-out infinite; }
+  .animate-aurora-4 { animation: aurora-4 22s linear infinite; }
 </style>
