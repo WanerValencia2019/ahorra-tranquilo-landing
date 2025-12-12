@@ -12,122 +12,220 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================
-   LIGHT MODE (Default)
-   ============================================ */
+@custom-variant dark (&:is(.dark *));
+
 :root {
-  /* Font Stack */
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
-  /* Border Radius */
-  --radius: 0.625rem; /* 10px */
-  
-  /* ========== Background & Surfaces ========== */
-  --background: 210 40% 98%; /* #f8fafc - slate-50 */
-  --foreground: 222 47% 11%; /* #0f172a - slate-900 */
-  
-  --card: 0 0% 100%; /* #ffffff */
-  --card-foreground: 222 47% 11%; /* #0f172a */
-  
-  --popover: 0 0% 100%; /* #ffffff */
-  --popover-foreground: 222 47% 11%; /* #0f172a */
-  
-  --secondary: 210 40% 96%; /* #f1f5f9 - slate-100 */
-  --secondary-foreground: 215 20% 65%; /* #64748b - slate-500 */
-  
-  --muted: 210 40% 98%; /* #f8fafc - slate-50 */
-  --muted-foreground: 215 16% 47%; /* #64748b - slate-500 */
-  
-  --accent: 210 40% 96%; /* #f1f5f9 - slate-100 */
-  --accent-foreground: 222 47% 11%; /* #0f172a */
-  
-  /* ========== Borders & Inputs ========== */
-  --border: 214 32% 91%; /* #e2e8f0 - slate-200 */
-  --input: 214 32% 91%; /* #e2e8f0 - slate-200 */
-  --ring: 174 87% 34%; /* #0ea5a4 - teal-500 */
-  
-  /* ========== Brand Primary ========== */
-  --primary: 174 87% 34%; /* #0ea5a4 - teal-500 */
-  --primary-foreground: 0 0% 100%; /* #ffffff */
-  
-  /* ========== Semantic Colors ========== */
-  --success: 142 71% 45%; /* #16a34a - green-600 (Ingresos) */
-  --success-foreground: 0 0% 100%; /* #ffffff */
-  
-  --destructive: 0 84% 60%; /* #dc2626 - red-600 (Gastos) */
-  --destructive-foreground: 0 0% 100%; /* #ffffff */
-  
-  --info: 217 91% 60%; /* #0284c7 - sky-600 (Transferencias) */
-  --info-foreground: 0 0% 100%; /* #ffffff */
-  
-  --savings: 167 80% 42%; /* #059669 - emerald-600 (Ahorros) */
-  --savings-foreground: 0 0% 100%; /* #ffffff */
-  
-  --warning: 32 95% 44%; /* #d97706 - amber-600 (Advertencias) */
-  --warning-foreground: 0 0% 100%; /* #ffffff */
-  
-  /* ========== Chart Colors ========== */
-  --chart-income: 142 71% 45%; /* green-600 */
-  --chart-expense: 0 84% 60%; /* red-600 */
-  --chart-transfer: 217 91% 60%; /* sky-600 */
-  --chart-savings: 167 80% 42%; /* emerald-600 */
-  --chart-other: 215 16% 47%; /* slate-400 */
+  /* Finance App Color Palette - Light Mode */
+  /* Base colors */
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #0f172a; /* slate-900 */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --border: #e2e8f0; /* slate-200 */
+  --input: #e2e8f0;
+  --ring: #0ea5a4; /* teal-500 */
+
+  /* Brand colors */
+  --primary: #0ea5a4; /* teal-500 */
+  --primary-foreground: #ffffff;
+  --primary-hover: #0f766e; /* teal-700 */
+
+  /* Secondary colors */
+  --secondary: #f1f5f9; /* slate-100 */
+  --secondary-foreground: #475569; /* slate-600 */
+  --muted: #f8fafc; /* slate-50 */
+  --muted-foreground: #94a3b8; /* slate-400 */
+  --accent: #f1f5f9; /* slate-100 */
+  --accent-foreground: #0f172a;
+
+  /* Semantic colors */
+  --success: #16a34a; /* green-600 - Ingresos */
+  --success-foreground: #ffffff;
+  --destructive: #dc2626; /* red-600 - Gastos */
+  --destructive-foreground: #ffffff;
+  --info: #0284c7; /* sky-600 - Transferencias/Info */
+  --info-foreground: #ffffff;
+  --savings: #059669; /* emerald-600 - Ahorros */
+  --savings-foreground: #ffffff;
+  --warning: #d97706; /* amber-600 - Advertencias */
+  --warning-foreground: #ffffff;
+
+  /* Chart colors */
+  --chart-income: #16a34a; /* green-600 */
+  --chart-expense: #dc2626; /* red-600 */
+  --chart-transfer: #0284c7; /* sky-600 */
+  --chart-savings: #059669; /* emerald-600 */
+  --chart-other: #94a3b8; /* slate-400 */
+
+  /* Common properties */
+  --radius: 0.625rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ============================================
-   DARK MODE
-   ============================================ */
 .dark {
-  /* ========== Background & Surfaces ========== */
-  --background: 222 47% 8%; /* #0b1220 - slate-950 custom */
-  --foreground: 210 40% 98%; /* #e2e8f0 - slate-200 */
-  
-  --card: 222 47% 11%; /* #111827 - slate-900 */
-  --card-foreground: 210 40% 98%; /* #e2e8f0 */
-  
-  --popover: 222 47% 11%; /* #111827 */
-  --popover-foreground: 210 40% 98%; /* #e2e8f0 */
-  
-  --secondary: 215 25% 16%; /* #1e293b - slate-800 */
-  --secondary-foreground: 210 40% 98%; /* #e2e8f0 */
-  
-  --muted: 215 25% 16%; /* #1e293b */
-  --muted-foreground: 217 19% 35%; /* #475569 - slate-600 */
-  
-  --accent: 215 25% 16%; /* #1e293b */
-  --accent-foreground: 210 40% 98%; /* #e2e8f0 */
-  
-  /* ========== Borders & Inputs ========== */
-  --border: 215 25% 27%; /* #334155 - slate-700 */
-  --input: 215 25% 27%; /* #334155 */
-  --ring: 172 100% 51%; /* #2dd4bf - teal-400 */
-  
-  /* ========== Brand Primary ========== */
-  --primary: 172 100% 51%; /* #2dd4bf - teal-400 */
-  --primary-foreground: 222 47% 11%; /* #0f172a - texto oscuro */
-  
-  /* ========== Semantic Colors ========== */
-  --success: 142 76% 36%; /* #10b981 - green-500 (Ingresos) */
-  --success-foreground: 222 47% 11%; /* #0f172a */
-  
-  --destructive: 0 91% 71%; /* #f87171 - red-400 (Gastos) */
-  --destructive-foreground: 222 47% 11%; /* #0f172a */
-  
-  --info: 199 89% 48%; /* #0ea5e9 - sky-500 (Transferencias) */
-  --info-foreground: 222 47% 11%; /* #0f172a */
-  
-  --savings: 160 84% 39%; /* #10b981 - emerald-500 (Ahorros) */
-  --savings-foreground: 222 47% 11%; /* #0f172a */
-  
-  --warning: 38 92% 50%; /* #f59e0b - amber-500 (Advertencias) */
-  --warning-foreground: 222 47% 11%; /* #0f172a */
-  
-  /* ========== Chart Colors ========== */
-  --chart-income: 142 76% 36%; /* green-500 */
-  --chart-expense: 0 91% 71%; /* red-400 */
-  --chart-transfer: 199 89% 48%; /* sky-400 */
-  --chart-savings: 160 84% 39%; /* emerald-400 */
-  --chart-other: 215 16% 47%; /* slate-500 */
+  /* Finance App Color Palette - Dark Mode */
+  /* Base colors */
+  --background: #0b1220; /* slate-950 custom */
+  --foreground: #e2e8f0; /* slate-200 */
+  --card: #111827; /* slate-900 */
+  --card-foreground: #e2e8f0;
+  --popover: #111827;
+  --popover-foreground: #e2e8f0;
+  --border: #334155; /* slate-700 */
+  --input: #334155;
+  --ring: #2dd4bf; /* teal-400 */
+
+  /* Brand colors */
+  --primary: #2dd4bf; /* teal-400 */
+  --primary-foreground: #0f172a;
+  --primary-hover: #14b8a6; /* teal-500 */
+
+  /* Secondary colors */
+  --secondary: #1e293b; /* slate-800 */
+  --secondary-foreground: #cbd5e1; /* slate-300 */
+  --muted: #1e293b;
+  --muted-foreground: #64748b; /* slate-500 */
+  --accent: #1e293b;
+  --accent-foreground: #e2e8f0;
+
+  /* Semantic colors */
+  --success: #22c55e; /* green-500 - Ingresos */
+  --success-foreground: #0f172a;
+  --destructive: #f87171; /* red-400 - Gastos */
+  --destructive-foreground: #0f172a;
+  --info: #38bdf8; /* sky-400 - Transferencias/Info */
+  --info-foreground: #0f172a;
+  --savings: #34d399; /* emerald-400 - Ahorros */
+  --savings-foreground: #0f172a;
+  --warning: #f59e0b; /* amber-500 - Advertencias */
+  --warning-foreground: #0f172a;
+
+  /* Chart colors */
+  --chart-income: #22c55e; /* green-500 */
+  --chart-expense: #f87171; /* red-400 */
+  --chart-transfer: #38bdf8; /* sky-400 */
+  --chart-savings: #34d399; /* emerald-400 */
+  --chart-other: #64748b; /* slate-500 */
+}
+
+@theme inline {
+  /* Radius utilities */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Color mappings for Tailwind */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Semantic color mappings */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-savings: var(--savings);
+  --color-savings-foreground: var(--savings-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  /* Chart color mappings */
+  --color-chart-income: var(--chart-income);
+  --color-chart-expense: var(--chart-expense);
+  --color-chart-transfer: var(--chart-transfer);
+  --color-chart-savings: var(--chart-savings);
+  --color-chart-other: var(--chart-other);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  /* Typography improvements */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+
+  /* Focus styles for accessibility */
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  /* Text truncation utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
 }
 
 /* ============================================
@@ -167,6 +265,69 @@ body {
   }
 }
 
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
 @keyframes accordion-down {
   from {
     height: 0;
@@ -196,6 +357,34 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+.animate-bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
 .animation-delay-200 {
   animation-delay: 200ms;
 }
@@ -206,6 +395,20 @@ body {
 
 .animation-delay-400 {
   animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Gradient */
+.gradient-primary-radial {
+  background: radial-gradient(circle at 50% 50%, hsl(var(--primary)) 0%, transparent 70%);
 }
 
 /* ============================================

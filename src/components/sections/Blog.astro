@@ -1,0 +1,172 @@
+---
+import { Card, CardContent, CardDescription, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/Button';
+import { BookOpen, Clock, ArrowRight, TrendingUp, PiggyBank, Target } from 'lucide-react';
+
+const blogPosts = [
+  {
+    id: 1,
+    title: '5 Hábitos Financieros que Cambiarán tu Vida en 2025',
+    excerpt: 'Descubre los hábitos esenciales que te ayudarán a alcanzar tus metas financieras este año.',
+    category: 'Educación Financiera',
+    readTime: '5 min',
+    date: '10 Dic 2024',
+    image: 'https://placehold.co/600x400/14b8a6/ffffff?text=Habitos+Financieros+(600x400)',
+    icon: TrendingUp,
+    color: 'primary',
+    featured: true,
+  },
+  {
+    id: 2,
+    title: 'Cómo Crear un Presupuesto que Realmente Funcione',
+    excerpt: 'Método paso a paso para diseñar un presupuesto realista que puedas mantener en el tiempo.',
+    category: 'Presupuestos',
+    readTime: '7 min',
+    date: '5 Dic 2024',
+    image: 'https://placehold.co/600x400/10b981/ffffff?text=Presupuesto+(600x400)',
+    icon: Target,
+    color: 'success',
+    featured: false,
+  },
+  {
+    id: 3,
+    title: 'El Método 50/30/20: Ahorra sin Sacrificar tu Estilo de Vida',
+    excerpt: 'Aprende a distribuir tus ingresos de manera inteligente sin renunciar a lo que disfrutas.',
+    category: 'Ahorro',
+    readTime: '6 min',
+    date: '28 Nov 2024',
+    image: 'https://placehold.co/600x400/f59e0b/ffffff?text=Metodo+50-30-20+(600x400)',
+    icon: PiggyBank,
+    color: 'warning',
+    featured: false,
+  },
+];
+---
+
+<section id="blog" class="py-16 md:py-24 bg-gradient-to-b from-accent/30 to-background">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+      <Badge variant="outline" class="mb-4">
+        <BookOpen class="size-3" />
+        Blog
+      </Badge>
+      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+        Aprende a gestionar tu dinero
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Tips, guías y estrategias para mejorar tu salud financiera
+      </p>
+    </div>
+
+    <!-- Featured Post -->
+    {
+      blogPosts
+        .filter((post) => post.featured)
+        .map((post) => (
+          <Card className="mb-8 md:mb-12 overflow-hidden group hover:shadow-2xl transition-all duration-300 animate-fade-in-up">
+            <div class="grid md:grid-cols-2 gap-0">
+              <!-- Image -->
+              <div class="relative overflow-hidden bg-muted h-64 md:h-auto">
+                <!-- PLACEHOLDER: Imagen destacada del blog - 600x400px (ratio 3:2) -->
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div class="absolute top-4 left-4">
+                  <Badge className="bg-primary text-primary-foreground">Destacado</Badge>
+                </div>
+              </div>
+
+              <!-- Content -->
+              <CardContent className="p-6 md:p-8 flex flex-col justify-center">
+                <div class="flex items-center gap-4 mb-4">
+                  <Badge variant="outline" className="gap-1">
+                    <post.icon className="size-3" />
+                    {post.category}
+                  </Badge>
+                  <span class="text-sm text-muted-foreground flex items-center gap-1">
+                    <Clock class="size-4" />
+                    {post.readTime}
+                  </span>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {post.title}
+                </h3>
+
+                <p class="text-muted-foreground mb-6 leading-relaxed">{post.excerpt}</p>
+
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-muted-foreground">{post.date}</span>
+                  <Button client:load variant="default" className="gap-2">
+                    Leer artículo
+                    <ArrowRight class="size-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </div>
+          </Card>
+        ))
+    }
+
+    <!-- Regular Posts Grid -->
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      {
+        blogPosts
+          .filter((post) => !post.featured)
+          .map((post, index) => (
+            <Card className={`overflow-hidden group hover:shadow-xl transition-all duration-300 animate-fade-in-up animation-delay-${(index + 1) * 200}`}>
+              <div class="relative overflow-hidden bg-muted h-48">
+                <!-- PLACEHOLDER: Imagen del post - 600x400px (ratio 3:2) -->
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              <CardContent className="p-6">
+                <div class="flex items-center gap-4 mb-3">
+                  <Badge variant="outline" className="gap-1">
+                    <post.icon className="size-3" />
+                    {post.category}
+                  </Badge>
+                  <span class="text-sm text-muted-foreground flex items-center gap-1">
+                    <Clock class="size-4" />
+                    {post.readTime}
+                  </span>
+                </div>
+
+                <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+
+                <p class="text-muted-foreground mb-4 line-clamp-2">{post.excerpt}</p>
+
+                <div class="flex items-center justify-between">
+                  <span class="text-sm text-muted-foreground">{post.date}</span>
+                  <Button client:load variant="ghost" size="sm" className="gap-2">
+                    Leer más
+                    <ArrowRight class="size-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))
+      }
+    </div>
+
+    <!-- CTA to Blog -->
+    <div class="text-center mt-12 animate-fade-in-up animation-delay-400">
+      <Button client:load variant="outline" size="lg" className="gap-2">
+        Ver todos los artículos
+        <ArrowRight class="size-4" />
+      </Button>
+    </div>
+  </div>
+</section>

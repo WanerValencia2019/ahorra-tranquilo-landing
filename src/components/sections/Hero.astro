@@ -5,12 +5,12 @@ import { Badge } from '../ui/Badge';
 
 <section
   id="hero"
-  class="relative overflow-hidden bg-gradient-to-b from-background via-background to-accent/20 py-20 sm:py-32"
+  class="relative overflow-hidden bg-gradient-to-b from-background via-background to-accent/20 py-16 md:py-24 lg:py-32"
 >
   <!-- Gradient radial animado -->
   <div class="absolute inset-0 gradient-primary-radial opacity-30"></div>
 
-  <div class="container relative z-10">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
       <!-- Content -->
       <div class="space-y-8 animate-fade-in-up">
@@ -100,9 +100,14 @@ import { Badge } from '../ui/Badge';
       <!-- Mockup Placeholder -->
       <div class="relative animate-fade-in-up animation-delay-300">
         <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
-          <!-- Placeholder de mockup - usuario agregará screenshot real -->
+          <!-- 
+            PLACEHOLDER: Screenshot principal del dashboard
+            Tamaño recomendado: 1200x800px (ratio 3:2)
+            Formato: PNG o WebP
+            Optimizar para web (< 200KB)
+          -->
           <img
-            src="https://placehold.co/800x600/0ea5a4/ffffff?text=Dashboard+Preview"
+            src="https://placehold.co/1200x800/14b8a6/ffffff?text=Dashboard+Preview+(1200x800)"
             alt="Vista previa de Ahorra Tranquilo Dashboard"
             class="w-full h-auto"
             loading="eager"
