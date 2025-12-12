@@ -7,10 +7,9 @@ import { Button } from './ui/Button';
 >
   <div class="container flex h-16 items-center justify-between">
     <div class="flex items-center gap-2">
-      <!-- Logo placeholder - usuario agregará logo real -->
-      <a href="/" class="flex items-center gap-2 font-bold text-xl text-primary">
-        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">AT</div>
-        <span class="hidden sm:inline">Ahorra Tranquilo</span>
+      <a href="/" class="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity">
+        <img src="/favicon.png" alt="Ahorra Tranquilo" class="w-10 h-10" />
+        <span class="hidden sm:inline bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Ahorra Tranquilo</span>
       </a>
     </div>
 
@@ -18,31 +17,37 @@ import { Button } from './ui/Button';
     <div class="hidden md:flex items-center gap-6">
       <a
         href="/#features"
-        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
       >
-        Funciones
+        Funcionalidades
       </a>
       <a
         href="/herramientas"
-        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
       >
         Herramientas
       </a>
       <a
         href="/planes"
-        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
       >
         Planes
       </a>
       <a
         href="/blog"
-        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
       >
         Blog
       </a>
       <a
+        href="/quienes-somos"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+      >
+        Quiénes Somos
+      </a>
+      <a
         href="/contacto"
-        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
       >
         Contacto
       </a>
