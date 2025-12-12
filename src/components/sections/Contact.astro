@@ -1,0 +1,214 @@
+---
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import { Mail, MessageSquare, MapPin, Phone, Send, Clock } from 'lucide-react';
+
+const contactMethods = [
+  {
+    icon: Mail,
+    title: 'Email',
+    description: 'Escríbenos y te responderemos pronto',
+    value: 'hola@ahorratranquilo.com',
+    href: 'mailto:hola@ahorratranquilo.com',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Chat en Vivo',
+    description: 'Lunes a Viernes, 9am - 6pm COT',
+    value: 'Iniciar chat',
+    href: '#chat',
+  },
+  {
+    icon: Phone,
+    title: 'WhatsApp',
+    description: 'Respuesta en menos de 1 hora',
+    value: '+57 300 123 4567',
+    href: 'https://wa.me/573001234567',
+  },
+];
+---
+
+<section id="contact" class="py-16 md:py-24 bg-muted/30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+      <Badge variant="outline" class="mb-4">
+        <Send class="size-3" />
+        Contacto
+      </Badge>
+      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+        Estamos aquí para ayudarte
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        ¿Tienes preguntas, sugerencias o necesitas ayuda? Nuestro equipo está listo para
+        escucharte
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <!-- Contact Methods -->
+      <div class="lg:col-span-1 space-y-6">
+        {
+          contactMethods.map((method, index) => (
+            <a
+              href={method.href}
+              class={`block animate-fade-in-up animation-delay-${(index + 1) * 200}`}
+            >
+              <Card class="hover:shadow-lg transition-all duration-300 hover:border-primary">
+                <CardContent class="p-6">
+                  <div class="flex items-start gap-4">
+                    <div class="p-3 rounded-lg bg-primary/10">
+                      <method.icon class="size-6 text-primary" />
+                    </div>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-foreground mb-1">{method.title}</h3>
+                      <p class="text-sm text-muted-foreground mb-2">{method.description}</p>
+                      <p class="text-sm font-medium text-primary">{method.value}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          ))
+        }
+
+        <!-- Office Info -->
+        <Card class="animate-fade-in-up animation-delay-400">
+          <CardContent class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-lg bg-muted">
+                <MapPin class="size-6 text-foreground" />
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-foreground mb-1">Oficina Principal</h3>
+                <p class="text-sm text-muted-foreground">
+                  Calle 100 #19-61<br />
+                  Bogotá, Colombia
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Office Hours -->
+        <Card class="animate-fade-in-up animation-delay-200">
+          <CardContent class="p-6">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-lg bg-muted">
+                <Clock class="size-6 text-foreground" />
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-foreground mb-1">Horario de Atención</h3>
+                <p class="text-sm text-muted-foreground">
+                  Lunes a Viernes: 9am - 6pm<br />
+                  Sábados: 10am - 2pm<br />
+                  Domingos: Cerrado
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2">
+        <Card class="animate-fade-in-up animation-delay-300">
+          <CardContent class="p-6 md:p-8">
+            <form class="space-y-6" id="contact-form">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="text-sm font-medium text-foreground">
+                    Nombre completo *
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    required
+                    placeholder="Juan Pérez"
+                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="email" class="text-sm font-medium text-foreground">
+                    Email *
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="juan@ejemplo.com"
+                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="subject" class="text-sm font-medium text-foreground">
+                  Asunto *
+                </label>
+                <input
+                  id="subject"
+                  type="text"
+                  required
+                  placeholder="¿En qué podemos ayudarte?"
+                  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label for="message" class="text-sm font-medium text-foreground">
+                  Mensaje *
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows="6"
+                  placeholder="Cuéntanos más detalles sobre tu consulta o comentario..."
+                  class="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                ></textarea>
+              </div>
+
+              <div class="flex items-start gap-2">
+                <input
+                  id="privacy"
+                  type="checkbox"
+                  required
+                  class="mt-1 size-4 rounded border-input"
+                />
+                <label for="privacy" class="text-sm text-muted-foreground">
+                  Acepto la{' '}
+                  <a href="/legal/privacy" class="text-primary hover:underline">
+                    política de privacidad
+                  </a>{' '}
+                  y el tratamiento de mis datos personales
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                <Send class="size-4" />
+                Enviar mensaje
+              </button>
+
+              <p class="text-xs text-center text-muted-foreground">
+                Responderemos tu mensaje en menos de 24 horas hábiles
+              </p>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert(
+      '¡Gracias por contactarnos! Tu mensaje ha sido enviado. Te responderemos pronto.'
+    );
+    (e.target as HTMLFormElement).reset();
+  });
+</script>

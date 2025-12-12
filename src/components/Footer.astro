@@ -1,0 +1,215 @@
+---
+import { Badge } from '@/components/ui/badge';
+import {
+  Twitter,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Github,
+  Mail,
+  MapPin,
+  Phone,
+} from 'lucide-react';
+
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  producto: [
+    { name: 'Características', href: '#features' },
+    { name: 'Precios', href: '#pricing' },
+    { name: 'Testimonios', href: '#testimonials' },
+    { name: 'Roadmap', href: '#roadmap' },
+  ],
+  recursos: [
+    { name: 'Blog', href: '#blog' },
+    { name: 'Guías Financieras', href: '#guides' },
+    { name: 'Calculadoras', href: '#tools' },
+    { name: 'Preguntas Frecuentes', href: '#faq' },
+  ],
+  empresa: [
+    { name: 'Sobre Nosotros', href: '#about' },
+    { name: 'Contacto', href: '#contact' },
+    { name: 'Seguridad', href: '#security' },
+    { name: 'Trabaja con Nosotros', href: '#careers' },
+  ],
+  legal: [
+    { name: 'Privacidad', href: '/legal/privacy' },
+    { name: 'Términos y Condiciones', href: '/legal/terms' },
+    { name: 'Política de Cookies', href: '/legal/cookies' },
+  ],
+};
+
+const socialLinks = [
+  {
+    name: 'Twitter',
+    href: 'https://twitter.com/ahorratranquilo',
+    icon: Twitter,
+  },
+  {
+    name: 'Facebook',
+    href: 'https://facebook.com/ahorratranquilo',
+    icon: Facebook,
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/ahorratranquilo',
+    icon: Instagram,
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://linkedin.com/company/ahorratranquilo',
+    icon: Linkedin,
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/ahorratranquilo',
+    icon: Github,
+  },
+];
+---
+
+<footer class="bg-card border-t">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <a href="/" class="flex items-center gap-2 font-bold text-xl text-primary">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">
+              AT
+            </div>
+            <span>Ahorra Tranquilo</span>
+          </a>
+        </div>
+        <p class="text-muted-foreground text-sm mb-4 max-w-sm">
+          Gestiona tus finanzas personales de forma inteligente. Control total de gastos, ingresos
+          y presupuestos con análisis en tiempo real.
+        </p>
+        <Badge variant="outline" class="mb-4">
+          🇨🇴 Hecho con ❤️ en Colombia
+        </Badge>
+        
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-2 text-sm text-muted-foreground mt-4">
+          <a href="mailto:hola@ahorratranquilo.com" class="flex items-center gap-2 hover:text-primary transition-colors">
+            <Mail class="size-4" />
+            hola@ahorratranquilo.com
+          </a>
+          <div class="flex items-center gap-2">
+            <MapPin class="size-4" />
+            Bogotá, Colombia
+          </div>
+        </div>
+      </div>
+
+      <!-- Links Columns -->
+      <div>
+        <h3 class="font-semibold text-foreground mb-4">Producto</h3>
+        <ul class="space-y-3">
+          {
+            footerLinks.producto.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-foreground mb-4">Recursos</h3>
+        <ul class="space-y-3">
+          {
+            footerLinks.recursos.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-foreground mb-4">Empresa</h3>
+        <ul class="space-y-3">
+          {
+            footerLinks.empresa.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold text-foreground mb-4">Legal</h3>
+        <ul class="space-y-3">
+          {
+            footerLinks.legal.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="border-t pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <!-- Copyright -->
+        <p class="text-sm text-muted-foreground">
+          © {currentYear} Ahorra Tranquilo. Todos los derechos reservados.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          {
+            socialLinks.map((social) => (
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-muted-foreground hover:text-primary transition-colors"
+                aria-label={social.name}
+              >
+                <social.icon className="size-5" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="mt-6 text-center">
+        <p class="text-xs text-muted-foreground">
+          Ahorra Tranquilo es una plataforma de gestión financiera personal. No somos una entidad
+          financiera ni ofrecemos servicios bancarios.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

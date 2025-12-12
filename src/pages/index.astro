@@ -1,10 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 import Hero from '../components/sections/Hero.astro';
 import ValueProposition from '../components/sections/ValueProposition.astro';
 import Features from '../components/sections/Features.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+// import FAQ from '../components/sections/FAQ.astro'; // Temporalmente deshabilitado - problema con Accordion SSR
+import Contact from '../components/sections/Contact.astro';
 ---
 
 <Layout
@@ -17,5 +22,10 @@ import HowItWorks from '../components/sections/HowItWorks.astro';
     <ValueProposition />
     <Features />
     <HowItWorks />
+    <Pricing />
+    <Testimonials />
+    <!-- <FAQ /> --> <!-- Temporalmente deshabilitado - problema con Accordion SSR -->
+    <Contact />
   </main>
+  <Footer />
 </Layout>

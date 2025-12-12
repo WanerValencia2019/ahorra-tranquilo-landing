@@ -3,7 +3,10 @@ dist/
 
 # generated types
 .astro/
-
+.vercel/
+legal/
+BRAND_GUIDELINES.md
+LANDING_BASIC_PROPOSAL.md
 # dependencies
 node_modules/
 

@@ -1,0 +1,93 @@
+---
+import { Badge } from '@/components/ui/badge';
+import { FAQAccordion } from '@/components/FAQAccordion';
+import { HelpCircle } from 'lucide-react';
+
+const faqs = [
+  {
+    question: '¿Es realmente gratis Ahorra Tranquilo?',
+    answer:
+      'Sí, Ahorra Tranquilo ofrece un plan completamente gratuito con funcionalidades básicas que incluyen registro de transacciones ilimitadas, 3 cuentas, presupuestos básicos y análisis mensuales. También tendremos planes premium próximamente con funciones avanzadas.',
+  },
+  {
+    question: '¿Mis datos bancarios están seguros?',
+    answer:
+      'Absolutamente. Usamos encriptación de extremo a extremo (AES-256) y nunca almacenamos credenciales bancarias. Además, cumplimos con estándares internacionales de seguridad (ISO 27001) y todas las regulaciones de protección de datos de Colombia.',
+  },
+  {
+    question: '¿Puedo usar Ahorra Tranquilo en múltiples dispositivos?',
+    answer:
+      'Sí, tu cuenta se sincroniza automáticamente en todos tus dispositivos. Puedes acceder desde tu computador, tablet y teléfono móvil (iOS y Android) sin perder ninguna información.',
+  },
+  {
+    question: '¿Necesito conectar mis cuentas bancarias?',
+    answer:
+      'No es obligatorio. Puedes registrar todas tus transacciones manualmente de forma rápida y sencilla. Sin embargo, la conexión bancaria automática está en nuestra hoja de ruta para hacer el proceso aún más eficiente.',
+  },
+  {
+    question: '¿Qué tipo de análisis financieros ofrece?',
+    answer:
+      'Ofrecemos análisis de gastos por categoría, tendencias mensuales, alertas de presupuesto, proyecciones de ahorro, comparativas de periodos anteriores y recomendaciones personalizadas basadas en tus hábitos financieros.',
+  },
+  {
+    question: '¿Puedo exportar mis datos?',
+    answer:
+      'Sí, puedes exportar todos tus datos en formatos CSV y Excel en cualquier momento. Tus datos son tuyos y tienes control total sobre ellos. Además, ofrecemos respaldos automáticos.',
+  },
+  {
+    question: '¿Cómo puedo categorizar mis gastos?',
+    answer:
+      'Ahorra Tranquilo viene con categorías predefinidas (alimentación, transporte, vivienda, etc.) pero también puedes crear categorías personalizadas según tus necesidades específicas.',
+  },
+  {
+    question: '¿Hay límite de transacciones?',
+    answer:
+      'En el plan gratuito no hay límite de transacciones. Puedes registrar todas las transacciones que necesites sin restricciones.',
+  },
+  {
+    question: '¿Qué monedas soporta la aplicación?',
+    answer:
+      'Actualmente soportamos Pesos Colombianos (COP) como moneda principal, pero estamos trabajando en agregar soporte multi-moneda para dólares (USD), euros (EUR) y otras monedas latinoamericanas.',
+  },
+  {
+    question: '¿Ofrecen soporte al cliente?',
+    answer:
+      'Sí, ofrecemos soporte por correo electrónico, chat en vivo (horario laboral) y una base de conocimientos completa con tutoriales y guías. También tenemos una comunidad activa en redes sociales.',
+  },
+];
+---
+
+<section id="faq" class="py-16 md:py-24 bg-background">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+      <Badge variant="outline" class="mb-4">
+        <HelpCircle class="size-3" />
+        Preguntas Frecuentes
+      </Badge>
+      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+        ¿Tienes alguna duda?
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Encuentra respuestas rápidas a las preguntas más comunes sobre Ahorra Tranquilo
+      </p>
+    </div>
+
+    <div class="animate-fade-in-up animation-delay-200">
+      <FAQAccordion faqs={faqs} client:only="react" />
+    </div>
+
+    <!-- CTA Contact -->
+    <div class="mt-12 text-center p-8 bg-muted/50 rounded-xl animate-fade-in-up animation-delay-400">
+      <h3 class="text-xl font-semibold text-foreground mb-2">¿No encontraste lo que buscabas?</h3>
+      <p class="text-muted-foreground mb-4">
+        Nuestro equipo está listo para ayudarte con cualquier consulta
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+      >
+        Contáctanos
+      </a>
+    </div>
+  </div>
+</section>

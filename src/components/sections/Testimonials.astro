@@ -1,0 +1,151 @@
+---
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Quote, Star } from 'lucide-react';
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'María González',
+    role: 'Diseñadora Gráfica',
+    location: 'Bogotá, Colombia',
+    rating: 5,
+    text: 'Ahorra Tranquilo cambió mi vida financiera. Ahora sé exactamente a dónde va cada peso y he logrado ahorrar para mi primer viaje internacional.',
+    achievement: 'Ahorró $2.5M en 6 meses',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=MG',
+  },
+  {
+    id: 2,
+    name: 'Carlos Ramírez',
+    role: 'Ingeniero de Software',
+    location: 'Medellín, Colombia',
+    rating: 5,
+    text: 'La mejor app para control financiero. Los análisis automáticos me ayudaron a identificar gastos innecesarios y optimizar mi presupuesto mensual.',
+    achievement: 'Redujo gastos en 30%',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=CR',
+  },
+  {
+    id: 3,
+    name: 'Ana Martínez',
+    role: 'Emprendedora',
+    location: 'Cali, Colombia',
+    rating: 5,
+    text: 'Como emprendedora necesitaba separar mis finanzas personales del negocio. Con Ahorra Tranquilo lo logré de forma simple y efectiva.',
+    achievement: 'Organizó 2 cuentas',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=AM',
+  },
+  {
+    id: 4,
+    name: 'Javier López',
+    role: 'Profesor Universitario',
+    location: 'Barranquilla, Colombia',
+    rating: 5,
+    text: 'Excelente herramienta educativa. La uso con mis estudiantes para enseñar educación financiera de manera práctica y visual.',
+    achievement: 'Enseña a 50+ estudiantes',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=JL',
+  },
+  {
+    id: 5,
+    name: 'Laura Sánchez',
+    role: 'Contadora',
+    location: 'Cartagena, Colombia',
+    rating: 5,
+    text: 'Como contadora he probado muchas apps financieras. Esta es la más intuitiva y completa que he encontrado para finanzas personales.',
+    achievement: 'Recomienda a sus clientes',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=LS',
+  },
+  {
+    id: 6,
+    name: 'Diego Torres',
+    role: 'Freelancer',
+    location: 'Bucaramanga, Colombia',
+    rating: 5,
+    text: 'Trabajo con ingresos variables y necesitaba algo flexible. Ahorra Tranquilo se adapta perfecto a mi estilo de vida freelance.',
+    achievement: 'Controla ingresos irregulares',
+    avatar: 'https://placehold.co/80x80/14b8a6/ffffff?text=DT',
+  },
+];
+---
+
+<section id="testimonials" class="py-16 md:py-24 bg-muted/30">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+      <Badge variant="outline" class="mb-4">
+        <Star class="size-3 fill-warning text-warning" />
+        Testimonios
+      </Badge>
+      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+        Lo que dicen nuestros usuarios
+      </h2>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        Miles de personas ya están transformando su relación con el dinero gracias a Ahorra Tranquilo
+      </p>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {
+        testimonials.map((testimonial, index) => (
+          <Card
+            class={`hover:shadow-lg transition-all duration-300 animate-fade-in-up animation-delay-${(index % 3) * 200 + 200}`}
+          >
+            <CardContent class="p-6 flex flex-col gap-4">
+              {/* Quote Icon */}
+              <div class="flex justify-between items-start">
+                <Quote class="size-8 text-primary/20" />
+                <div class="flex gap-0.5">
+                  {Array.from({ length: testimonial.rating }).map(() => (
+                    <Star class="size-4 fill-warning text-warning" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Testimonial Text */}
+              <p class="text-foreground leading-relaxed">{testimonial.text}</p>
+
+              {/* Achievement Badge */}
+              <Badge variant="secondary" class="self-start">
+                {testimonial.achievement}
+              </Badge>
+
+              {/* User Info */}
+              <div class="flex items-center gap-3 pt-4 border-t">
+                <img
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
+                  class="size-12 rounded-full"
+                  loading="lazy"
+                />
+                <div class="flex flex-col">
+                  <span class="font-semibold text-foreground">{testimonial.name}</span>
+                  <span class="text-sm text-muted-foreground">{testimonial.role}</span>
+                  <span class="text-xs text-muted-foreground">{testimonial.location}</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))
+      }
+    </div>
+
+    {/* Trust Metrics */}
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="animate-fade-in-up animation-delay-200">
+        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">10K+</div>
+        <div class="text-muted-foreground">Usuarios Activos</div>
+      </div>
+      <div class="animate-fade-in-up animation-delay-300">
+        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">4.8/5</div>
+        <div class="text-muted-foreground">Calificación Promedio</div>
+      </div>
+      <div class="animate-fade-in-up animation-delay-400">
+        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">$50B+</div>
+        <div class="text-muted-foreground">COP Gestionados</div>
+      </div>
+      <div class="animate-fade-in-up animation-delay-200">
+        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">95%</div>
+        <div class="text-muted-foreground">Recomendarían</div>
+      </div>
+    </div>
+  </div>
+</section>
