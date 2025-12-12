@@ -1,10 +1,36 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Blog from '../components/sections/Blog.astro';
 import { Badge } from '../components/ui/badge';
-import { BookOpen, ArrowLeft } from 'lucide-react';
+import { Button } from '../components/ui/Button';
+import { Card, CardContent } from '../components/ui/Card';
+import { BookOpen, ArrowLeft, Clock, ArrowRight, TrendingUp, PiggyBank, Target, DollarSign } from 'lucide-react';
+
+// Get all blog posts and sort by date
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+// Icon mapping for categories
+const categoryIcons = {
+  'Educación Financiera': TrendingUp,
+  'Presupuestos': Target,
+  'Ahorro': PiggyBank,
+  'Inversión': DollarSign,
+  'Deudas': DollarSign,
+  'Herramientas': Target,
+  'Tips': TrendingUp,
+};
+
+// Format date
+function formatDate(date: Date) {
+  return date.toLocaleDateString('es-CO', { 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric' 
+  });
+}
 ---
 
 <Layout
@@ -35,8 +61,72 @@ import { BookOpen, ArrowLeft } from 'lucide-react';
       </div>
     </section>
 
-    <!-- Blog Component -->
-    <Blog />
+    <!-- Blog Posts Grid -->
+    <section class="py-16 md:py-24">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {
+            sortedPosts.map((post) => {
+              const Icon = categoryIcons[post.data.category] || BookOpen;
+              return (
+                <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300">
+                  <a href={`/blog/${post.slug}`}>
+                    <div class="relative overflow-hidden bg-muted h-48">
+                      <img
+                        src={post.data.image || 'https://placehold.co/600x400/14b8a6/ffffff?text=Blog+Post'}
+                        alt={post.data.title}
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      {post.data.featured && (
+                        <div class="absolute top-4 left-4">
+                          <Badge className="bg-primary text-primary-foreground">Destacado</Badge>
+                        </div>
+                      )}
+                    </div>
+
+                    <CardContent className="p-6">
+                      <div class="flex items-center gap-4 mb-3">
+                        <Badge variant="outline" className="gap-1">
+                          <Icon className="size-3" />
+                          {post.data.category}
+                        </Badge>
+                        <span class="text-sm text-muted-foreground flex items-center gap-1">
+                          <Clock class="size-4" />
+                          {post.data.readTime || '5 min'}
+                        </span>
+                      </div>
+
+                      <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        {post.data.title}
+                      </h3>
+
+                      <p class="text-muted-foreground mb-4 line-clamp-3">{post.data.description}</p>
+
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-muted-foreground">{formatDate(post.data.pubDate)}</span>
+                        <Button client:load variant="ghost" size="sm" className="gap-2">
+                          Leer más
+                          <ArrowRight class="size-4" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </a>
+                </Card>
+              );
+            })
+          }
+        </div>
+
+        {sortedPosts.length === 0 && (
+          <div class="text-center py-12">
+            <BookOpen class="size-16 mx-auto text-muted-foreground mb-4" />
+            <h3 class="text-xl font-semibold mb-2">No hay artículos disponibles</h3>
+            <p class="text-muted-foreground">Pronto publicaremos contenido nuevo.</p>
+          </div>
+        )}
+      </div>
+    </section>
   </main>
   <Footer />
 </Layout>
