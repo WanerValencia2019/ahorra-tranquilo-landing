@@ -1,22 +1,144 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonical?: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const {
+  title = 'Ahorra Tranquilo - Gestiona tus Finanzas Personales de Forma Inteligente',
+  description = 'Control total de gastos, ingresos y presupuestos con análisis en tiempo real. La aplicación financiera más fácil de usar en Colombia.',
+  ogImage = '/og-image.png',
+  canonical = Astro.url.pathname,
+} = Astro.props;
+
+const siteUrl = 'https://ahorratranquilo.com';
+const fullTitle = title.includes('Ahorra Tranquilo') ? title : `${title} | Ahorra Tranquilo`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="finanzas personales, control de gastos, presupuesto, ahorro, gestión financiera, Colombia, app finanzas, control ingresos, metas ahorro"
+    />
+    <meta name="author" content="Waner Andrés Valencia Moreno" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={`${siteUrl}${canonical}`} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${siteUrl}${canonical}`} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:site_name" content="Ahorra Tranquilo" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={`${siteUrl}${canonical}`} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0ea5a4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#2dd4bf" media="(prefers-color-scheme: dark)" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicons - Placeholders (usuario agregará imágenes reales) -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/globals.css" />
+
+    <!-- Dark mode script (prevent flash) -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+
+      window.localStorage.setItem('theme', theme);
+    </script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      import { injectSpeedInsights } from '@vercel/speed-insights';
+      injectSpeedInsights();
+    </script>
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ahorra Tranquilo",
+        "url": "https://ahorratranquilo.com",
+        "logo": "https://ahorratranquilo.com/logo.png",
+        "description": "Aplicación de gestión de finanzas personales",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-301-421-9131",
+          "contactType": "customer support",
+          "email": "soporte@support.ahorratranquilo.com",
+          "areaServed": "CO",
+          "availableLanguage": ["Spanish"]
+        },
+        "sameAs": [
+          "https://twitter.com/ahorratranquilo",
+          "https://facebook.com/ahorratranquilo",
+          "https://instagram.com/ahorratranquilo"
+        ]
+      }
+    </script>
+  </head>
+  <body class="antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+    >
+      Saltar al contenido principal
+    </a>
+
+    <slot />
+  </body>
+</html>

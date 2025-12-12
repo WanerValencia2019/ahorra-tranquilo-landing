@@ -1,0 +1,149 @@
+---
+import { Card, CardContent } from '../ui/Card';
+---
+
+<section id="how-it-works" class="py-20 sm:py-32 bg-accent/30">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        Tan simple como <span class="text-primary">1, 2, 3</span>
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Empieza a gestionar tus finanzas en menos de 2 minutos
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative max-w-5xl mx-auto">
+      <!-- Connection line (hidden on mobile) -->
+      <div
+        class="hidden md:block absolute top-24 left-1/4 right-1/4 h-1 bg-gradient-to-r from-primary via-info to-success"
+        style="top: 96px;"
+      ></div>
+
+      <!-- Steps Grid -->
+      <div class="grid gap-12 md:grid-cols-3">
+        <!-- Step 1 -->
+        <div class="relative text-center space-y-6">
+          <div
+            class="relative mx-auto w-20 h-20 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold shadow-lg z-10"
+          >
+            1
+            <div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-20"></div>
+          </div>
+          <Card client:load className="hover:shadow-lg transition-shadow">
+            <CardContent className="pt-6 space-y-4">
+              <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto">
+                <svg
+                  class="w-6 h-6 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Crea tu cuenta o usa el demo</h3>
+              <p class="text-muted-foreground">
+                Registro en segundos con tu email o prueba inmediatamente con datos de ejemplo.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative text-center space-y-6">
+          <div
+            class="relative mx-auto w-20 h-20 rounded-full bg-info text-info-foreground flex items-center justify-center text-2xl font-bold shadow-lg z-10"
+          >
+            2
+            <div class="absolute inset-0 rounded-full bg-info animate-ping opacity-20 animation-delay-200"></div>
+          </div>
+          <Card client:load className="hover:shadow-lg transition-shadow">
+            <CardContent className="pt-6 space-y-4">
+              <div class="w-12 h-12 rounded-lg bg-info/10 flex items-center justify-center mx-auto">
+                <svg
+                  class="w-6 h-6 text-info"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Registra tus ingresos y gastos</h3>
+              <p class="text-muted-foreground">
+                Añade transacciones fácilmente. Define categorías, montos y fechas en un clic.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative text-center space-y-6">
+          <div
+            class="relative mx-auto w-20 h-20 rounded-full bg-success text-success-foreground flex items-center justify-center text-2xl font-bold shadow-lg z-10"
+          >
+            3
+            <div class="absolute inset-0 rounded-full bg-success animate-ping opacity-20 animation-delay-400"></div>
+          </div>
+          <Card client:load className="hover:shadow-lg transition-shadow">
+            <CardContent className="pt-6 space-y-4">
+              <div class="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center mx-auto">
+                <svg
+                  class="w-6 h-6 text-success"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold">Visualiza tu progreso y ahorra mejor</h3>
+              <p class="text-muted-foreground">
+                Ve reportes detallados, gráficos hermosos y toma el control total de tu dinero.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <a
+        href="https://app.ahorratranquilo.com"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Empieza Ahora - Es Gratis
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+      <p class="mt-4 text-sm text-muted-foreground">
+        No requiere tarjeta de crédito • Configuración en 2 minutos
+      </p>
+    </div>
+  </div>
+</section>

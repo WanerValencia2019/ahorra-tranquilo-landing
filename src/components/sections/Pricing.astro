@@ -1,0 +1,300 @@
+---
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/Card';
+import { Badge } from '../ui/Badge';
+import { Button } from '../ui/Button';
+---
+
+<section id="pricing" class="py-20 sm:py-32">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <Badge client:load variant="outline" className="mb-4">Planes</Badge>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        Empieza <span class="text-primary">gratis</span>, crece cuando quieras
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Actualmente 100% gratis. Próximamente planes para usuarios avanzados
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto">
+      <!-- Free Plan (Current) -->
+      <Card
+        client:load
+        className="relative border-2 border-primary shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <Badge client:load variant="default" className="px-4 py-1">
+            Disponible Ahora
+          </Badge>
+        </div>
+        <CardHeader className="pt-10">
+          <CardTitle className="text-2xl">Free</CardTitle>
+          <CardDescription>Perfecto para empezar</CardDescription>
+          <div class="mt-4">
+            <span class="text-4xl font-bold">$0</span>
+            <span class="text-muted-foreground">/mes</span>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-success mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Transacciones ilimitadas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-success mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Categorías personalizadas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-success mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Reportes y gráficos básicos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-success mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Modo demo incluido</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-success mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Soporte por email</span>
+            </li>
+          </ul>
+          <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer">
+            <Button client:load className="w-full" size="lg">
+              Empezar Gratis
+            </Button>
+          </a>
+        </CardContent>
+      </Card>
+
+      <!-- Starter Plan (Coming Soon) -->
+      <Card client:load className="hover:shadow-lg transition-shadow opacity-90">
+        <CardHeader>
+          <div class="flex items-center justify-between">
+            <CardTitle className="text-2xl">Starter</CardTitle>
+            <Badge client:load variant="secondary">Próximamente</Badge>
+          </div>
+          <CardDescription>Para usuarios avanzados</CardDescription>
+          <div class="mt-4">
+            <span class="text-4xl font-bold">$X.XXX</span>
+            <span class="text-muted-foreground">/mes</span>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <p class="text-sm text-muted-foreground">Todo en Free, más:</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Presupuestos automáticos</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Metas de ahorro avanzadas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Reportes exportables (PDF)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Recordatorios inteligentes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-primary mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Soporte prioritario</span>
+            </li>
+          </ul>
+          <Button client:load className="w-full" size="lg" variant="outline" disabled>
+            Próximamente
+          </Button>
+        </CardContent>
+      </Card>
+
+      <!-- Premium Plan (Coming Soon) -->
+      <Card client:load className="hover:shadow-lg transition-shadow opacity-90">
+        <CardHeader>
+          <div class="flex items-center justify-between">
+            <CardTitle className="text-2xl">Premium</CardTitle>
+            <Badge client:load variant="secondary">Próximamente</Badge>
+          </div>
+          <CardDescription>Para power users</CardDescription>
+          <div class="mt-4">
+            <span class="text-4xl font-bold">$X.XXX</span>
+            <span class="text-muted-foreground">/mes</span>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <p class="text-sm text-muted-foreground">Todo en Starter, más:</p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-warning mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Múltiples cuentas/monedas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-warning mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Conexión con bancos (futura)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-warning mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Análisis predictivo con IA</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-warning mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>API de desarrollador</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg
+                class="w-5 h-5 text-warning mt-0.5 shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Soporte 24/7</span>
+            </li>
+          </ul>
+          <Button client:load className="w-full" size="lg" variant="outline" disabled>
+            Próximamente
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+
+    <!-- Note -->
+    <div class="mt-12 text-center">
+      <p class="text-muted-foreground">
+        💡 <strong>Por ahora todo es gratis.</strong> Los planes de pago llegarán para ofrecer funciones avanzadas sin afectar lo que ya tienes.
+      </p>
+    </div>
+  </div>
+</section>

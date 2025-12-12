@@ -1,0 +1,164 @@
+---
+import { Card, CardContent } from '../ui/Card';
+---
+
+<section id="value-proposition" class="py-20 sm:py-32 bg-accent/30">
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        ¿Por qué elegir <span class="text-primary">Ahorra Tranquilo</span>?
+      </h2>
+      <p class="text-lg text-muted-foreground">
+        Una solución completa para tomar control de tus finanzas personales
+      </p>
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Benefit 1 -->
+      <Card
+        client:load
+        className="group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:border-primary/50"
+      >
+        <CardContent className="pt-6 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <svg
+              class="w-6 h-6 text-primary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Control Total de Gastos</h3>
+          <p class="text-muted-foreground">
+            Registra y categoriza tus gastos e ingresos en segundos. Visualiza exactamente a dónde va tu dinero.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Benefit 2 -->
+      <Card
+        client:load
+        className="group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:border-primary/50"
+      >
+        <CardContent className="pt-6 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-savings/10 flex items-center justify-center group-hover:bg-savings/20 transition-colors">
+            <svg
+              class="w-6 h-6 text-savings"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Metas de Ahorro</h3>
+          <p class="text-muted-foreground">
+            Define tus objetivos financieros y haz seguimiento del progreso. Alcanza tus metas más rápido.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Benefit 3 -->
+      <Card
+        client:load
+        className="group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:border-primary/50"
+      >
+        <CardContent className="pt-6 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-info/10 flex items-center justify-center group-hover:bg-info/20 transition-colors">
+            <svg
+              class="w-6 h-6 text-info"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Visualizaciones Claras</h3>
+          <p class="text-muted-foreground">
+            Gráficos hermosos y fáciles de entender. Toma decisiones informadas con análisis en tiempo real.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Benefit 4 -->
+      <Card
+        client:load
+        className="group hover:shadow-lg hover:scale-[1.02] transition-all duration-300 hover:border-primary/50"
+      >
+        <CardContent className="pt-6 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-success/10 flex items-center justify-center group-hover:bg-success/20 transition-colors">
+            <svg
+              class="w-6 h-6 text-success"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold">Seguridad y Privacidad</h3>
+          <p class="text-muted-foreground">
+            Tus datos están protegidos con cifrado de nivel bancario. Sin conexión a bancos, sin riesgos.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+
+    <!-- Additional highlight -->
+    <div class="mt-16 text-center">
+      <Card client:load className="max-w-4xl mx-auto border-primary/20">
+        <CardContent className="py-8">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <div class="space-y-2 text-center sm:text-left">
+              <h4 class="text-2xl font-bold">Modo Demo Disponible</h4>
+              <p class="text-muted-foreground">
+                Prueba todas las funciones sin registrarte. Datos de ejemplo incluidos.
+              </p>
+            </div>
+            <a
+              href="https://app.ahorratranquilo.com/demo"
+              class="shrink-0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                class="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
+                Probar Ahora →
+              </button>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
