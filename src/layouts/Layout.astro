@@ -15,6 +15,7 @@ const {
 
 const siteUrl = 'https://ahorratranquilo.com';
 const fullTitle = title.includes('Ahorra Tranquilo') ? title : `${title} | Ahorra Tranquilo`;
+import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
@@ -95,18 +96,6 @@ const fullTitle = title.includes('Ahorra Tranquilo') ? title : `${title} | Ahorr
       window.localStorage.setItem('theme', theme);
     </script>
 
-    <!-- Vercel Analytics -->
-    <script>
-      import { inject } from '@vercel/analytics';
-      inject();
-    </script>
-
-    <!-- Vercel Speed Insights -->
-    <script>
-      import { injectSpeedInsights } from '@vercel/speed-insights';
-      injectSpeedInsights();
-    </script>
-
     <!-- Structured Data - Organization -->
     <script type="application/ld+json">
       {
@@ -131,6 +120,7 @@ const fullTitle = title.includes('Ahorra Tranquilo') ? title : `${title} | Ahorr
         ]
       }
     </script>
+    <Analytics />
   </head>
   <body class="antialiased">
     <a
