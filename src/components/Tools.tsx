@@ -48,8 +48,8 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
   };
 
   return (
-    <section id="tools" className={`py-8 md:py-8 bg-background ${className}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tools" className={`bg-background ${className}`}>
+      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <Badge variant="outline" className="mb-4 gap-1.5">
@@ -64,7 +64,7 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Calculadora de Meta de Ahorro */}
           <Card className="hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50">
             <CardHeader>
