@@ -48,7 +48,7 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
   };
 
   return (
-    <section id="tools" className={`bg-background ${className}`}>
+    <section id="tools" className={`py-8 bg-background ${className}`}>
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
