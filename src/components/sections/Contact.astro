@@ -1,22 +1,16 @@
 ---
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, MessageSquare, MapPin, Phone, Send, Clock } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Clock, Building2 } from 'lucide-react';
 
 const contactMethods = [
   {
     icon: Mail,
     title: 'Email',
     description: 'Escríbenos y te responderemos pronto',
-    value: 'hola@ahorratranquilo.com',
-    href: 'mailto:hola@ahorratranquilo.com',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Chat en Vivo',
-    description: 'Lunes a Viernes, 9am - 6pm COT',
-    value: 'Iniciar chat',
-    href: '#chat',
+    value: 'soporte@support.ahorratranquilo.com',
+    href: 'mailto:soporte@support.ahorratranquilo.com',
+    color: 'primary',
   },
   {
     icon: Phone,
@@ -24,45 +18,48 @@ const contactMethods = [
     description: 'Respuesta en menos de 1 hora',
     value: '+57 300 123 4567',
     href: 'https://wa.me/573001234567',
+    color: 'success',
   },
 ];
 ---
 
-<section id="contact" class="py-8 md:py-12 bg-muted/30">
+<section id="contact" class="py-8 md:py-12 bg-gradient-to-b from-background to-muted/30">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-6 md:mb-8 animate-fade-in-up">
-      <Badge variant="outline" class="mb-4">
-        <Send class="size-3" />
-        Contacto
+    <div class="text-center mb-10 md:mb-12 animate-fade-in-up">
+      <Badge variant="outline" class="mb-4 gap-1.5">
+        <Send class="size-3.5" />
+        Contáctanos
       </Badge>
-      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-        Estamos aquí para ayudarte
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-4">
+        Envíanos un Mensaje
       </h2>
       <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        ¿Tienes preguntas, sugerencias o necesitas ayuda? Nuestro equipo está listo para
-        escucharte
+        Completa el formulario y nuestro equipo te responderá lo antes posible
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <!-- Contact Methods -->
-      <div class="lg:col-span-1 space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <!-- Contact Methods & Info -->
+      <div class="lg:col-span-1 space-y-5">
+        <!-- Contact Methods -->
         {
           contactMethods.map((method, index) => (
             <a
               href={method.href}
-              class={`block animate-fade-in-up animation-delay-${(index + 1) * 200}`}
+              target={method.href.startsWith('http') ? '_blank' : undefined}
+              rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class={`block animate-fade-in-up animation-delay-${(index + 1) * 100}`}
             >
-              <Card class="hover:shadow-lg transition-all duration-300 hover:border-primary">
-                <CardContent class="p-6">
-                  <div class="flex items-start gap-4">
-                    <div class="p-3 rounded-lg bg-primary/10">
-                      <method.icon class="size-6 text-primary" />
+              <Card class={`hover:shadow-xl transition-all duration-300 hover:border-${method.color}/50 hover:-translate-y-1 group`}>
+                <CardContent class="p-7 lg:p-8">
+                  <div class="flex items-center gap-5">
+                    <div class={`p-4 rounded-xl bg-${method.color}/10 group-hover:scale-110 transition-transform shrink-0`}>
+                      <method.icon class={`size-6 text-${method.color}`} />
                     </div>
-                    <div class="flex-1">
-                      <h3 class="font-semibold text-foreground mb-1">{method.title}</h3>
-                      <p class="text-sm text-muted-foreground mb-2">{method.description}</p>
-                      <p class="text-sm font-medium text-primary">{method.value}</p>
+                    <div class="flex-1 min-w-0">
+                      <h3 class={`font-semibold text-base mb-2.5 group-hover:text-${method.color} transition-colors`}>{method.title}</h3>
+                      <p class="text-sm text-muted-foreground mb-3 leading-relaxed">{method.description}</p>
+                      <p class={`text-sm font-medium text-${method.color} break-all`}>{method.value}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -72,37 +69,48 @@ const contactMethods = [
         }
 
         <!-- Office Info -->
-        <Card class="animate-fade-in-up animation-delay-400">
-          <CardContent class="p-6">
-            <div class="flex items-start gap-4">
-              <div class="p-3 rounded-lg bg-muted">
-                <MapPin class="size-6 text-foreground" />
+        <Card class="animate-fade-in-up animation-delay-300 border-2 hover:shadow-lg transition-all">
+          <CardContent class="p-7 lg:p-8">
+            <div class="flex items-center gap-5">
+              <div class="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-success/10 shrink-0">
+                <Building2 class="size-6 text-primary" />
               </div>
-              <div class="flex-1">
-                <h3 class="font-semibold text-foreground mb-1">Oficina Principal</h3>
-                <p class="text-sm text-muted-foreground">
-                  Calle 100 #19-61<br />
-                  Bogotá, Colombia
-                </p>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-base mb-4">Oficina Principal</h3>
+                <div class="space-y-2 text-sm text-muted-foreground">
+                  <div class="flex items-start gap-3">
+                    <MapPin class="size-4 mt-0.5 text-primary shrink-0" />
+                    <span class="leading-relaxed">Calle 100 #19-61<br />Bogotá, Colombia</span>
+                  </div>
+                </div>
               </div>
             </div>
           </CardContent>
         </Card>
 
         <!-- Office Hours -->
-        <Card class="animate-fade-in-up animation-delay-200">
-          <CardContent class="p-6">
-            <div class="flex items-start gap-4">
-              <div class="p-3 rounded-lg bg-muted">
-                <Clock class="size-6 text-foreground" />
+        <Card class="animate-fade-in-up animation-delay-400 border-2 hover:shadow-lg transition-all">
+          <CardContent class="p-7 lg:p-8">
+            <div class="flex items-center gap-5">
+              <div class="p-4 rounded-xl bg-gradient-to-br from-success/10 to-warning/10 shrink-0">
+                <Clock class="size-6 text-success" />
               </div>
-              <div class="flex-1">
-                <h3 class="font-semibold text-foreground mb-1">Horario de Atención</h3>
-                <p class="text-sm text-muted-foreground">
-                  Lunes a Viernes: 9am - 6pm<br />
-                  Sábados: 10am - 2pm<br />
-                  Domingos: Cerrado
-                </p>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-semibold text-base mb-4">Horario de Atención</h3>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between items-center gap-4">
+                    <span class="text-muted-foreground">Lunes - Viernes</span>
+                    <span class="font-medium text-foreground whitespace-nowrap">9am - 6pm</span>
+                  </div>
+                  <div class="flex justify-between items-center gap-4">
+                    <span class="text-muted-foreground">Sábados</span>
+                    <span class="font-medium text-foreground whitespace-nowrap">10am - 2pm</span>
+                  </div>
+                  <div class="flex justify-between items-center gap-4">
+                    <span class="text-muted-foreground">Domingos</span>
+                    <span class="font-medium text-destructive">Cerrado</span>
+                  </div>
+                </div>
               </div>
             </div>
           </CardContent>
@@ -111,73 +119,82 @@ const contactMethods = [
 
       <!-- Contact Form -->
       <div class="lg:col-span-2">
-        <Card class="animate-fade-in-up animation-delay-300">
-          <CardContent class="p-6 md:p-8">
+        <Card class="animate-fade-in-up animation-delay-200 border-2 shadow-lg">
+          <CardContent class="p-8 md:p-10">
+            <div class="mb-8">
+              <h3 class="text-2xl font-bold text-foreground mb-2">Envía tu mensaje</h3>
+              <p class="text-muted-foreground">Completa los campos y nos pondremos en contacto contigo</p>
+            </div>
+            
             <form class="space-y-6" id="contact-form">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
-                  <label for="name" class="text-sm font-medium text-foreground">
-                    Nombre completo *
+                  <label for="name" class="text-sm font-semibold text-foreground flex items-center gap-2">
+                    <span>Nombre completo</span>
+                    <span class="text-destructive">*</span>
                   </label>
                   <input
                     id="name"
                     type="text"
                     required
                     placeholder="Juan Pérez"
-                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                    class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
 
                 <div class="space-y-2">
-                  <label for="email" class="text-sm font-medium text-foreground">
-                    Email *
+                  <label for="email" class="text-sm font-semibold text-foreground flex items-center gap-2">
+                    <span>Email</span>
+                    <span class="text-destructive">*</span>
                   </label>
                   <input
                     id="email"
                     type="email"
                     required
                     placeholder="juan@ejemplo.com"
-                    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                    class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
                   />
                 </div>
               </div>
 
               <div class="space-y-2">
-                <label for="subject" class="text-sm font-medium text-foreground">
-                  Asunto *
+                <label for="subject" class="text-sm font-semibold text-foreground flex items-center gap-2">
+                  <span>Asunto</span>
+                  <span class="text-destructive">*</span>
                 </label>
                 <input
                   id="subject"
                   type="text"
                   required
                   placeholder="¿En qué podemos ayudarte?"
-                  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </div>
 
               <div class="space-y-2">
-                <label for="message" class="text-sm font-medium text-foreground">
-                  Mensaje *
+                <label for="message" class="text-sm font-semibold text-foreground flex items-center gap-2">
+                  <span>Mensaje</span>
+                  <span class="text-destructive">*</span>
                 </label>
                 <textarea
                   id="message"
                   required
                   rows="6"
                   placeholder="Cuéntanos más detalles sobre tu consulta o comentario..."
-                  class="flex min-h-[120px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+                  class="flex min-h-[150px] w-full rounded-lg border-2 border-input bg-background px-4 py-3 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
                 ></textarea>
               </div>
 
-              <div class="flex items-start gap-2">
+              <div class="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border">
                 <input
                   id="privacy"
                   type="checkbox"
                   required
-                  class="mt-1 size-4 rounded border-input"
+                  class="mt-1 size-4 rounded border-input accent-primary cursor-pointer"
                 />
-                <label for="privacy" class="text-sm text-muted-foreground">
+                <label for="privacy" class="text-sm text-muted-foreground cursor-pointer">
                   Acepto la{' '}
-                  <a href="/legal/privacy" class="text-primary hover:underline">
+                  <a href="/legal/privacy" class="text-primary hover:underline font-medium">
                     política de privacidad
                   </a>{' '}
                   y el tratamiento de mis datos personales
@@ -186,15 +203,16 @@ const contactMethods = [
 
               <button
                 type="submit"
-                class="w-full inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary to-primary/90 px-8 py-4 text-base font-semibold text-primary-foreground hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all active:translate-y-0"
               >
-                <Send class="size-4" />
+                <Send class="size-5" />
                 Enviar mensaje
               </button>
 
-              <p class="text-xs text-center text-muted-foreground">
-                Responderemos tu mensaje en menos de 24 horas hábiles
-              </p>
+              <div class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                <Clock class="size-4" />
+                <span>Responderemos en menos de 24 horas hábiles</span>
+              </div>
             </form>
           </CardContent>
         </Card>

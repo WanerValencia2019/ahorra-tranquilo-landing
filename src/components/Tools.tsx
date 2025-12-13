@@ -13,8 +13,8 @@ interface ToolsProps {
 const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
   // Calculadora de Ahorro
   const [savingsGoal, setSavingsGoal] = useState<string>('5000000');
-  const [monthlySavings, setMonthlySavings] = useState<string>('300000');
-  const [monthsToGoal, setMonthsToGoal] = useState<number>(0);
+  const [months, setMonths] = useState<string>('12');
+  const [monthlyRequired, setMonthlyRequired] = useState<number>(0);
   
   // Calculadora de Presupuesto 50/30/20
   const [monthlyIncome, setMonthlyIncome] = useState<string>('2500000');
@@ -24,11 +24,11 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
 
   const calculateSavings = () => {
     const goal = parseFloat(savingsGoal) || 0;
-    const monthly = parseFloat(monthlySavings) || 0;
+    const monthsNum = parseFloat(months) || 0;
     
-    if (monthly > 0) {
-      const months = Math.ceil(goal / monthly);
-      setMonthsToGoal(months);
+    if (monthsNum > 0) {
+      const required = goal / monthsNum;
+      setMonthlyRequired(required);
     }
   };
 
@@ -75,7 +75,7 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
                 Calculadora de Ahorro
                 <Sparkles className="size-4 text-warning animate-pulse" />
               </CardTitle>
-              <CardDescription>¿Cuánto tiempo tardarás en alcanzar tu meta?</CardDescription>
+              <CardDescription>¿Cuánto necesitas ahorrar mensualmente para alcanzar tu meta?</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Input: Meta de Ahorro */}
@@ -91,34 +91,31 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
                 />
               </div>
 
-              {/* Input: Ahorro Mensual */}
+              {/* Input: Tiempo en Meses */}
               <div className="space-y-2">
-                <Label htmlFor="monthly-savings">Ahorro Mensual (COP)</Label>
+                <Label htmlFor="months">¿En cuántos meses quieres lograrlo?</Label>
                 <Input
-                  id="monthly-savings"
+                  id="months"
                   type="number"
-                  value={monthlySavings}
-                  onChange={(e) => setMonthlySavings(e.target.value)}
-                  placeholder="300000"
+                  value={months}
+                  onChange={(e) => setMonths(e.target.value)}
+                  placeholder="12"
                   className="text-lg"
                 />
               </div>
 
               {/* Calculate Button */}
               <Button onClick={calculateSavings} className="w-full" size="lg">
-                Calcular Tiempo
+                Calcular Aporte Mensual
               </Button>
 
               {/* Result */}
-              {monthsToGoal > 0 && (
+              {monthlyRequired > 0 && (
                 <div className="mt-6 p-6 rounded-lg bg-primary/10 border-2 border-primary/20 animate-fade-in-up">
-                  <p className="text-sm text-muted-foreground mb-2">Alcanzarás tu meta en:</p>
-                  <p className="text-4xl font-bold text-primary mb-1">{monthsToGoal}</p>
-                  <p className="text-lg text-foreground">
-                    {monthsToGoal === 1 ? 'mes' : 'meses'}
-                    <span className="text-sm text-muted-foreground ml-2">
-                      ({Math.floor(monthsToGoal / 12)} años y {monthsToGoal % 12} meses)
-                    </span>
+                  <p className="text-sm text-muted-foreground mb-2">Necesitas ahorrar mensualmente:</p>
+                  <p className="text-4xl font-bold text-primary mb-1">{formatCurrency(monthlyRequired)}</p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Durante {months} {parseInt(months) === 1 ? 'mes' : 'meses'} para alcanzar {formatCurrency(parseFloat(savingsGoal))}
                   </p>
                 </div>
               )}
