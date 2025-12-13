@@ -28,7 +28,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'completed',
       category: 'UI/UX',
       votes: 342,
-      quarter: 'Q4 2024',
+      quarter: 'Q1 2025',
       icon: '🌙',
     },
     {
@@ -38,7 +38,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'completed',
       category: 'Reportes',
       votes: 287,
-      quarter: 'Q4 2024',
+      quarter: 'Q4 2025',
       icon: '📊',
     },
     {
@@ -48,7 +48,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'in-progress',
       category: 'Integración',
       votes: 524,
-      quarter: 'Q1 2025',
+      quarter: 'Q2 2026',
       icon: '🏦',
     },
     {
@@ -58,7 +58,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'in-progress',
       category: 'Features',
       votes: 412,
-      quarter: 'Q1 2025',
+      quarter: 'Q1 2026',
       icon: '🔔',
     },
     {
@@ -68,7 +68,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'planned',
       category: 'Features',
       votes: 389,
-      quarter: 'Q2 2025',
+      quarter: 'Q2 2026',
       icon: '📈',
     },
     {
@@ -78,7 +78,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'planned',
       category: 'Features',
       votes: 456,
-      quarter: 'Q2 2025',
+      quarter: 'Q1 2026',
       icon: '👨‍👩‍👧‍👦',
     },
     {
@@ -88,7 +88,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'planned',
       category: 'Platform',
       votes: 892,
-      quarter: 'Q3 2025',
+      quarter: 'Q1 2027',
       icon: '📱',
     },
     {
@@ -98,7 +98,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       status: 'planned',
       category: 'AI',
       votes: 671,
-      quarter: 'Q3 2025',
+      quarter: 'Q2 2026',
       icon: '🤖',
     },
   ]);
