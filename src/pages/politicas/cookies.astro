@@ -38,7 +38,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
     </section>
 
     <!-- Content -->
-    <section class="py-12 md:py-16">
+    <section class="py-12 md:py-16 bg-muted">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
           <!-- Quick Navigation -->
@@ -69,10 +69,10 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">1</span>
                 ¿Qué son las Cookies?
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (computador, tablet o móvil) cuando visita un sitio web. Permiten que el sitio recuerde sus acciones y preferencias durante un período de tiempo.
               </p>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 Las cookies NO pueden dañar su dispositivo, no contienen virus y no pueden acceder a información personal almacenada en su computador.
               </p>
             </section>
@@ -85,19 +85,19 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </h2>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">Por su duración:</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li><strong>Cookies de sesión:</strong> Se eliminan automáticamente al cerrar el navegador</li>
                 <li><strong>Cookies persistentes:</strong> Permanecen en su dispositivo hasta que expiran o las elimina</li>
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">Por su origen:</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li><strong>Cookies propias:</strong> Establecidas por nuestro sitio web</li>
                 <li><strong>Cookies de terceros:</strong> Establecidas por servicios externos (ej: analíticas)</li>
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">Por su finalidad:</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li><strong>Esenciales:</strong> Necesarias para el funcionamiento básico</li>
                 <li><strong>De rendimiento:</strong> Ayudan a mejorar el funcionamiento</li>
                 <li><strong>Funcionales:</strong> Recuerdan sus preferencias</li>
@@ -111,7 +111,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">3</span>
                 Cookies que Usamos
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-6">
+              <p class="text-foreground leading-relaxed mb-6 font-medium">
                 A continuación detallamos las cookies que utilizamos en Ahorra Tranquilo:
               </p>
 
@@ -120,48 +120,48 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <table class="w-full text-sm border rounded-xl overflow-hidden">
                   <thead class="bg-muted">
                     <tr>
-                      <th class="text-left p-4 font-semibold">Cookie</th>
-                      <th class="text-left p-4 font-semibold">Tipo</th>
-                      <th class="text-left p-4 font-semibold">Duración</th>
-                      <th class="text-left p-4 font-semibold">Propósito</th>
+                      <th class="text-left p-4 font-semibold text-foreground">Cookie</th>
+                      <th class="text-left p-4 font-semibold text-foreground">Tipo</th>
+                      <th class="text-left p-4 font-semibold text-foreground">Duración</th>
+                      <th class="text-left p-4 font-semibold text-foreground">Propósito</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y">
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">session_id</td>
+                      <td class="p-4 font-mono text-xs text-foreground">session_id</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
-                      <td class="p-4">Sesión</td>
-                      <td class="p-4 text-muted-foreground">Mantiene su sesión activa</td>
+                      <td class="p-4 text-foreground">Sesión</td>
+                      <td class="p-4 text-foreground">Mantiene su sesión activa</td>
                     </tr>
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">auth_token</td>
+                      <td class="p-4 font-mono text-xs text-foreground">auth_token</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
-                      <td class="p-4">7 días</td>
-                      <td class="p-4 text-muted-foreground">Autenticación de usuario</td>
+                      <td class="p-4 text-foreground">7 días</td>
+                      <td class="p-4 text-foreground">Autenticación de usuario</td>
                     </tr>
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">theme</td>
+                      <td class="p-4 font-mono text-xs text-foreground">theme</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-success/10 text-success text-xs">Funcional</span></td>
-                      <td class="p-4">1 año</td>
-                      <td class="p-4 text-muted-foreground">Recuerda su preferencia de tema (claro/oscuro)</td>
+                      <td class="p-4 text-foreground">1 año</td>
+                      <td class="p-4 text-foreground">Recuerda su preferencia de tema (claro/oscuro)</td>
                     </tr>
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">currency</td>
+                      <td class="p-4 font-mono text-xs text-foreground">currency</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-success/10 text-success text-xs">Funcional</span></td>
-                      <td class="p-4">1 año</td>
-                      <td class="p-4 text-muted-foreground">Recuerda su moneda preferida</td>
+                      <td class="p-4 text-foreground">1 año</td>
+                      <td class="p-4 text-foreground">Recuerda su moneda preferida</td>
                     </tr>
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">_va</td>
+                      <td class="p-4 font-mono text-xs text-foreground">_va</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-info/10 text-info text-xs">Analítica</span></td>
-                      <td class="p-4">1 año</td>
-                      <td class="p-4 text-muted-foreground">Vercel Analytics - Métricas anónimas</td>
+                      <td class="p-4 text-foreground">1 año</td>
+                      <td class="p-4 text-foreground">Vercel Analytics - Métricas anónimas</td>
                     </tr>
                     <tr class="bg-card">
-                      <td class="p-4 font-mono text-xs">cookie_consent</td>
+                      <td class="p-4 font-mono text-xs text-foreground">cookie_consent</td>
                       <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
-                      <td class="p-4">1 año</td>
-                      <td class="p-4 text-muted-foreground">Guarda sus preferencias de cookies</td>
+                      <td class="p-4 text-foreground">1 año</td>
+                      <td class="p-4 text-foreground">Guarda sus preferencias de cookies</td>
                     </tr>
                   </tbody>
                 </table>
@@ -174,7 +174,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">4</span>
                 Cookies de Terceros
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Utilizamos servicios de terceros que pueden establecer sus propias cookies:
               </p>
 
@@ -192,7 +192,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </div>
 
               <div class="bg-success/10 border border-success/30 rounded-xl p-4 not-prose">
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-foreground font-medium">
                   <strong>✅ Nota:</strong> No utilizamos cookies de publicidad ni de seguimiento invasivo. Nuestras analíticas son anónimas y respetan su privacidad.
                 </p>
               </div>
@@ -204,15 +204,15 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">5</span>
                 Cómo Gestionar Cookies
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Puede controlar y gestionar las cookies de varias formas:
               </p>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">5.1. Configuración del Navegador</h3>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 La mayoría de navegadores le permiten gestionar cookies. Aquí están los enlaces a las instrucciones de los navegadores más populares:
               </p>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Chrome</a></li>
                 <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mozilla Firefox</a></li>
                 <li><a href="https://support.apple.com/es-co/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Safari</a></li>
@@ -220,13 +220,13 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 mt-6 not-prose">
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-foreground font-medium">
                   <strong>⚠️ Importante:</strong> Bloquear todas las cookies puede afectar el funcionamiento de la plataforma. Las cookies esenciales son necesarias para que pueda iniciar sesión y usar Ahorra Tranquilo correctamente.
                 </p>
               </div>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">5.2. Eliminar Cookies Existentes</h3>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 Puede eliminar las cookies ya almacenadas en su dispositivo a través de la configuración de su navegador. Esto cerrará su sesión y eliminará sus preferencias guardadas.
               </p>
             </section>
@@ -237,7 +237,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">6</span>
                 Actualizaciones de esta Política
               </h2>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 Podemos actualizar esta Política de Cookies ocasionalmente para reflejar cambios en las cookies que utilizamos o por otras razones operativas, legales o regulatorias. Le recomendamos revisar esta política periódicamente. La fecha de última actualización se indica al inicio del documento.
               </p>
             </section>
@@ -248,11 +248,11 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">7</span>
                 Contacto
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Si tiene preguntas sobre nuestra Política de Cookies:
               </p>
               <div class="bg-card border rounded-xl p-6 not-prose">
-                <div class="space-y-3 text-sm">
+                <div class="space-y-3 text-sm text-foreground">
                   <p><strong>📧 Email:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
                   <p><strong>🌐 Sitio web:</strong> <a href="https://ahorratranquilo.com" class="text-primary hover:underline">ahorratranquilo.com</a></p>
                 </div>

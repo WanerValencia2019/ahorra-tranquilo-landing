@@ -38,7 +38,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
     </section>
 
     <!-- Content -->
-    <section class="py-12 md:py-16">
+    <section class="py-12 md:py-16 bg-muted">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto">
           <!-- Quick Navigation -->
@@ -96,7 +96,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 El responsable del tratamiento de sus datos personales es:
               </p>
               <div class="bg-card border rounded-xl p-6 not-prose">
-                <div class="space-y-3 text-sm">
+                <div class="space-y-3 text-sm text-foreground">
                   <p><strong>Nombre:</strong> Waner Andrés Valencia Moreno</p>
                   <p><strong>Proyecto:</strong> Ahorra Tranquilo</p>
                   <p><strong>Domicilio:</strong> Quibdó, Chocó, Colombia</p>
@@ -112,12 +112,12 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">3</span>
                 Datos Personales Recopilados
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Recopilamos diferentes tipos de información para proveer y mejorar nuestro servicio:
               </p>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">3.1. Datos de Identificación</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Nombre completo</li>
                 <li>Dirección de correo electrónico</li>
                 <li>Fotografía de perfil (opcional)</li>
@@ -125,7 +125,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">3.2. Datos Financieros</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Ingresos y gastos registrados</li>
                 <li>Categorías de transacciones</li>
                 <li>Metas de ahorro</li>
@@ -133,13 +133,13 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 my-6 not-prose">
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-foreground font-medium">
                   <strong>⚠️ Importante:</strong> No recopilamos información bancaria directa como números de cuenta, tarjetas de crédito o claves de acceso bancario. Los datos financieros son ingresados manualmente por el usuario.
                 </p>
               </div>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">3.3. Datos Técnicos y de Uso</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Dirección IP</li>
                 <li>Tipo de navegador y versión</li>
                 <li>Sistema operativo</li>
@@ -149,7 +149,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">3.4. Datos de Comunicación</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Mensajes enviados a soporte</li>
                 <li>Preferencias de comunicación</li>
               </ul>
@@ -161,12 +161,12 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">4</span>
                 Finalidad del Tratamiento
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Sus datos personales son tratados para las siguientes finalidades legítimas:
               </p>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">4.1. Prestación del Servicio</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Crear y gestionar su cuenta de usuario</li>
                 <li>Proveer las funcionalidades de gestión financiera</li>
                 <li>Generar reportes y análisis personalizados</li>
@@ -174,7 +174,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">4.2. Mejora y Personalización</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Analizar patrones de uso para mejorar la experiencia</li>
                 <li>Desarrollar nuevas funcionalidades</li>
                 <li>Personalizar recomendaciones financieras</li>
@@ -182,7 +182,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">4.3. Comunicación</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Enviar notificaciones sobre su cuenta</li>
                 <li>Responder consultas de soporte</li>
                 <li>Informar sobre actualizaciones del servicio</li>
@@ -190,7 +190,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">4.4. Seguridad y Cumplimiento Legal</h3>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+              <ul class="text-foreground space-y-2 list-disc list-inside font-medium">
                 <li>Prevenir fraudes y accesos no autorizados</li>
                 <li>Cumplir con obligaciones legales</li>
                 <li>Proteger los derechos de los usuarios</li>
@@ -203,27 +203,27 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">5</span>
                 Base Legal del Tratamiento
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 El tratamiento de sus datos personales se fundamenta en:
               </p>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">5.1. Consentimiento Informado</h3>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 Al registrarse en Ahorra Tranquilo, usted acepta expresamente esta Política de Privacidad y autoriza el tratamiento de sus datos personales para las finalidades descritas. Su consentimiento es:
               </p>
-              <ul class="text-muted-foreground space-y-2 list-disc list-inside mt-2">
+              <ul class="text-foreground space-y-2 list-disc list-inside mt-2 font-medium">
                 <li><strong>Previo:</strong> Se solicita antes del tratamiento</li>
                 <li><strong>Expreso:</strong> Se manifiesta de forma clara e inequívoca</li>
                 <li><strong>Informado:</strong> Se le informa sobre los términos del tratamiento</li>
               </ul>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">5.2. Ejecución de Contrato</h3>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 El tratamiento de ciertos datos es necesario para ejecutar el contrato de servicios (Términos y Condiciones) que usted acepta al registrarse.
               </p>
 
               <h3 class="text-lg font-semibold mt-6 mb-3">5.3. Obligaciones Legales</h3>
-              <p class="text-muted-foreground leading-relaxed">
+              <p class="text-foreground leading-relaxed font-medium">
                 En algunos casos, el tratamiento es necesario para cumplir con obligaciones legales aplicables en Colombia.
               </p>
             </section>
@@ -234,7 +234,7 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">6</span>
                 Derechos del Titular (Derechos ARCO)
               </h2>
-              <p class="text-muted-foreground leading-relaxed mb-4">
+              <p class="text-foreground leading-relaxed mb-4 font-medium">
                 Como titular de datos personales, la Ley 1581 de 2012 le otorga los siguientes derechos:
               </p>
 
@@ -258,14 +258,14 @@ import { Badge } from '../../components/ui/Badge.tsx';
               </div>
 
               <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 not-prose">
-                <h4 class="font-semibold mb-3">📬 Cómo ejercer sus derechos</h4>
-                <p class="text-sm text-muted-foreground mb-3">
+                <h4 class="font-semibold mb-3 text-foreground">📬 Cómo ejercer sus derechos</h4>
+                <p class="text-sm text-foreground mb-3 font-medium">
                   Puede ejercer sus derechos enviando una solicitud a:
                 </p>
-                <p class="text-sm">
+                <p class="text-sm text-foreground">
                   <strong>Email:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a>
                 </p>
-                <p class="text-sm text-muted-foreground mt-3">
+                <p class="text-sm text-foreground mt-3 font-medium">
                   Responderemos su solicitud en un plazo máximo de 15 días hábiles, conforme a la ley.
                 </p>
               </div>
@@ -415,14 +415,14 @@ import { Badge } from '../../components/ui/Badge.tsx';
                 Para cualquier consulta relacionada con esta política o el tratamiento de sus datos:
               </p>
               <div class="bg-card border rounded-xl p-6 not-prose">
-                <div class="space-y-3 text-sm">
+                <div class="space-y-3 text-sm text-foreground">
                   <p><strong>📧 Email de Soporte:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
                   <p><strong>📍 Dirección:</strong> Quibdó, Chocó, Colombia</p>
                 </div>
               </div>
 
               <div class="bg-info/10 border border-info/30 rounded-xl p-4 mt-6 not-prose">
-                <p class="text-sm text-muted-foreground">
+                <p class="text-sm text-foreground font-medium">
                   <strong>ℹ️ Autoridad de Control:</strong> Si considera que sus derechos han sido vulnerados, puede presentar una queja ante la Superintendencia de Industria y Comercio (SIC) - <a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">www.sic.gov.co</a>
                 </p>
               </div>
