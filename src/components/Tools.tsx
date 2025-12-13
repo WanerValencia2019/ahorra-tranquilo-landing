@@ -48,7 +48,7 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
   };
 
   return (
-    <section id="tools" className={`py-16 md:py-24 bg-gradient-to-b from-background to-accent/20 ${className}`}>
+    <section id="tools" className={`py-8 md:py-8 bg-gradient-to-b from-background to-accent/20 ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
