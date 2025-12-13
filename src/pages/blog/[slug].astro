@@ -61,7 +61,7 @@ const relatedPosts = allPosts
 <Layout 
   title={`${entry.data.title} | Blog Ahorra Tranquilo`}
   description={entry.data.description}
-  ogImage={featuredImage}
+  ogImage={featuredImage?.src || '/og-image.png'}
 >
   <Navbar />
   <main class="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
