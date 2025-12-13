@@ -49,35 +49,35 @@ const socialLinks = [
 ---
 
 <footer class="bg-card border-t">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-8">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
     <!-- Main Footer Content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8 mb-8 md:mb-12">
       <!-- Brand Column -->
       <div class="lg:col-span-2">
-        <div class="flex items-center gap-2 mb-4">
-          <a href="/" class="flex items-center gap-2 font-bold text-xl text-primary">
+        <div class="flex items-center gap-2 mb-3 sm:mb-4">
+          <a href="/" class="flex items-center gap-2 font-bold text-lg sm:text-xl text-primary">
             <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white text-sm font-bold">
               AT
             </div>
             <span>Ahorra Tranquilo</span>
           </a>
         </div>
-        <p class="text-muted-foreground text-sm mb-4 max-w-sm">
+        <p class="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 max-w-sm">
           Gestiona tus finanzas personales de forma inteligente. Control total de gastos, ingresos
           y presupuestos con análisis en tiempo real.
         </p>
-        <Badge variant="outline" className="mb-4">
+        <Badge variant="outline" className="mb-3 sm:mb-4 text-xs">
           🇨🇴 Hecho con ❤️ en Colombia
         </Badge>
         
         <!-- Contact Info -->
-        <div class="flex flex-col gap-2 text-sm text-muted-foreground mt-4">
+        <div class="flex flex-col gap-1.5 sm:gap-2 text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
           <a href="mailto:soporte@support.ahorratranquilo.com" class="flex items-center gap-2 hover:text-primary transition-colors">
-            <Mail className="size-4" />
-            soporte@support.ahorratranquilo.com
+            <Mail className="size-3 sm:size-4 flex-shrink-0" />
+            <span class="break-all">soporte@support.ahorratranquilo.com</span>
           </a>
           <div class="flex items-center gap-2">
-            <MapPin className="size-4" />
+            <MapPin className="size-3 sm:size-4 flex-shrink-0" />
             Quibdó, Chocó, Colombia
           </div>
         </div>
@@ -85,14 +85,14 @@ const socialLinks = [
 
       <!-- Links Columns -->
       <div>
-        <h3 class="font-semibold text-foreground mb-4">Producto</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Producto</h3>
+        <ul class="space-y-2 sm:space-y-2 sm:space-y-3">
           {
             footerLinks.producto.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  class="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
@@ -103,14 +103,14 @@ const socialLinks = [
       </div>
 
       <div>
-        <h3 class="font-semibold text-foreground mb-4">Recursos</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Recursos</h3>
+        <ul class="space-y-2 sm:space-y-3">
           {
             footerLinks.recursos.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  class="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
@@ -121,14 +121,14 @@ const socialLinks = [
       </div>
 
       <div>
-        <h3 class="font-semibold text-foreground mb-4">Empresa</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Empresa</h3>
+        <ul class="space-y-2 sm:space-y-3">
           {
             footerLinks.empresa.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  class="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
@@ -139,14 +139,14 @@ const socialLinks = [
       </div>
 
       <div>
-        <h3 class="font-semibold text-foreground mb-4">Legal</h3>
-        <ul class="space-y-3">
+        <h3 class="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Legal</h3>
+        <ul class="space-y-2 sm:space-y-3">
           {
             footerLinks.legal.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  class="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
@@ -158,10 +158,10 @@ const socialLinks = [
     </div>
 
     <!-- Social Links -->
-    <div class="border-t pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+    <div class="border-t pt-6 sm:pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
         <!-- Copyright -->
-        <p class="text-sm text-muted-foreground">
+        <p class="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
           © {currentYear} Ahorra Tranquilo. Todos los derechos reservados.
         </p>
 
@@ -184,8 +184,8 @@ const socialLinks = [
       </div>
 
       <!-- Additional Info -->
-      <div class="mt-6 text-center">
-        <p class="text-xs text-muted-foreground">
+      <div class="mt-4 sm:mt-6 text-center">
+        <p class="text-[10px] sm:text-xs text-muted-foreground px-4">
           Ahorra Tranquilo es una plataforma de gestión financiera personal. No somos una entidad
           financiera ni ofrecemos servicios bancarios.
         </p>

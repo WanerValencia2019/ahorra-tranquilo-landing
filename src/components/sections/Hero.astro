@@ -2,11 +2,12 @@
 import { Button } from '../ui/Button.tsx';
 import { Badge } from '../ui/Badge.tsx';
 import dashboardImage from '@/assets/dashboard-1200x800.png';
+import dashboardMobile from '@/assets/analisis-600x800.png';
 ---
 
 <section
   id="hero"
-  class="relative overflow-hidden min-h-[90vh] max-h-[95vh] flex items-center bg-background pt-6 pb-12 md:pt-8 md:pb-16"
+  class="relative overflow-hidden min-h-screen md:min-h-[90vh] md:max-h-[95vh] flex items-center bg-background pt-16 pb-8 md:pt-8 md:pb-16"
 >
   <!-- Aurora/Mesh Gradient Background -->
   <div class="absolute inset-0 overflow-hidden">
@@ -30,53 +31,53 @@ import dashboardImage from '@/assets/dashboard-1200x800.png';
   </div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+    <div class="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
       <!-- Content -->
-      <div class="space-y-6 animate-fade-in-up">
+      <div class="space-y-4 md:space-y-6 animate-fade-in-up">
         <!-- Title with gradient -->
-        <div class="space-y-2">
-          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
+        <div class="space-y-1 md:space-y-2">
+          <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
             <span class="block text-foreground animate-slide-in-left">Organiza tu</span>
             <span class="block text-foreground animate-slide-in-left animation-delay-100">dinero.</span>
-            <span class="block bg-gradient-to-r from-primary via-primary/80 to-success bg-clip-text text-transparent animate-slide-in-left animation-delay-200 mt-2">
-              Ahorra con<br class="sm:hidden" /> tranquilidad.
+            <span class="block bg-gradient-to-r from-primary via-primary/80 to-success bg-clip-text text-transparent animate-slide-in-left animation-delay-200 mt-1 md:mt-2">
+              Ahorra con tranquilidad.
             </span>
           </h1>
         </div>
 
         <!-- Description with better spacing -->
-        <p class="text-lg text-muted-foreground sm:text-xl max-w-2xl leading-relaxed animate-fade-in-up animation-delay-300">
+        <p class="text-base text-muted-foreground sm:text-lg md:text-xl max-w-2xl leading-relaxed animate-fade-in-up animation-delay-300">
           Tu vida financiera en un solo lugar, <span class="text-foreground font-semibold">simple y sin estrés</span>. 
           Control total con análisis en tiempo real 📊
         </p>
 
         <!-- Stats with better design -->
-        <div class="grid grid-cols-3 gap-4 pt-4 animate-scale-in animation-delay-400">
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-2 md:pt-4 animate-scale-in animation-delay-400">
           <div class="relative group">
-            <div class="absolute inset-0 bg-primary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all">
-              <div class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">100%</div>
-              <div class="text-xs font-medium text-muted-foreground">Gratis</div>
+            <div class="absolute inset-0 bg-primary/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all">
+              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">100%</div>
+              <div class="text-[10px] sm:text-xs font-medium text-muted-foreground">Gratis</div>
             </div>
           </div>
           <div class="relative group">
-            <div class="absolute inset-0 bg-success/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-success/50 transition-all">
-              <div class="text-2xl sm:text-3xl font-extrabold">🇨🇴</div>
-              <div class="text-xs font-medium text-muted-foreground">Colombia</div>
+            <div class="absolute inset-0 bg-success/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-success/50 transition-all">
+              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold">🇨🇴</div>
+              <div class="text-[10px] sm:text-xs font-medium text-muted-foreground">Colombia</div>
             </div>
           </div>
           <div class="relative group">
-            <div class="absolute inset-0 bg-info/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-info/50 transition-all">
-              <div class="text-2xl sm:text-3xl font-extrabold">🔒</div>
-              <div class="text-xs font-medium text-muted-foreground">Seguro</div>
+            <div class="absolute inset-0 bg-info/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-info/50 transition-all">
+              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold">🔒</div>
+              <div class="text-[10px] sm:text-xs font-medium text-muted-foreground">Seguro</div>
             </div>
           </div>
         </div>
 
         <!-- CTAs with better design -->
-        <div class="flex flex-col sm:flex-row gap-3 pt-4 animate-fade-in-up animation-delay-500">
+        <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-3 md:pt-4 animate-fade-in-up animation-delay-500">
           <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer" class="flex-1">
             <Button client:load size="lg" className="w-full group relative overflow-hidden shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
               <span class="relative z-10 flex items-center justify-center gap-2">
@@ -105,7 +106,7 @@ import dashboardImage from '@/assets/dashboard-1200x800.png';
         </div>
 
         <!-- Trust indicators with icons -->
-        <div class="flex flex-wrap items-center gap-4 pt-3 animate-fade-in-up animation-delay-400">
+        <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 md:pt-3 animate-fade-in-up animation-delay-400">
           <div class="flex items-center gap-2.5 text-sm font-medium text-muted-foreground group cursor-default">
             <div class="flex items-center justify-center w-6 h-6 rounded-full bg-success/10 group-hover:bg-success/20 transition-colors">
               <svg class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
@@ -132,24 +133,32 @@ import dashboardImage from '@/assets/dashboard-1200x800.png';
       </div>
 
       <!-- Mockup with enhanced animations -->
-      <div class="relative animate-fade-in-up animation-delay-300">
-                <!-- Badge with pulse -->
-        <div class="inline-block animate-bounce-soft">
-          <Badge client:load variant="default" className="gap-2 text-xs px-4 py-4 shadow-lg shadow-primary/20">
-            <span class="relative flex h-3 w-3">
+      <div class="relative animate-fade-in-up animation-delay-300 mt-6 lg:mt-0">
+        <!-- Badge with pulse -->
+        <div class="inline-block animate-bounce-soft mb-4">
+          <Badge client:load variant="default" className="gap-1.5 sm:gap-2 text-[10px] sm:text-xs px-3 py-2 sm:px-4 sm:py-3 shadow-lg shadow-primary/20">
+            <span class="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-foreground"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-primary-foreground"></span>
             </span>
-            <span class="font-semibold">100% Gratis • Modo Demo Disponible</span>
+            <span class="font-semibold">100% Gratis • Modo Demo</span>
           </Badge>
         </div>
         <div class="absolute -inset-4 bg-gradient-to-r from-primary via-success to-info opacity-20 blur-3xl rounded-3xl animate-pulse"></div>
         
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 bg-card backdrop-blur-sm group">
+        <div class="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 bg-card backdrop-blur-sm group">
+          <!-- Mobile: imagen vertical -->
+          <img
+            src={dashboardMobile.src}
+            alt="Vista previa de Ahorra Tranquilo Dashboard"
+            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 lg:hidden max-w-sm mx-auto"
+            loading="eager"
+          />
+          <!-- Desktop: imagen horizontal -->
           <img
             src={dashboardImage.src}
             alt="Vista previa de Ahorra Tranquilo Dashboard"
-            class="w-full h-auto group-hover:scale-105 transition-transform duration-700"
+            class="w-full h-auto group-hover:scale-105 transition-transform duration-700 hidden lg:block"
             loading="eager"
           />
         </div>
