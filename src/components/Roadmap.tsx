@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
+import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { Rocket, CheckCircle2, Clock, Lightbulb, ThumbsUp, Sparkles } from 'lucide-react';
 

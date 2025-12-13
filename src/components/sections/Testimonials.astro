@@ -1,6 +1,6 @@
 ---
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/Badge';
 import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
@@ -119,8 +119,8 @@ const testimonials = [
                 <p class="text-foreground leading-relaxed text-base font-medium flex-grow">{testimonial.text}</p>
 
                 {/* Achievement Badge destacado */}
-                <div class="relative group/badge">
-                  <div class="absolute inset-0 bg-gradient-to-r from-success/20 to-primary/20 rounded-lg blur group-hover/badge:blur-md transition-all"></div>
+                <div class="relative group/Badge">
+                  <div class="absolute inset-0 bg-gradient-to-r from-success/20 to-primary/20 rounded-lg blur group-hover/Badge:blur-md transition-all"></div>
                   <div class="relative px-4 py-2 rounded-lg bg-gradient-to-r from-success/10 to-primary/10 border border-success/20">
                     <span class="text-sm font-bold bg-gradient-to-r from-success to-primary bg-clip-text text-transparent">
                       ✨ {testimonial.achievement}

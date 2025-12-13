@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
+import { Badge } from './ui/Badge';
 import { Button } from './ui/Button';
 import { Gamepad2, Trophy, RefreshCw, Sparkles, ArrowDown } from 'lucide-react';
 
