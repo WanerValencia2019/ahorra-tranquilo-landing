@@ -158,7 +158,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
   const sortedItems = [...filteredItems].sort((a, b) => b.votes - a.votes);
 
   return (
-    <section id="roadmap" className={`py-16 md:py-24 bg-background ${className}`}>
+    <section id="roadmap" className={`py-8 md:py-8 bg-background ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
