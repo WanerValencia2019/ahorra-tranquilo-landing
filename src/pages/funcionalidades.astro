@@ -62,7 +62,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../co
           <Card client:load className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50">
             <CardHeader>
               <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg shadow-primary/30">
-                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-7 h-7 text-primary-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                 </svg>
               </div>
@@ -338,8 +338,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../co
         <div class="absolute inset-0 bg-grid-white/10"></div>
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div class="text-center md:text-left">
-            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">¿Quieres más funcionalidades?</h3>
-            <p class="text-white/80">Vota por las próximas funciones que quieres ver en la app</p>
+            <h3 class="text-2xl md:text-3xl font-bold text-primary-foreground mb-2">¿Quieres más funcionalidades?</h3>
+            <p class="text-primary-foreground/80">Vota por las próximas funciones que quieres ver en la app</p>
           </div>
           <a href="/roadmap">
             <Button client:load size="lg" variant="secondary" className="font-semibold shadow-xl">
