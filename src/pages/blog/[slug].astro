@@ -8,6 +8,10 @@ import { Badge } from '../../components/ui/Badge';
 import { Button } from '../../components/ui/Button';
 import { ArrowLeft, Clock, Calendar, User, Share2, TrendingUp, PiggyBank, Target, DollarSign, BookOpen } from 'lucide-react';
 import '../../styles/blog-prose.css';
+import { Image } from 'astro:assets';
+
+// Import all blog images dynamically
+const images = import.meta.glob('../../assets/blogs/*.{png,jpg,jpeg,webp}', { eager: true });
 
 export const getStaticPaths = (async () => {
   const blogEntries = await getCollection('blog');
@@ -19,6 +23,10 @@ export const getStaticPaths = (async () => {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+// Get the image for this post
+const imagePath = entry.data.image ? `../../assets/blogs/${entry.data.image.split('/').pop()}` : null;
+const featuredImage = imagePath && images[imagePath] ? images[imagePath].default : null;
 
 // Icon mapping for categories
 const categoryIcons = {
@@ -126,13 +134,13 @@ const relatedPosts = allPosts
       </header>
 
       <!-- Featured Image with Parallax Effect -->
-      {entry.data.image && (
+      {featuredImage && (
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div class="max-w-5xl mx-auto">
             <div class="relative overflow-hidden rounded-3xl shadow-2xl group">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-              <img
-                src={entry.data.image}
+              <Image
+                src={featuredImage}
                 alt={entry.data.title}
                 class="w-full h-auto group-hover:scale-105 transition-transform duration-700"
                 loading="eager"
