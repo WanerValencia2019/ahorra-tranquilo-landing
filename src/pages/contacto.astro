@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Contact from '../components/sections/Contact.astro';
-import { Badge } from '../components/ui/Badge';
+import { Badge } from '../components/ui/Badge.tsx';
 import { Mail, ArrowLeft } from 'lucide-react';
 ---
 
@@ -22,12 +22,12 @@ import { Mail, ArrowLeft } from 'lucide-react';
       
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-8 transition-colors group">
-          <ArrowLeft class="size-4 group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
           Volver al inicio
         </a>
         <div class="text-center max-w-3xl mx-auto">
-          <Badge variant="outline" class="mb-4 gap-1.5">
-            <Mail class="size-3.5" />
+          <Badge variant="outline" className="mb-4 gap-1.5">
+            <Mail className="size-3.5" />
             Contacto
           </Badge>
           <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
@@ -40,7 +40,7 @@ import { Mail, ArrowLeft } from 'lucide-react';
           <!-- Stats rápidos -->
           <div class="grid grid-cols-3 gap-6 mt-10 max-w-2xl mx-auto">
             <div class="text-center">
-              <div class="text-3xl font-bold text-primary mb-1">< 1h</div>
+              <div class="text-3xl font-bold text-primary mb-1">1h</div>
               <div class="text-sm text-muted-foreground">Tiempo de respuesta</div>
             </div>
             <div class="text-center">
@@ -76,7 +76,7 @@ import { Mail, ArrowLeft } from 'lucide-react';
             <a href="mailto:soporte@support.ahorratranquilo.com" class="group">
               <div class="text-center p-8 rounded-2xl bg-card border-2 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail class="size-8 text-primary" />
+                  <Mail className="size-8 text-primary" />
                 </div>
                 <h3 class="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">Email General</h3>
                 <p class="text-muted-foreground text-sm mb-3">Para consultas generales y soporte</p>

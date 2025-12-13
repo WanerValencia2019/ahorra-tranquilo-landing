@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/Card';
-import { Badge } from './ui/Badge';
-import { Button } from './ui/Button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/Card.tsx';
+import { Badge } from './ui/Badge.tsx';
+import { Button } from './ui/Button.tsx';
 import { Label } from './ui/Label';
 import { Input } from './ui/Input';
 import { Calculator, PiggyBank, TrendingUp, Sparkles } from 'lucide-react';

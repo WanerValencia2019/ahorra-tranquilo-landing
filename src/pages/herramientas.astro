@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Tools from '../components/Tools.tsx';
 import { Calculator, ArrowLeft } from 'lucide-react';
-import { Button } from '../components/ui/Button';
+import { Button } from '../components/ui/Button.tsx.tsx';
 ---
 
 <Layout
@@ -25,14 +25,14 @@ import { Button } from '../components/ui/Button';
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 font-medium group">
-          <ArrowLeft class="size-4 group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft className="size-4 group-hover:-translate-x-1 transition-transform" />
           Volver al inicio
         </a>
         
         <div class="text-center max-w-4xl mx-auto">
           <!-- Badge mejorado -->
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-success/10 border border-primary/20 mb-6 animate-fade-in">
-            <Calculator class="size-4 text-primary animate-pulse" />
+            <Calculator className="size-4 text-primary animate-pulse" />
             <span class="text-sm font-semibold text-primary">Herramientas Gratis</span>
           </div>
 

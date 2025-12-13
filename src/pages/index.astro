@@ -6,9 +6,9 @@ import Hero from '../components/sections/Hero.astro';
 import ValueProposition from '../components/sections/ValueProposition.astro';
 import Features from '../components/sections/Features.astro';
 import HowItWorks from '../components/sections/HowItWorks.astro';
-import { Button } from '../components/ui/Button';
-import { Card, CardContent, CardDescription, CardTitle } from '../components/ui/Card';
-import { Badge } from '../components/ui/Badge';
+import { Button } from '../components/ui/Button.tsx';
+import { Card, CardContent, CardDescription, CardTitle } from '../components/ui/Card.tsx';
+import { Badge } from '../components/ui/Badge.tsx';
 import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lucide-react';
 ---
 
@@ -34,8 +34,8 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
     <section class="py-8 md:py-12 bg-gradient-to-b from-accent/30 to-background">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <Badge variant="outline" class="mb-4">
-            <Sparkles class="size-3" />
+          <Badge variant="outline" className="mb-4">
+            <Sparkles className="size-3" />
             Descubre Más
           </Badge>
           <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
@@ -52,7 +52,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
             <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-primary/50">
               <CardContent className="p-6 text-center">
                 <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <Calculator class="size-8 text-primary" />
+                  <Calculator className="size-8 text-primary" />
                 </div>
                 <CardTitle className="mb-2 group-hover:text-primary transition-colors">
                   Calculadoras
@@ -62,7 +62,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
                 </CardDescription>
                 <Button client:load variant="ghost" size="sm" className="gap-2">
                   Explorar
-                  <ArrowRight class="size-4" />
+                  <ArrowRight className="size-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -73,7 +73,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
             <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-success/50">
               <CardContent className="p-6 text-center">
                 <div class="w-16 h-16 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
-                  <Gamepad2 class="size-8 text-success" />
+                  <Gamepad2 className="size-8 text-success" />
                 </div>
                 <CardTitle className="mb-2 group-hover:text-success transition-colors">
                   Mini Juego
@@ -83,7 +83,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
                 </CardDescription>
                 <Button client:load variant="ghost" size="sm" className="gap-2">
                   Jugar
-                  <ArrowRight class="size-4" />
+                  <ArrowRight className="size-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -94,7 +94,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
             <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-info/50">
               <CardContent className="p-6 text-center">
                 <div class="w-16 h-16 rounded-full bg-info/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-info/20 transition-colors">
-                  <BookOpen class="size-8 text-info" />
+                  <BookOpen className="size-8 text-info" />
                 </div>
                 <CardTitle className="mb-2 group-hover:text-info transition-colors">
                   Blog
@@ -104,7 +104,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
                 </CardDescription>
                 <Button client:load variant="ghost" size="sm" className="gap-2">
                   Leer
-                  <ArrowRight class="size-4" />
+                  <ArrowRight className="size-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -115,7 +115,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
             <Card className="h-full hover:shadow-2xl transition-all duration-300 hover:border-warning/50">
               <CardContent className="p-6 text-center">
                 <div class="w-16 h-16 rounded-full bg-warning/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-warning/20 transition-colors">
-                  <Rocket class="size-8 text-warning" />
+                  <Rocket className="size-8 text-warning" />
                 </div>
                 <CardTitle className="mb-2 group-hover:text-warning transition-colors">
                   Roadmap
@@ -125,7 +125,7 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
                 </CardDescription>
                 <Button client:load variant="ghost" size="sm" className="gap-2">
                   Ver más
-                  <ArrowRight class="size-4" />
+                  <ArrowRight className="size-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -146,11 +146,11 @@ import { ArrowRight, Sparkles, Calculator, Gamepad2, Rocket, BookOpen } from 'lu
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <Button client:load size="lg" variant="secondary" className="gap-2">
             Ir a la App
-            <ArrowRight class="size-4" />
+            <ArrowRight className="size-4" />
           </Button>
           <Button client:load size="lg" variant="outline" className="gap-2 bg-white/10 hover:bg-white/20 text-white border-white/30">
             Probar Demo
-            <Sparkles class="size-4" />
+            <Sparkles className="size-4" />
           </Button>
         </div>
       </div>

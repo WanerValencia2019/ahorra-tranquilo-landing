@@ -3,9 +3,9 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import { Badge } from '../components/ui/Badge';
-import { Button } from '../components/ui/Button';
-import { Card, CardContent } from '../components/ui/Card';
+import { Badge } from '../components/ui/Badge.tsx';
+import { Button } from '../components/ui/Button.tsx';
+import { Card, CardContent } from '../components/ui/Card.tsx';
 import { BookOpen, ArrowLeft, Clock, ArrowRight, TrendingUp, PiggyBank, Target, DollarSign } from 'lucide-react';
 import { Image } from 'astro:assets';
 
@@ -47,12 +47,12 @@ function formatDate(date: Date) {
     <section class="py-6 md:py-8 bg-gradient-to-b from-info/5 to-background">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <ArrowLeft class="size-4" />
+          <ArrowLeft className="size-4" />
           Volver al inicio
         </a>
         <div class="text-center max-w-3xl mx-auto">
-          <Badge variant="outline" class="mb-4">
-            <BookOpen class="size-3" />
+          <Badge variant="outline" className="mb-4">
+            <BookOpen className="size-3" />
             Blog
           </Badge>
           <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -107,7 +107,7 @@ function formatDate(date: Date) {
                           {post.data.category}
                         </Badge>
                         <span class="text-sm text-muted-foreground flex items-center gap-1">
-                          <Clock class="size-4" />
+                          <Clock className="size-4" />
                           {post.data.readTime || '5 min'}
                         </span>
                       </div>
@@ -122,7 +122,7 @@ function formatDate(date: Date) {
                         <span class="text-sm text-muted-foreground">{formatDate(post.data.pubDate)}</span>
                         <Button client:load variant="ghost" size="sm" className="gap-2">
                           Leer más
-                          <ArrowRight class="size-4" />
+                          <ArrowRight className="size-4" />
                         </Button>
                       </div>
                     </CardContent>
@@ -135,7 +135,7 @@ function formatDate(date: Date) {
 
         {sortedPosts.length === 0 && (
           <div class="text-center py-12">
-            <BookOpen class="size-16 mx-auto text-muted-foreground mb-4" />
+            <BookOpen className="size-16 mx-auto text-muted-foreground mb-4" />
             <h3 class="text-xl font-semibold mb-2">No hay artículos disponibles</h3>
             <p class="text-muted-foreground">Pronto publicaremos contenido nuevo.</p>
           </div>

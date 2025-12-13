@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Roadmap from '../components/Roadmap.tsx';
-import { Badge } from '../components/ui/Badge';
+import { Badge } from '../components/ui/Badge.tsx';
 import { Rocket, ArrowLeft } from 'lucide-react';
 ---
 
@@ -17,12 +17,12 @@ import { Rocket, ArrowLeft } from 'lucide-react';
     <section class="py-6 md:py-8 bg-gradient-to-b from-warning/5 to-background">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <ArrowLeft class="size-4" />
+          <ArrowLeft className="size-4" />
           Volver al inicio
         </a>
         <div class="text-center max-w-3xl mx-auto">
-          <Badge variant="outline" class="mb-4">
-            <Rocket class="size-3" />
+          <Badge variant="outline" className="mb-4">
+            <Rocket className="size-3" />
             Roadmap
           </Badge>
           <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
