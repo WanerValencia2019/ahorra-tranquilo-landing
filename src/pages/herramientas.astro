@@ -16,12 +16,9 @@ import { Button } from '../components/ui/Button.tsx';
     <!-- Hero mejorado -->
     <section class="relative py-8 md:py-12 overflow-hidden">
       <!-- Background decorativo -->
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-success/10 to-info/10"></div>
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-success rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-info rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-success/5"></div>
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-success/10 rounded-full blur-3xl"></div>
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 font-medium group">
@@ -31,7 +28,7 @@ import { Button } from '../components/ui/Button.tsx';
         
         <div class="text-center max-w-4xl mx-auto">
           <!-- Badge mejorado -->
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-success/10 border border-primary/20 mb-6 animate-fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-6 animate-fade-in">
             <Calculator className="size-4 text-primary animate-pulse" />
             <span class="text-sm font-semibold text-primary">Herramientas Gratis</span>
           </div>
@@ -50,15 +47,15 @@ import { Button } from '../components/ui/Button.tsx';
           <div class="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mt-8 animate-fade-in-up animation-delay-400">
             <div class="text-center">
               <div class="text-2xl md:text-3xl font-bold text-primary mb-1">100%</div>
-              <div class="text-xs md:text-sm text-muted-foreground">Gratis</div>
+              <div class="text-sm text-muted-foreground font-medium">Gratis</div>
             </div>
             <div class="text-center">
               <div class="text-2xl md:text-3xl font-bold text-success mb-1">2+</div>
-              <div class="text-xs md:text-sm text-muted-foreground">Herramientas</div>
+              <div class="text-sm text-muted-foreground font-medium">Herramientas</div>
             </div>
             <div class="text-center">
               <div class="text-2xl md:text-3xl font-bold text-info mb-1">0</div>
-              <div class="text-xs md:text-sm text-muted-foreground">Registro</div>
+              <div class="text-sm text-muted-foreground font-medium">Registro</div>
             </div>
           </div>
         </div>
@@ -72,9 +69,9 @@ import { Button } from '../components/ui/Button.tsx';
         <Tools client:load />
 
         <!-- Features de las herramientas -->
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20">
-            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
+          <div class="text-center p-6 rounded-xl bg-card border border-primary/30 hover:border-primary/50 transition-all">
+            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
               <svg class="size-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -83,8 +80,8 @@ import { Button } from '../components/ui/Button.tsx';
             <p class="text-sm text-muted-foreground">Cálculos en tiempo real mientras escribes</p>
           </div>
 
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-success/5 to-success/10 border border-success/20">
-            <div class="w-12 h-12 rounded-full bg-success/10 flex items-center justify-center mx-auto mb-4">
+          <div class="text-center p-6 rounded-xl bg-card border border-success/30 hover:border-success/50 transition-all">
+            <div class="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
               <svg class="size-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -93,8 +90,8 @@ import { Button } from '../components/ui/Button.tsx';
             <p class="text-sm text-muted-foreground">Tus datos nunca salen de tu navegador</p>
           </div>
 
-          <div class="text-center p-6 rounded-xl bg-gradient-to-br from-info/5 to-info/10 border border-info/20">
-            <div class="w-12 h-12 rounded-full bg-info/10 flex items-center justify-center mx-auto mb-4">
+          <div class="text-center p-6 rounded-xl bg-card border border-info/30 hover:border-info/50 transition-all">
+            <div class="w-12 h-12 rounded-full bg-info/20 flex items-center justify-center mx-auto mb-4">
               <svg class="size-6 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
               </svg>
@@ -107,11 +104,10 @@ import { Button } from '../components/ui/Button.tsx';
     </section>
 
     <!-- CTA mejorado -->
-    <section class="py-8 md:py-8 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary via-success to-primary"></div>
-      <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-blob"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-blob animation-delay-2000"></div>
+    <section class="py-8 md:py-8 relative overflow-hidden bg-gradient-to-br from-primary via-success to-primary">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-background rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-background rounded-full filter blur-3xl"></div>
       </div>
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -136,22 +132,22 @@ import { Button } from '../components/ui/Button.tsx';
           </div>
 
           <!-- Features adicionales -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-primary-foreground/90">
-            <div class="text-center">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 text-primary-foreground">
+            <div class="text-center p-3 rounded-lg bg-primary-foreground/10 backdrop-blur-sm">
               <div class="text-2xl font-bold mb-1">📊</div>
-              <div class="text-sm">Gráficas en tiempo real</div>
+              <div class="text-xs md:text-sm font-medium">Gráficas en tiempo real</div>
             </div>
-            <div class="text-center">
+            <div class="text-center p-3 rounded-lg bg-primary-foreground/10 backdrop-blur-sm">
               <div class="text-2xl font-bold mb-1">💰</div>
-              <div class="text-sm">Presupuestos automáticos</div>
+              <div class="text-xs md:text-sm font-medium">Presupuestos automáticos</div>
             </div>
-            <div class="text-center">
+            <div class="text-center p-3 rounded-lg bg-primary-foreground/10 backdrop-blur-sm">
               <div class="text-2xl font-bold mb-1">🎯</div>
-              <div class="text-sm">Metas de ahorro</div>
+              <div class="text-xs md:text-sm font-medium">Metas de ahorro</div>
             </div>
-            <div class="text-center">
+            <div class="text-center p-3 rounded-lg bg-primary-foreground/10 backdrop-blur-sm">
               <div class="text-2xl font-bold mb-1">📱</div>
-              <div class="text-sm">Diseñada para cualquier dispositivo</div>
+              <div class="text-xs md:text-sm font-medium">Diseñada para cualquier dispositivo</div>
             </div>
           </div>
         </div>

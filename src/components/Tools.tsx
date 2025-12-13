@@ -48,18 +48,18 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
   };
 
   return (
-    <section id="tools" className={`py-8 md:py-8 bg-gradient-to-b from-background to-accent/20 ${className}`}>
+    <section id="tools" className={`py-8 md:py-8 bg-background ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <Badge variant="outline" className="mb-4 gap-1">
-            <Calculator className="size-3" />
+          <Badge variant="outline" className="mb-4 gap-1.5">
+            <Calculator className="size-3.5" />
             Calculadoras
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Herramientas Financieras Gratis
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Planifica tus finanzas con nuestras calculadoras interactivas
           </p>
         </div>
@@ -111,10 +111,10 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
 
               {/* Result */}
               {monthlyRequired > 0 && (
-                <div className="mt-6 p-6 rounded-lg bg-primary/10 border-2 border-primary/20 animate-fade-in-up">
-                  <p className="text-sm text-muted-foreground mb-2">Necesitas ahorrar mensualmente:</p>
+                <div className="mt-6 p-6 rounded-lg bg-primary/10 border-2 border-primary/30 animate-fade-in-up">
+                  <p className="text-sm text-muted-foreground font-medium mb-2">Necesitas ahorrar mensualmente:</p>
                   <p className="text-4xl font-bold text-primary mb-1">{formatCurrency(monthlyRequired)}</p>
-                  <p className="text-sm text-muted-foreground mt-2">
+                  <p className="text-sm text-muted-foreground font-medium mt-2">
                     Durante {months} {parseInt(months) === 1 ? 'mes' : 'meses'} para alcanzar {formatCurrency(parseFloat(savingsGoal))}
                   </p>
                 </div>
@@ -157,33 +157,33 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
               {needs > 0 && (
                 <div className="space-y-3 animate-fade-in-up">
                   {/* Necesidades 50% */}
-                  <div className="p-4 rounded-lg bg-info/10 border border-info/20">
+                  <div className="p-4 rounded-lg bg-info/10 border-2 border-info/30">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">Necesidades</span>
-                      <span className="text-xs text-muted-foreground">50%</span>
+                      <span className="text-sm font-semibold text-foreground">Necesidades</span>
+                      <span className="text-xs font-medium text-muted-foreground">50%</span>
                     </div>
                     <p className="text-2xl font-bold text-info">{formatCurrency(needs)}</p>
-                    <p className="text-xs text-muted-foreground mt-1">Vivienda, comida, transporte</p>
+                    <p className="text-xs text-muted-foreground font-medium mt-1">Vivienda, comida, transporte</p>
                   </div>
 
                   {/* Deseos 30% */}
-                  <div className="p-4 rounded-lg bg-warning/10 border border-warning/20">
+                  <div className="p-4 rounded-lg bg-warning/10 border-2 border-warning/30">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">Deseos</span>
-                      <span className="text-xs text-muted-foreground">30%</span>
+                      <span className="text-sm font-semibold text-foreground">Deseos</span>
+                      <span className="text-xs font-medium text-muted-foreground">30%</span>
                     </div>
                     <p className="text-2xl font-bold text-warning">{formatCurrency(wants)}</p>
-                    <p className="text-xs text-muted-foreground mt-1">Entretenimiento, salidas, hobbies</p>
+                    <p className="text-xs text-muted-foreground font-medium mt-1">Entretenimiento, salidas, hobbies</p>
                   </div>
 
                   {/* Ahorros 20% */}
-                  <div className="p-4 rounded-lg bg-success/10 border border-success/20">
+                  <div className="p-4 rounded-lg bg-success/10 border-2 border-success/30">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">Ahorros e Inversión</span>
-                      <span className="text-xs text-muted-foreground">20%</span>
+                      <span className="text-sm font-semibold text-foreground">Ahorros e Inversión</span>
+                      <span className="text-xs font-medium text-muted-foreground">20%</span>
                     </div>
                     <p className="text-2xl font-bold text-success">{formatCurrency(savings)}</p>
-                    <p className="text-xs text-muted-foreground mt-1">Fondo de emergencia, inversiones</p>
+                    <p className="text-xs text-muted-foreground font-medium mt-1">Fondo de emergencia, inversiones</p>
                   </div>
                 </div>
               )}
@@ -193,10 +193,10 @@ const Tools: React.FC<ToolsProps> = ({ className = '' }) => {
 
         {/* CTA to App */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
+          <p className="text-muted-foreground font-medium mb-4">
             ¿Te gustaron las calculadoras? En la app tienes muchas más herramientas 🎉
           </p>
-          <Button size="lg" className="gap-2">
+          <Button size="lg" className="gap-2 font-semibold">
             Probar en Modo Demo
             <Sparkles className="size-4" />
           </Button>
