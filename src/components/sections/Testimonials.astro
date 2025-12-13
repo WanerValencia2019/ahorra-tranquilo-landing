@@ -67,14 +67,14 @@ const testimonials = [
 ];
 ---
 
-<section id="testimonials" class="py-16 md:py-24 relative overflow-hidden">
+<section id="testimonials" class="py-8 md:py-12 relative overflow-hidden">
   {/* Background decorativo */}
   <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-success/5 to-background"></div>
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
   <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-success/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
   
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
+    <div class="text-center mb-6 md:mb-8 animate-fade-in-up">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-warning/10 to-warning/5 border border-warning/20 mb-6">
         <Star class="size-4 fill-warning text-warning animate-pulse" />
         <span class="text-sm font-semibold text-warning">Testimonios Verificados</span>
@@ -89,7 +89,7 @@ const testimonials = [
     </div>
 
     {/* Testimonials Grid */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         testimonials.map((testimonial, index) => (
           <div
@@ -160,9 +160,9 @@ const testimonials = [
     </div>
 
     {/* Trust Metrics con diseño mejorado */}
-    <div class="mt-20 relative">
+    <div class="mt-8 md:mt-10 relative">
       <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-success/10 to-info/10 rounded-3xl blur-2xl"></div>
-      <div class="relative grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 p-8 md:p-12 rounded-3xl bg-card/50 backdrop-blur-sm border-2 border-primary/10">
+      <div class="relative grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 p-6 md:p-8 rounded-3xl bg-card/50 backdrop-blur-sm border-2 border-primary/10">
         <div class="text-center group cursor-default">
           <div class="relative inline-block mb-3">
             <div class="absolute inset-0 bg-gradient-to-r from-primary to-success rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
