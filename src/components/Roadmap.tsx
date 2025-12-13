@@ -43,16 +43,6 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
     },
     {
       id: 3,
-      title: 'Conexión Bancaria',
-      description: 'Sincroniza automáticamente con tu banco',
-      status: 'planned',
-      category: 'Integración',
-      votes: 524,
-      quarter: 'Q2 2027',
-      icon: '🏦',
-    },
-    {
-      id: 4,
       title: 'Alertas Inteligentes',
       description: 'Notificaciones personalizadas de gastos',
       status: 'planned',
@@ -60,6 +50,16 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
       votes: 412,
       quarter: 'Q1 2026',
       icon: '🔔',
+    },
+    {
+      id: 4,
+      title: 'Modo Familiar',
+      description: 'Gestión financiera compartida',
+      status: 'planned',
+      category: 'Features',
+      votes: 456,
+      quarter: 'Q1 2026',
+      icon: '👨‍👩‍👧‍👦',
     },
     {
       id: 5,
@@ -73,13 +73,13 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
     },
     {
       id: 6,
-      title: 'Modo Familiar',
-      description: 'Gestión financiera compartida',
+      title: 'Asistente AI',
+      description: 'Consejos financieros con inteligencia artificial',
       status: 'planned',
-      category: 'Features',
-      votes: 456,
-      quarter: 'Q1 2026',
-      icon: '👨‍👩‍👧‍👦',
+      category: 'AI',
+      votes: 671,
+      quarter: 'Q2 2026',
+      icon: '🤖',
     },
     {
       id: 7,
@@ -93,13 +93,13 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
     },
     {
       id: 8,
-      title: 'Asistente AI',
-      description: 'Consejos financieros con inteligencia artificial',
+      title: 'Conexión Bancaria',
+      description: 'Sincroniza automáticamente con tu banco',
       status: 'planned',
-      category: 'AI',
-      votes: 671,
-      quarter: 'Q2 2026',
-      icon: '🤖',
+      category: 'Integración',
+      votes: 524,
+      quarter: 'Q2 2027',
+      icon: '🏦',
     },
   ]);
 
@@ -155,7 +155,7 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
   };
 
   const filteredItems = roadmapItems.filter((item) => filter === 'all' || item.status === filter);
-  const sortedItems = [...filteredItems].sort((a, b) => b.votes - a.votes);
+  const sortedItems = [...filteredItems];
 
   return (
     <section id="roadmap" className={`py-8 md:py-8 bg-background ${className}`}>
@@ -255,10 +255,12 @@ const Roadmap: React.FC<RoadmapProps> = ({ className = '' }) => {
           <p className="text-muted-foreground mb-4">
             Queremos escucharte. Envíanos tus sugerencias y ayúdanos a crear la mejor app financiera
           </p>
-          <Button size="lg" className="gap-2">
+          <a href="/contacto">
+          <Button size="lg" className="gap-2" >
             Sugerir una función
             <Lightbulb className="size-4" />
           </Button>
+          </a>
         </div>
       </div>
     </section>
