@@ -67,84 +67,138 @@ const testimonials = [
 ];
 ---
 
-<section id="testimonials" class="py-16 md:py-24 bg-muted/30">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<section id="testimonials" class="py-16 md:py-24 relative overflow-hidden">
+  {/* Background decorativo */}
+  <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-success/5 to-background"></div>
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-success/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+  
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="text-center mb-12 md:mb-16 animate-fade-in-up">
-      <Badge variant="outline" class="mb-4">
-        <Star class="size-3 fill-warning text-warning" />
-        Testimonios
-      </Badge>
-      <h2 class="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-warning/10 to-warning/5 border border-warning/20 mb-6">
+        <Star class="size-4 fill-warning text-warning animate-pulse" />
+        <span class="text-sm font-semibold text-warning">Testimonios Verificados</span>
+        <Star class="size-4 fill-warning text-warning animate-pulse" />
+      </div>
+      <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
         Lo que dicen nuestros usuarios
       </h2>
-      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Miles de personas ya están transformando su relación con el dinero gracias a Ahorra Tranquilo
+      <p class="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+        Miles de personas transformando sus finanzas con resultados reales
       </p>
     </div>
 
-    <!-- Testimonials Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    {/* Testimonials Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         testimonials.map((testimonial, index) => (
-          <Card
-            class={`hover:shadow-lg transition-all duration-300 animate-fade-in-up animation-delay-${(index % 3) * 200 + 200}`}
+          <div
+            class={`group relative animate-fade-in-up animation-delay-${(index % 3) * 200 + 200}`}
           >
-            <CardContent class="p-6 flex flex-col gap-4">
-              {/* Quote Icon */}
-              <div class="flex justify-between items-start">
-                <Quote class="size-8 text-primary/20" />
-                <div class="flex gap-0.5">
-                  {Array.from({ length: testimonial.rating }).map(() => (
-                    <Star class="size-4 fill-warning text-warning" />
-                  ))}
+            {/* Glow effect */}
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-success rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+            
+            <Card class="relative h-full border-2 border-transparent group-hover:border-primary/20 transition-all duration-300 bg-card/50 backdrop-blur-sm">
+              <CardContent class="p-8 flex flex-col gap-5">
+                {/* Header con Quote y Estrellas */}
+                <div class="flex justify-between items-start -mt-2">
+                  <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-success rounded-xl blur-md opacity-50"></div>
+                    <div class="relative p-3 rounded-xl bg-gradient-to-br from-primary to-success">
+                      <Quote class="size-6 text-white" strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <div class="flex gap-1 bg-gradient-to-r from-warning/10 to-warning/5 px-3 py-1.5 rounded-full border border-warning/20">
+                    {Array.from({ length: testimonial.rating }).map(() => (
+                      <Star class="size-4 fill-warning text-warning" />
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Testimonial Text */}
-              <p class="text-foreground leading-relaxed">{testimonial.text}</p>
+                {/* Testimonial Text */}
+                <p class="text-foreground leading-relaxed text-base font-medium flex-grow">{testimonial.text}</p>
 
-              {/* Achievement Badge */}
-              <Badge variant="secondary" class="self-start">
-                {testimonial.achievement}
-              </Badge>
-
-              {/* User Info */}
-              <div class="flex items-center gap-3 pt-4 border-t">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  class="size-12 rounded-full"
-                  loading="lazy"
-                />
-                <div class="flex flex-col">
-                  <span class="font-semibold text-foreground">{testimonial.name}</span>
-                  <span class="text-sm text-muted-foreground">{testimonial.role}</span>
-                  <span class="text-xs text-muted-foreground">{testimonial.location}</span>
+                {/* Achievement Badge destacado */}
+                <div class="relative group/badge">
+                  <div class="absolute inset-0 bg-gradient-to-r from-success/20 to-primary/20 rounded-lg blur group-hover/badge:blur-md transition-all"></div>
+                  <div class="relative px-4 py-2 rounded-lg bg-gradient-to-r from-success/10 to-primary/10 border border-success/20">
+                    <span class="text-sm font-bold bg-gradient-to-r from-success to-primary bg-clip-text text-transparent">
+                      ✨ {testimonial.achievement}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+
+                {/* User Info mejorado */}
+                <div class="flex items-center gap-4 pt-5 border-t-2 border-gradient-to-r from-border/50 to-transparent">
+                  <div class="relative flex-shrink-0">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary to-success rounded-full blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="relative p-1 rounded-full bg-gradient-to-br from-primary to-success">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        class="size-14 rounded-full bg-background"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex flex-col">
+                    <span class="font-bold text-foreground text-base">{testimonial.name}</span>
+                    <span class="text-sm text-muted-foreground font-medium">{testimonial.role}</span>
+                    <span class="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+                      <svg class="size-3" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                      </svg>
+                      {testimonial.location}
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         ))
       }
     </div>
 
-    {/* Trust Metrics */}
-    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div class="animate-fade-in-up animation-delay-200">
-        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">10K+</div>
-        <div class="text-muted-foreground">Usuarios Activos</div>
-      </div>
-      <div class="animate-fade-in-up animation-delay-300">
-        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">4.8/5</div>
-        <div class="text-muted-foreground">Calificación Promedio</div>
-      </div>
-      <div class="animate-fade-in-up animation-delay-400">
-        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">$50B+</div>
-        <div class="text-muted-foreground">COP Gestionados</div>
-      </div>
-      <div class="animate-fade-in-up animation-delay-200">
-        <div class="text-3xl md:text-4xl font-bold text-primary mb-2">95%</div>
-        <div class="text-muted-foreground">Recomendarían</div>
+    {/* Trust Metrics con diseño mejorado */}
+    <div class="mt-20 relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-success/10 to-info/10 rounded-3xl blur-2xl"></div>
+      <div class="relative grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 p-8 md:p-12 rounded-3xl bg-card/50 backdrop-blur-sm border-2 border-primary/10">
+        <div class="text-center group cursor-default">
+          <div class="relative inline-block mb-3">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary to-success rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <div class="relative text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-success bg-clip-text text-transparent">
+              10K+
+            </div>
+          </div>
+          <div class="text-muted-foreground font-semibold text-sm md:text-base">Usuarios Activos</div>
+        </div>
+        <div class="text-center group cursor-default">
+          <div class="relative inline-block mb-3">
+            <div class="absolute inset-0 bg-gradient-to-r from-warning to-warning/60 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <div class="relative text-4xl md:text-5xl font-black bg-gradient-to-r from-warning to-warning/60 bg-clip-text text-transparent flex items-center justify-center gap-1">
+              4.8<Star class="size-6 md:size-8 fill-warning text-warning -mt-2" />
+            </div>
+          </div>
+          <div class="text-muted-foreground font-semibold text-sm md:text-base">Calificación</div>
+        </div>
+        <div class="text-center group cursor-default">
+          <div class="relative inline-block mb-3">
+            <div class="absolute inset-0 bg-gradient-to-r from-success to-info rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <div class="relative text-4xl md:text-5xl font-black bg-gradient-to-r from-success to-info bg-clip-text text-transparent">
+              $50B+
+            </div>
+          </div>
+          <div class="text-muted-foreground font-semibold text-sm md:text-base">COP Gestionados</div>
+        </div>
+        <div class="text-center group cursor-default">
+          <div class="relative inline-block mb-3">
+            <div class="absolute inset-0 bg-gradient-to-r from-info to-primary rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+            <div class="relative text-4xl md:text-5xl font-black bg-gradient-to-r from-info to-primary bg-clip-text text-transparent">
+              95%
+            </div>
+          </div>
+          <div class="text-muted-foreground font-semibold text-sm md:text-base">Recomendarían</div>
+        </div>
       </div>
     </div>
   </div>
