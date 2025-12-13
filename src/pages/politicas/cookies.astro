@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { Badge } from '../../components/ui/Badge';
+---
+
+<Layout title="Política de Cookies - Ahorra Tranquilo" description="Política de Cookies de Ahorra Tranquilo. Conoce qué cookies usamos y cómo gestionarlas.">
+  <Navbar />
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-success/5">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+          <span>/</span>
+          <span>Legal</span>
+          <span>/</span>
+          <span class="text-foreground">Cookies</span>
+        </nav>
+
+        <div class="max-w-4xl">
+          <Badge client:load variant="default" className="mb-4">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+            </svg>
+            Preferencias
+          </Badge>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+            Política de <span class="text-primary">Cookies</span>
+          </h1>
+          <p class="text-lg text-muted-foreground">
+            Última actualización: 1 de enero de 2025
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Navigation -->
+          <div class="bg-card rounded-xl border p-6 mb-12">
+            <h2 class="font-semibold text-lg mb-4">Contenido</h2>
+            <nav class="grid sm:grid-cols-2 gap-2 text-sm">
+              <a href="#que-son" class="text-muted-foreground hover:text-primary transition-colors py-1">1. ¿Qué son las Cookies?</a>
+              <a href="#tipos" class="text-muted-foreground hover:text-primary transition-colors py-1">2. Tipos de Cookies</a>
+              <a href="#usamos" class="text-muted-foreground hover:text-primary transition-colors py-1">3. Cookies que Usamos</a>
+              <a href="#terceros" class="text-muted-foreground hover:text-primary transition-colors py-1">4. Cookies de Terceros</a>
+              <a href="#gestionar" class="text-muted-foreground hover:text-primary transition-colors py-1">5. Cómo Gestionar Cookies</a>
+              <a href="#actualizaciones" class="text-muted-foreground hover:text-primary transition-colors py-1">6. Actualizaciones</a>
+              <a href="#contacto" class="text-muted-foreground hover:text-primary transition-colors py-1">7. Contacto</a>
+            </nav>
+          </div>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            <!-- Introducción -->
+            <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-12 not-prose">
+              <p class="text-muted-foreground">
+                En <strong>Ahorra Tranquilo</strong> utilizamos cookies y tecnologías similares para mejorar su experiencia, analizar el uso de nuestra plataforma y personalizar el contenido. Esta política explica qué son las cookies, cómo las usamos y cómo puede gestionarlas.
+              </p>
+            </div>
+
+            <!-- 1. ¿Qué son las Cookies? -->
+            <section id="que-son" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                ¿Qué son las Cookies?
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (computador, tablet o móvil) cuando visita un sitio web. Permiten que el sitio recuerde sus acciones y preferencias durante un período de tiempo.
+              </p>
+              <p class="text-muted-foreground leading-relaxed">
+                Las cookies NO pueden dañar su dispositivo, no contienen virus y no pueden acceder a información personal almacenada en su computador.
+              </p>
+            </section>
+
+            <!-- 2. Tipos de Cookies -->
+            <section id="tipos" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">2</span>
+                Tipos de Cookies
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">Por su duración:</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Cookies de sesión:</strong> Se eliminan automáticamente al cerrar el navegador</li>
+                <li><strong>Cookies persistentes:</strong> Permanecen en su dispositivo hasta que expiran o las elimina</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">Por su origen:</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Cookies propias:</strong> Establecidas por nuestro sitio web</li>
+                <li><strong>Cookies de terceros:</strong> Establecidas por servicios externos (ej: analíticas)</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">Por su finalidad:</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Esenciales:</strong> Necesarias para el funcionamiento básico</li>
+                <li><strong>De rendimiento:</strong> Ayudan a mejorar el funcionamiento</li>
+                <li><strong>Funcionales:</strong> Recuerdan sus preferencias</li>
+                <li><strong>Analíticas:</strong> Recopilan información sobre el uso</li>
+              </ul>
+            </section>
+
+            <!-- 3. Cookies que Usamos -->
+            <section id="usamos" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">3</span>
+                Cookies que Usamos
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-6">
+                A continuación detallamos las cookies que utilizamos en Ahorra Tranquilo:
+              </p>
+
+              <!-- Tabla de cookies -->
+              <div class="overflow-x-auto not-prose">
+                <table class="w-full text-sm border rounded-xl overflow-hidden">
+                  <thead class="bg-muted">
+                    <tr>
+                      <th class="text-left p-4 font-semibold">Cookie</th>
+                      <th class="text-left p-4 font-semibold">Tipo</th>
+                      <th class="text-left p-4 font-semibold">Duración</th>
+                      <th class="text-left p-4 font-semibold">Propósito</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y">
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">session_id</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
+                      <td class="p-4">Sesión</td>
+                      <td class="p-4 text-muted-foreground">Mantiene su sesión activa</td>
+                    </tr>
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">auth_token</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
+                      <td class="p-4">7 días</td>
+                      <td class="p-4 text-muted-foreground">Autenticación de usuario</td>
+                    </tr>
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">theme</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-success/10 text-success text-xs">Funcional</span></td>
+                      <td class="p-4">1 año</td>
+                      <td class="p-4 text-muted-foreground">Recuerda su preferencia de tema (claro/oscuro)</td>
+                    </tr>
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">currency</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-success/10 text-success text-xs">Funcional</span></td>
+                      <td class="p-4">1 año</td>
+                      <td class="p-4 text-muted-foreground">Recuerda su moneda preferida</td>
+                    </tr>
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">_va</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-info/10 text-info text-xs">Analítica</span></td>
+                      <td class="p-4">1 año</td>
+                      <td class="p-4 text-muted-foreground">Vercel Analytics - Métricas anónimas</td>
+                    </tr>
+                    <tr class="bg-card">
+                      <td class="p-4 font-mono text-xs">cookie_consent</td>
+                      <td class="p-4"><span class="px-2 py-1 rounded bg-primary/10 text-primary text-xs">Esencial</span></td>
+                      <td class="p-4">1 año</td>
+                      <td class="p-4 text-muted-foreground">Guarda sus preferencias de cookies</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- 4. Cookies de Terceros -->
+            <section id="terceros" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">4</span>
+                Cookies de Terceros
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Utilizamos servicios de terceros que pueden establecer sus propias cookies:
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 not-prose my-6">
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">📊 Vercel Analytics</h4>
+                  <p class="text-sm text-muted-foreground mb-2">Analíticas respetuosas con la privacidad</p>
+                  <a href="https://vercel.com/docs/analytics/privacy" target="_blank" rel="noopener noreferrer" class="text-xs text-primary hover:underline">Ver política →</a>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">⚡ Vercel Speed Insights</h4>
+                  <p class="text-sm text-muted-foreground mb-2">Métricas de rendimiento anónimas</p>
+                  <a href="https://vercel.com/docs/speed-insights" target="_blank" rel="noopener noreferrer" class="text-xs text-primary hover:underline">Ver documentación →</a>
+                </div>
+              </div>
+
+              <div class="bg-success/10 border border-success/30 rounded-xl p-4 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  <strong>✅ Nota:</strong> No utilizamos cookies de publicidad ni de seguimiento invasivo. Nuestras analíticas son anónimas y respetan su privacidad.
+                </p>
+              </div>
+            </section>
+
+            <!-- 5. Cómo Gestionar Cookies -->
+            <section id="gestionar" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">5</span>
+                Cómo Gestionar Cookies
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Puede controlar y gestionar las cookies de varias formas:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.1. Configuración del Navegador</h3>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                La mayoría de navegadores le permiten gestionar cookies. Aquí están los enlaces a las instrucciones de los navegadores más populares:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Google Chrome</a></li>
+                <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Mozilla Firefox</a></li>
+                <li><a href="https://support.apple.com/es-co/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Safari</a></li>
+                <li><a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Microsoft Edge</a></li>
+              </ul>
+
+              <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 mt-6 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  <strong>⚠️ Importante:</strong> Bloquear todas las cookies puede afectar el funcionamiento de la plataforma. Las cookies esenciales son necesarias para que pueda iniciar sesión y usar Ahorra Tranquilo correctamente.
+                </p>
+              </div>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.2. Eliminar Cookies Existentes</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Puede eliminar las cookies ya almacenadas en su dispositivo a través de la configuración de su navegador. Esto cerrará su sesión y eliminará sus preferencias guardadas.
+              </p>
+            </section>
+
+            <!-- 6. Actualizaciones -->
+            <section id="actualizaciones" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">6</span>
+                Actualizaciones de esta Política
+              </h2>
+              <p class="text-muted-foreground leading-relaxed">
+                Podemos actualizar esta Política de Cookies ocasionalmente para reflejar cambios en las cookies que utilizamos o por otras razones operativas, legales o regulatorias. Le recomendamos revisar esta política periódicamente. La fecha de última actualización se indica al inicio del documento.
+              </p>
+            </section>
+
+            <!-- 7. Contacto -->
+            <section id="contacto" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">7</span>
+                Contacto
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Si tiene preguntas sobre nuestra Política de Cookies:
+              </p>
+              <div class="bg-card border rounded-xl p-6 not-prose">
+                <div class="space-y-3 text-sm">
+                  <p><strong>📧 Email:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
+                  <p><strong>🌐 Sitio web:</strong> <a href="https://ahorratranquilo.com" class="text-primary hover:underline">ahorratranquilo.com</a></p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Back to Legal -->
+          <div class="mt-12 pt-8 border-t flex flex-wrap gap-4">
+            <a href="/politicas/privacy" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Política de Privacidad
+            </a>
+            <a href="/politicas/terms" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              → Términos y Condiciones
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

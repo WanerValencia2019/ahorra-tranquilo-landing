@@ -1,0 +1,452 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { Badge } from '../../components/ui/Badge';
+---
+
+<Layout title="Política de Privacidad - Ahorra Tranquilo" description="Política de Privacidad de Ahorra Tranquilo. Conoce cómo protegemos y tratamos tus datos personales conforme a la Ley 1581 de 2012.">
+  <Navbar />
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-success/5">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+          <span>/</span>
+          <span>Legal</span>
+          <span>/</span>
+          <span class="text-foreground">Privacidad</span>
+        </nav>
+
+        <div class="max-w-4xl">
+          <Badge client:load variant="default" className="mb-4">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            Ley 1581 de 2012
+          </Badge>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+            Política de <span class="text-primary">Privacidad</span>
+          </h1>
+          <p class="text-lg text-muted-foreground">
+            Última actualización: 9 de diciembre de 2025
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Navigation -->
+          <div class="bg-card rounded-xl border p-6 mb-12">
+            <h2 class="font-semibold text-lg mb-4">Contenido</h2>
+            <nav class="grid sm:grid-cols-2 gap-2 text-sm">
+              <a href="#introduccion" class="text-muted-foreground hover:text-primary transition-colors py-1">1. Introducción</a>
+              <a href="#responsable" class="text-muted-foreground hover:text-primary transition-colors py-1">2. Responsable del Tratamiento</a>
+              <a href="#datos-recopilados" class="text-muted-foreground hover:text-primary transition-colors py-1">3. Datos Personales Recopilados</a>
+              <a href="#finalidad" class="text-muted-foreground hover:text-primary transition-colors py-1">4. Finalidad del Tratamiento</a>
+              <a href="#base-legal" class="text-muted-foreground hover:text-primary transition-colors py-1">5. Base Legal del Tratamiento</a>
+              <a href="#derechos" class="text-muted-foreground hover:text-primary transition-colors py-1">6. Derechos del Titular</a>
+              <a href="#compartir" class="text-muted-foreground hover:text-primary transition-colors py-1">7. Compartir y Transferir Datos</a>
+              <a href="#seguridad" class="text-muted-foreground hover:text-primary transition-colors py-1">8. Medidas de Seguridad</a>
+              <a href="#retencion" class="text-muted-foreground hover:text-primary transition-colors py-1">9. Retención de Datos</a>
+              <a href="#cookies" class="text-muted-foreground hover:text-primary transition-colors py-1">10. Cookies</a>
+              <a href="#menores" class="text-muted-foreground hover:text-primary transition-colors py-1">11. Menores de Edad</a>
+              <a href="#cambios" class="text-muted-foreground hover:text-primary transition-colors py-1">12. Cambios a esta Política</a>
+              <a href="#contacto" class="text-muted-foreground hover:text-primary transition-colors py-1">13. Contacto</a>
+            </nav>
+          </div>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            <!-- 1. Introducción -->
+            <section id="introduccion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                Introducción
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                En <strong>Ahorra Tranquilo</strong>, disponible en <a href="https://app.ahorratranquilo.com" class="text-primary hover:underline">app.ahorratranquilo.com</a>, respetamos y protegemos la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos y protegemos sus datos personales en cumplimiento de la legislación colombiana vigente.
+              </p>
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 not-prose">
+                <h4 class="font-semibold text-foreground mb-2">📋 Marco Legal Aplicable</h4>
+                <ul class="text-sm text-muted-foreground space-y-1">
+                  <li>• Ley 1581 de 2012 (Protección de Datos Personales)</li>
+                  <li>• Decreto 1377 de 2013 (Reglamentación parcial)</li>
+                  <li>• Decreto 886 de 2014 (Políticas de tratamiento)</li>
+                  <li>• Superintendencia de Industria y Comercio (SIC)</li>
+                </ul>
+              </div>
+              <p class="text-muted-foreground leading-relaxed mt-4">
+                <strong>Fecha de vigencia:</strong> 1 de enero de 2025<br />
+                <strong>Última actualización:</strong> 9 de diciembre de 2025
+              </p>
+            </section>
+
+            <!-- 2. Responsable del Tratamiento -->
+            <section id="responsable" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">2</span>
+                Responsable del Tratamiento
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                El responsable del tratamiento de sus datos personales es:
+              </p>
+              <div class="bg-card border rounded-xl p-6 not-prose">
+                <div class="space-y-3 text-sm">
+                  <p><strong>Nombre:</strong> Waner Andrés Valencia Moreno</p>
+                  <p><strong>Proyecto:</strong> Ahorra Tranquilo</p>
+                  <p><strong>Domicilio:</strong> Quibdó, Chocó, Colombia</p>
+                  <p><strong>Email de contacto:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
+                  <p><strong>Sitio web:</strong> <a href="https://ahorratranquilo.com" class="text-primary hover:underline">ahorratranquilo.com</a></p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. Datos Personales Recopilados -->
+            <section id="datos-recopilados" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">3</span>
+                Datos Personales Recopilados
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Recopilamos diferentes tipos de información para proveer y mejorar nuestro servicio:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">3.1. Datos de Identificación</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Nombre completo</li>
+                <li>Dirección de correo electrónico</li>
+                <li>Fotografía de perfil (opcional)</li>
+                <li>Número telefónico (opcional)</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">3.2. Datos Financieros</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Ingresos y gastos registrados</li>
+                <li>Categorías de transacciones</li>
+                <li>Metas de ahorro</li>
+                <li>Presupuestos configurados</li>
+              </ul>
+
+              <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 my-6 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  <strong>⚠️ Importante:</strong> No recopilamos información bancaria directa como números de cuenta, tarjetas de crédito o claves de acceso bancario. Los datos financieros son ingresados manualmente por el usuario.
+                </p>
+              </div>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">3.3. Datos Técnicos y de Uso</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Dirección IP</li>
+                <li>Tipo de navegador y versión</li>
+                <li>Sistema operativo</li>
+                <li>Páginas visitadas dentro de la aplicación</li>
+                <li>Fechas y horas de acceso</li>
+                <li>Identificadores de dispositivo</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">3.4. Datos de Comunicación</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Mensajes enviados a soporte</li>
+                <li>Preferencias de comunicación</li>
+              </ul>
+            </section>
+
+            <!-- 4. Finalidad del Tratamiento -->
+            <section id="finalidad" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">4</span>
+                Finalidad del Tratamiento
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Sus datos personales son tratados para las siguientes finalidades legítimas:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.1. Prestación del Servicio</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Crear y gestionar su cuenta de usuario</li>
+                <li>Proveer las funcionalidades de gestión financiera</li>
+                <li>Generar reportes y análisis personalizados</li>
+                <li>Sincronizar datos entre dispositivos</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.2. Mejora y Personalización</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Analizar patrones de uso para mejorar la experiencia</li>
+                <li>Desarrollar nuevas funcionalidades</li>
+                <li>Personalizar recomendaciones financieras</li>
+                <li>Optimizar el rendimiento de la plataforma</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.3. Comunicación</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Enviar notificaciones sobre su cuenta</li>
+                <li>Responder consultas de soporte</li>
+                <li>Informar sobre actualizaciones del servicio</li>
+                <li>Enviar contenido educativo financiero (con consentimiento)</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.4. Seguridad y Cumplimiento Legal</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Prevenir fraudes y accesos no autorizados</li>
+                <li>Cumplir con obligaciones legales</li>
+                <li>Proteger los derechos de los usuarios</li>
+              </ul>
+            </section>
+
+            <!-- 5. Base Legal del Tratamiento -->
+            <section id="base-legal" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">5</span>
+                Base Legal del Tratamiento
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                El tratamiento de sus datos personales se fundamenta en:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.1. Consentimiento Informado</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Al registrarse en Ahorra Tranquilo, usted acepta expresamente esta Política de Privacidad y autoriza el tratamiento de sus datos personales para las finalidades descritas. Su consentimiento es:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside mt-2">
+                <li><strong>Previo:</strong> Se solicita antes del tratamiento</li>
+                <li><strong>Expreso:</strong> Se manifiesta de forma clara e inequívoca</li>
+                <li><strong>Informado:</strong> Se le informa sobre los términos del tratamiento</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.2. Ejecución de Contrato</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                El tratamiento de ciertos datos es necesario para ejecutar el contrato de servicios (Términos y Condiciones) que usted acepta al registrarse.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.3. Obligaciones Legales</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                En algunos casos, el tratamiento es necesario para cumplir con obligaciones legales aplicables en Colombia.
+              </p>
+            </section>
+
+            <!-- 6. Derechos del Titular -->
+            <section id="derechos" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">6</span>
+                Derechos del Titular (Derechos ARCO)
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Como titular de datos personales, la Ley 1581 de 2012 le otorga los siguientes derechos:
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 not-prose my-6">
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">📖 Acceso</h4>
+                  <p class="text-sm text-muted-foreground">Conocer y consultar sus datos personales en cualquier momento.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">✏️ Rectificación</h4>
+                  <p class="text-sm text-muted-foreground">Actualizar y corregir datos inexactos o incompletos.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">🗑️ Cancelación</h4>
+                  <p class="text-sm text-muted-foreground">Solicitar la supresión de sus datos cuando no sean necesarios.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">🚫 Oposición</h4>
+                  <p class="text-sm text-muted-foreground">Oponerse al tratamiento en casos específicos.</p>
+                </div>
+              </div>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 not-prose">
+                <h4 class="font-semibold mb-3">📬 Cómo ejercer sus derechos</h4>
+                <p class="text-sm text-muted-foreground mb-3">
+                  Puede ejercer sus derechos enviando una solicitud a:
+                </p>
+                <p class="text-sm">
+                  <strong>Email:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a>
+                </p>
+                <p class="text-sm text-muted-foreground mt-3">
+                  Responderemos su solicitud en un plazo máximo de 15 días hábiles, conforme a la ley.
+                </p>
+              </div>
+            </section>
+
+            <!-- 7. Compartir y Transferir Datos -->
+            <section id="compartir" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">7</span>
+                Compartir y Transferir Datos
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">7.1. Principio General</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                <strong>No vendemos, alquilamos ni compartimos</strong> sus datos personales con terceros con fines comerciales. Sus datos financieros son estrictamente confidenciales.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">7.2. Proveedores de Servicios</h3>
+              <p class="text-muted-foreground leading-relaxed mb-2">
+                Podemos compartir datos con terceros proveedores que nos ayudan a operar la plataforma:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Servicios de hosting y almacenamiento en la nube</li>
+                <li>Servicios de autenticación</li>
+                <li>Herramientas de análisis y monitoreo</li>
+                <li>Servicios de comunicación (email)</li>
+              </ul>
+              <p class="text-muted-foreground leading-relaxed mt-2">
+                Todos los proveedores están contractualmente obligados a proteger sus datos.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">7.3. Requerimientos Legales</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Podemos divulgar información cuando sea requerido por ley, orden judicial o autoridad competente en Colombia.
+              </p>
+            </section>
+
+            <!-- 8. Medidas de Seguridad -->
+            <section id="seguridad" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">8</span>
+                Medidas de Seguridad
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Implementamos medidas técnicas y organizativas para proteger sus datos:
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 not-prose my-6">
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">🔐 Cifrado</h4>
+                  <p class="text-sm text-muted-foreground">Comunicaciones cifradas con TLS 1.3 y datos sensibles cifrados en reposo con AES-256.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">🔑 Autenticación</h4>
+                  <p class="text-sm text-muted-foreground">Contraseñas hasheadas con bcrypt y soporte para autenticación de dos factores.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">🛡️ Infraestructura</h4>
+                  <p class="text-sm text-muted-foreground">Servidores con firewalls, monitoreo 24/7 y copias de seguridad diarias.</p>
+                </div>
+                <div class="bg-card border rounded-xl p-4">
+                  <h4 class="font-semibold mb-2">👥 Acceso</h4>
+                  <p class="text-sm text-muted-foreground">Control de acceso estricto basado en roles y auditoría de accesos.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 9. Retención de Datos -->
+            <section id="retencion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">9</span>
+                Retención de Datos
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Conservamos sus datos personales durante el tiempo necesario para cumplir con las finalidades descritas:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Datos de cuenta activa:</strong> Mientras mantenga su cuenta activa</li>
+                <li><strong>Datos de cuenta eliminada:</strong> 30 días para permitir recuperación, luego eliminación permanente</li>
+                <li><strong>Datos de respaldo:</strong> Hasta 90 días en sistemas de backup</li>
+                <li><strong>Registros de auditoría:</strong> 5 años según requerimientos legales</li>
+              </ul>
+            </section>
+
+            <!-- 10. Cookies -->
+            <section id="cookies" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">10</span>
+                Cookies y Tecnologías Similares
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Utilizamos cookies y tecnologías similares para mejorar su experiencia:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">Tipos de cookies que usamos:</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Esenciales:</strong> Necesarias para el funcionamiento básico</li>
+                <li><strong>De sesión:</strong> Para mantener su sesión activa</li>
+                <li><strong>De preferencias:</strong> Para recordar sus configuraciones (tema, idioma)</li>
+                <li><strong>Analíticas:</strong> Para entender cómo usa la plataforma</li>
+              </ul>
+
+              <p class="text-muted-foreground leading-relaxed mt-4">
+                Puede gestionar las cookies desde la configuración de su navegador. Para más información, consulte nuestra <a href="/politicas/cookies" class="text-primary hover:underline">Política de Cookies</a>.
+              </p>
+            </section>
+
+            <!-- 11. Menores de Edad -->
+            <section id="menores" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">11</span>
+                Protección de Menores de Edad
+              </h2>
+              <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 not-prose">
+                <p class="text-muted-foreground">
+                  <strong>⚠️ Importante:</strong> Ahorra Tranquilo está dirigido a personas mayores de 18 años. No recopilamos conscientemente información de menores de edad. Si detectamos que un menor se ha registrado, procederemos a eliminar su cuenta y datos de inmediato.
+                </p>
+              </div>
+            </section>
+
+            <!-- 12. Cambios a esta Política -->
+            <section id="cambios" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">12</span>
+                Cambios a esta Política
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Podemos actualizar esta Política de Privacidad periódicamente. Cuando realicemos cambios significativos:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Actualizaremos la fecha de "última actualización"</li>
+                <li>Le notificaremos por email sobre cambios importantes</li>
+                <li>Mostraremos un aviso en la plataforma</li>
+              </ul>
+              <p class="text-muted-foreground leading-relaxed mt-4">
+                Le recomendamos revisar esta política periódicamente.
+              </p>
+            </section>
+
+            <!-- 13. Contacto -->
+            <section id="contacto" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">13</span>
+                Contacto y Consultas
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Para cualquier consulta relacionada con esta política o el tratamiento de sus datos:
+              </p>
+              <div class="bg-card border rounded-xl p-6 not-prose">
+                <div class="space-y-3 text-sm">
+                  <p><strong>📧 Email de Soporte:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
+                  <p><strong>📍 Dirección:</strong> Quibdó, Chocó, Colombia</p>
+                </div>
+              </div>
+
+              <div class="bg-info/10 border border-info/30 rounded-xl p-4 mt-6 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  <strong>ℹ️ Autoridad de Control:</strong> Si considera que sus derechos han sido vulnerados, puede presentar una queja ante la Superintendencia de Industria y Comercio (SIC) - <a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">www.sic.gov.co</a>
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <!-- Back to Legal -->
+          <div class="mt-12 pt-8 border-t flex flex-wrap gap-4">
+            <a href="/politicas/terms" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Términos y Condiciones
+            </a>
+            <a href="/politicas/cookies" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              → Política de Cookies
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

@@ -1,0 +1,423 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { Badge } from '../../components/ui/Badge';
+---
+
+<Layout title="Términos y Condiciones - Ahorra Tranquilo" description="Términos y Condiciones de uso de Ahorra Tranquilo. Conoce las reglas y condiciones para utilizar nuestra plataforma.">
+  <Navbar />
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative py-12 md:py-16 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-success/5">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+          <a href="/" class="hover:text-primary transition-colors">Inicio</a>
+          <span>/</span>
+          <span>Legal</span>
+          <span>/</span>
+          <span class="text-foreground">Términos</span>
+        </nav>
+
+        <div class="max-w-4xl">
+          <Badge client:load variant="default" className="mb-4">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Documento Legal
+          </Badge>
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4">
+            Términos y <span class="text-primary">Condiciones</span>
+          </h1>
+          <p class="text-lg text-muted-foreground">
+            Última actualización: 1 de enero de 2025
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <!-- Quick Navigation -->
+          <div class="bg-card rounded-xl border p-6 mb-12">
+            <h2 class="font-semibold text-lg mb-4">Contenido</h2>
+            <nav class="grid sm:grid-cols-2 gap-2 text-sm">
+              <a href="#responsable" class="text-muted-foreground hover:text-primary transition-colors py-1">1. Información del Responsable</a>
+              <a href="#aceptacion" class="text-muted-foreground hover:text-primary transition-colors py-1">2. Aceptación de los Términos</a>
+              <a href="#servicios" class="text-muted-foreground hover:text-primary transition-colors py-1">3. Descripción de los Servicios</a>
+              <a href="#registro" class="text-muted-foreground hover:text-primary transition-colors py-1">4. Registro y Cuenta</a>
+              <a href="#datos" class="text-muted-foreground hover:text-primary transition-colors py-1">5. Tratamiento de Datos</a>
+              <a href="#propiedad" class="text-muted-foreground hover:text-primary transition-colors py-1">6. Propiedad Intelectual</a>
+              <a href="#uso" class="text-muted-foreground hover:text-primary transition-colors py-1">7. Uso Aceptable</a>
+              <a href="#limitacion" class="text-muted-foreground hover:text-primary transition-colors py-1">8. Limitación de Responsabilidad</a>
+              <a href="#modificaciones" class="text-muted-foreground hover:text-primary transition-colors py-1">9. Modificaciones</a>
+              <a href="#terminacion" class="text-muted-foreground hover:text-primary transition-colors py-1">10. Terminación</a>
+              <a href="#jurisdiccion" class="text-muted-foreground hover:text-primary transition-colors py-1">11. Jurisdicción</a>
+              <a href="#disposiciones" class="text-muted-foreground hover:text-primary transition-colors py-1">12. Disposiciones Generales</a>
+              <a href="#contacto" class="text-muted-foreground hover:text-primary transition-colors py-1">13. Contacto</a>
+            </nav>
+          </div>
+
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            <!-- 1. Información del Responsable -->
+            <section id="responsable" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                Información del Responsable
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Los presentes Términos y Condiciones regulan el uso de la plataforma web <strong>Ahorra Tranquilo</strong>, disponible en <a href="https://app.ahorratranquilo.com" class="text-primary hover:underline">app.ahorratranquilo.com</a>, un servicio de gestión de finanzas personales.
+              </p>
+              <div class="bg-card border rounded-xl p-6 not-prose">
+                <div class="space-y-3 text-sm">
+                  <p><strong>Nombre del Responsable:</strong> Waner Andrés Valencia Moreno</p>
+                  <p><strong>Proyecto:</strong> Ahorra Tranquilo</p>
+                  <p><strong>Domicilio:</strong> Quibdó, Chocó, Colombia</p>
+                  <p><strong>Email:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
+                  <p><strong>Sitio web:</strong> <a href="https://ahorratranquilo.com" class="text-primary hover:underline">ahorratranquilo.com</a></p>
+                </div>
+              </div>
+              <p class="text-muted-foreground leading-relaxed mt-4">
+                <strong>Fecha de vigencia:</strong> 1 de enero de 2025
+              </p>
+            </section>
+
+            <!-- 2. Aceptación de los Términos -->
+            <section id="aceptacion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">2</span>
+                Aceptación de los Términos
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Al acceder, registrarse o utilizar cualquier funcionalidad de Ahorra Tranquilo, usted declara haber leído, comprendido y aceptado en su totalidad los presentes Términos y Condiciones, así como nuestra <a href="/politicas/privacy" class="text-primary hover:underline">Política de Privacidad</a>.
+              </p>
+              <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 not-prose">
+                <p class="text-muted-foreground">
+                  <strong>⚠️ Importante:</strong> Si no está de acuerdo con estos términos, debe abstenerse de utilizar la plataforma. El uso continuado de la plataforma después de cualquier modificación constituye la aceptación de los nuevos términos.
+                </p>
+              </div>
+            </section>
+
+            <!-- 3. Descripción de los Servicios -->
+            <section id="servicios" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">3</span>
+                Descripción de los Servicios
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Ahorra Tranquilo es una plataforma digital que ofrece herramientas para la gestión de finanzas personales, incluyendo pero no limitándose a:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Registro y categorización de ingresos y gastos</li>
+                <li>Creación y seguimiento de presupuestos</li>
+                <li>Definición y monitoreo de metas de ahorro</li>
+                <li>Generación de reportes y análisis financieros</li>
+                <li>Dashboard con visualización de datos financieros</li>
+                <li>Herramientas educativas financieras</li>
+              </ul>
+              <div class="bg-info/10 border border-info/30 rounded-xl p-4 mt-6 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  <strong>ℹ️ Nota:</strong> Ahorra Tranquilo NO es una entidad financiera, banco, casa de cambio ni asesor financiero certificado. No realizamos transacciones bancarias ni gestionamos dinero real.
+                </p>
+              </div>
+            </section>
+
+            <!-- 4. Registro y Cuenta de Usuario -->
+            <section id="registro" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">4</span>
+                Registro y Cuenta de Usuario
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.1. Creación de Cuenta</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Para utilizar los servicios de Ahorra Tranquilo, debe crear una cuenta proporcionando información veraz, completa y actualizada. Es su responsabilidad mantener la confidencialidad de sus credenciales de acceso.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.2. Responsabilidad del Usuario</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Proporcionar información verdadera y mantenerla actualizada</li>
+                <li>Proteger sus credenciales de acceso</li>
+                <li>Notificar inmediatamente cualquier uso no autorizado de su cuenta</li>
+                <li>Asumir responsabilidad por todas las actividades realizadas desde su cuenta</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">4.3. Suspensión y Cancelación</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Nos reservamos el derecho de suspender o cancelar cuentas que violen estos términos, realicen actividades fraudulentas, o utilicen la plataforma de manera inapropiada. Usted puede solicitar la eliminación de su cuenta en cualquier momento.
+              </p>
+            </section>
+
+            <!-- 5. Tratamiento de Datos Personales -->
+            <section id="datos" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">5</span>
+                Tratamiento de Datos Personales
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                En cumplimiento de la <strong>Ley 1581 de 2012</strong> y el <strong>Decreto 1377 de 2013</strong> sobre protección de datos personales en Colombia:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.1. Datos Recopilados</h3>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li><strong>Identificación:</strong> Nombre, correo electrónico, foto de perfil (opcional)</li>
+                <li><strong>Financieros:</strong> Datos ingresados manualmente (ingresos, gastos, metas)</li>
+                <li><strong>Técnicos:</strong> IP, navegador, dispositivo, patrones de uso</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">5.2. Derechos del Titular</h3>
+              <p class="text-muted-foreground leading-relaxed mb-2">
+                Como titular de datos personales, usted tiene derecho a:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Conocer, actualizar y rectificar sus datos</li>
+                <li>Solicitar prueba de la autorización otorgada</li>
+                <li>Ser informado sobre el uso dado a sus datos</li>
+                <li>Revocar la autorización y solicitar supresión</li>
+                <li>Acceder gratuitamente a sus datos personales</li>
+              </ul>
+
+              <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mt-6 not-prose">
+                <p class="text-sm text-muted-foreground">
+                  Para más detalles, consulte nuestra <a href="/politicas/privacy" class="text-primary hover:underline font-semibold">Política de Privacidad</a> completa.
+                </p>
+              </div>
+            </section>
+
+            <!-- 6. Propiedad Intelectual -->
+            <section id="propiedad" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">6</span>
+                Propiedad Intelectual
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Conforme a la <strong>Ley 23 de 1982</strong> sobre Derechos de Autor en Colombia:
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">6.1. Derechos de Ahorra Tranquilo</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Todos los contenidos de la plataforma, incluyendo pero no limitándose a diseño, código, textos, gráficos, logotipos, iconos, imágenes, algoritmos y software, son propiedad exclusiva de Ahorra Tranquilo o de sus licenciantes y están protegidos por las leyes de propiedad intelectual.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">6.2. Licencia de Uso Limitada</h3>
+              <p class="text-muted-foreground leading-relaxed mb-2">
+                Se le otorga una licencia limitada, no exclusiva, intransferible y revocable para acceder y usar la plataforma exclusivamente para fines personales. Queda prohibido:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Copiar, modificar o distribuir el contenido</li>
+                <li>Realizar ingeniería inversa del software</li>
+                <li>Usar el contenido con fines comerciales sin autorización</li>
+                <li>Crear obras derivadas</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">6.3. Contenido del Usuario</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Usted conserva todos los derechos sobre los datos financieros que ingresa. Al utilizar el servicio, nos otorga una licencia limitada para procesar, almacenar y analizar dichos datos exclusivamente para proveer el servicio.
+              </p>
+            </section>
+
+            <!-- 7. Uso Aceptable -->
+            <section id="uso" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">7</span>
+                Uso Aceptable
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Al utilizar Ahorra Tranquilo, usted se compromete a:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>✅ Usar la plataforma para fines personales y legales</li>
+                <li>✅ Mantener información precisa y actualizada</li>
+                <li>✅ Respetar los derechos de otros usuarios</li>
+                <li>❌ No intentar acceder a sistemas no autorizados</li>
+                <li>❌ No usar la plataforma para actividades ilegales</li>
+                <li>❌ No transmitir malware o código malicioso</li>
+                <li>❌ No sobrecargar deliberadamente los servidores</li>
+                <li>❌ No crear cuentas múltiples o falsas</li>
+              </ul>
+            </section>
+
+            <!-- 8. Limitación de Responsabilidad -->
+            <section id="limitacion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">8</span>
+                Limitación de Responsabilidad
+              </h2>
+
+              <div class="bg-warning/10 border border-warning/30 rounded-xl p-4 mb-6 not-prose">
+                <p class="text-muted-foreground">
+                  <strong>⚠️ Aviso Importante:</strong> Ahorra Tranquilo es una herramienta informativa y educativa. NO proporciona asesoría financiera, legal, contable o fiscal profesional.
+                </p>
+              </div>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">8.1. Disponibilidad del Servicio</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Nos esforzamos por mantener la plataforma disponible 24/7, pero no garantizamos acceso ininterrumpido. Podemos experimentar interrupciones por mantenimiento, actualizaciones o causas fuera de nuestro control.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">8.2. Exactitud de la Información</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Los análisis, reportes y recomendaciones proporcionados se basan en los datos que usted ingresa. No garantizamos la exactitud, completitud o utilidad de dichos análisis. Las decisiones financieras son de su exclusiva responsabilidad.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">8.3. No Asesoría Profesional</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Para decisiones financieras importantes, consulte con un profesional certificado. Ahorra Tranquilo no reemplaza el consejo de contadores, asesores financieros o abogados.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">8.4. Limitación de Daños</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                En la máxima medida permitida por la ley colombiana, Ahorra Tranquilo no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos derivados del uso de la plataforma.
+              </p>
+            </section>
+
+            <!-- 9. Modificaciones -->
+            <section id="modificaciones" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">9</span>
+                Modificaciones
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">9.1. Cambios a los Términos</h3>
+              <p class="text-muted-foreground leading-relaxed mb-2">
+                Nos reservamos el derecho de modificar estos términos en cualquier momento. Cuando realicemos cambios:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Actualizaremos la fecha de última modificación</li>
+                <li>Notificaremos cambios significativos por email</li>
+                <li>Mostraremos un aviso en la plataforma</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">9.2. Cambios al Servicio</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Podemos modificar, suspender o discontinuar funcionalidades del servicio en cualquier momento, sin previo aviso y sin responsabilidad hacia los usuarios.
+              </p>
+            </section>
+
+            <!-- 10. Terminación -->
+            <section id="terminacion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">10</span>
+                Terminación
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">10.1. Por el Usuario</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Puede eliminar su cuenta y datos en cualquier momento desde la configuración de su perfil o contactándonos directamente.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">10.2. Por Ahorra Tranquilo</h3>
+              <p class="text-muted-foreground leading-relaxed mb-2">
+                Podemos suspender o terminar su acceso si:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Viola estos Términos y Condiciones</li>
+                <li>Realiza actividades fraudulentas</li>
+                <li>Usa la plataforma de manera que pueda dañar el servicio</li>
+                <li>Lo requiere una orden judicial o autoridad competente</li>
+              </ul>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">10.3. Efectos de la Terminación</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Tras la terminación, perderá acceso a su cuenta y datos. Le recomendamos exportar su información antes de eliminar su cuenta.
+              </p>
+            </section>
+
+            <!-- 11. Legislación Aplicable y Jurisdicción -->
+            <section id="jurisdiccion" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">11</span>
+                Legislación Aplicable y Jurisdicción
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Estos Términos se rigen por las leyes de la República de Colombia. Para cualquier controversia:
+              </p>
+              <ul class="text-muted-foreground space-y-2 list-disc list-inside">
+                <li>Las partes acuerdan intentar primero una solución amistosa</li>
+                <li>Si no se resuelve en 30 días, se someterá a los jueces de Bogotá D.C.</li>
+                <li>Renunciamos a cualquier otro fuero que pudiera corresponder</li>
+              </ul>
+
+              <div class="bg-card border rounded-xl p-6 mt-6 not-prose">
+                <h4 class="font-semibold mb-3">📋 Normativa Aplicable</h4>
+                <ul class="text-sm text-muted-foreground space-y-1">
+                  <li>• Código de Comercio Colombiano</li>
+                  <li>• Ley 1581 de 2012 (Protección de Datos)</li>
+                  <li>• Ley 527 de 1999 (Comercio Electrónico)</li>
+                  <li>• Ley 1480 de 2011 (Estatuto del Consumidor)</li>
+                  <li>• Ley 23 de 1982 (Derechos de Autor)</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- 12. Disposiciones Generales -->
+            <section id="disposiciones" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">12</span>
+                Disposiciones Generales
+              </h2>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">12.1. Acuerdo Completo</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Estos Términos, junto con la Política de Privacidad, constituyen el acuerdo completo entre usted y Ahorra Tranquilo.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">12.2. Divisibilidad</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Si alguna disposición se considera inválida, las demás disposiciones permanecerán vigentes.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">12.3. No Renuncia</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                El no ejercicio de un derecho no implica renuncia al mismo.
+              </p>
+
+              <h3 class="text-lg font-semibold mt-6 mb-3">12.4. Cesión</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Usted no puede ceder sus derechos u obligaciones bajo estos Términos. Ahorra Tranquilo puede hacerlo sin restricción.
+              </p>
+            </section>
+
+            <!-- 13. Contacto -->
+            <section id="contacto" class="scroll-mt-24 mb-12">
+              <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary text-sm font-bold">13</span>
+                Contacto
+              </h2>
+              <p class="text-muted-foreground leading-relaxed mb-4">
+                Para cualquier consulta relacionada con estos Términos y Condiciones:
+              </p>
+              <div class="bg-card border rounded-xl p-6 not-prose">
+                <div class="space-y-3 text-sm">
+                  <p><strong>📧 Email Legal:</strong> <a href="mailto:soporte@support.ahorratranquilo.com" class="text-primary hover:underline">soporte@support.ahorratranquilo.com</a></p>
+                  <p><strong>📍 Dirección:</strong> Quibdó, Chocó, Colombia</p>
+                  <p><strong>🌐 Sitio web:</strong> <a href="https://ahorratranquilo.com" class="text-primary hover:underline">ahorratranquilo.com</a></p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Back to Legal -->
+          <div class="mt-12 pt-8 border-t flex flex-wrap gap-4">
+            <a href="/politicas/privacy" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Política de Privacidad
+            </a>
+            <a href="/politicas/cookies" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+              → Política de Cookies
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
