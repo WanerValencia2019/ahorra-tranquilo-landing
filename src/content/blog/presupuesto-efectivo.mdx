@@ -10,15 +10,25 @@ featured: false
 readTime: "7 min"
 ---
 
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import ComparisonTable from '../../components/blog/ComparisonTable.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import StepByStep from '../../components/blog/StepByStep.astro';
+
+
 ## ¿Por qué fallan los presupuestos tradicionales?
 
 Has intentado hacer presupuestos antes. Descargaste una plantilla de Excel con 47 categorías, la llenaste con ilusión el día 1, y para el día 15 ya no sabías ni dónde la guardaste.
 
-**No eres tú, es el método.**
+<HighlightBox emoji="⚠️" variant="solid">
+**No eres tú, es el método.** Los presupuestos tradicionales son demasiado complicados para el día a día.
+</HighlightBox>
 
 Los presupuestos tradicionales fallan porque:
 - Son demasiado complicados
-- Tienen categorías irrelevantes
+- Tienen categorías irrelevantes  
 - No se adaptan a tu vida real
 - Requieren demasiado esfuerzo para mantener
 
@@ -28,7 +38,20 @@ Hoy te voy a enseñar un método que **SÍ funciona**.
 
 Olvida las 47 categorías. Solo necesitas **4 grandes grupos**:
 
+
+<div class="grid md:grid-cols-2 gap-6 my-10">
+  <StatsCard number="50-60%" label="Gastos Esenciales" color="primary" icon="🏠" />
+  <StatsCard number="10-20%" label="Ahorros e Inversión" color="success" icon="💰" />
+  <StatsCard number="20-30%" label="Estilo de Vida" color="warning" icon="🎉" />
+  <StatsCard number="5-10%" label="Entretenimiento" color="info" icon="🎮" />
+</div>
+
 ### 1. Esenciales (50-60% de tus ingresos)
+
+<Callout type="info">
+Estos son gastos que **no puedes evitar** sin afectar tu calidad de vida básica.
+</Callout>
+
 - Vivienda (arriendo o cuota)
 - Servicios públicos
 - Mercado
@@ -39,6 +62,10 @@ Olvida las 47 categorías. Solo necesitas **4 grandes grupos**:
 - Fondo de emergencias
 - Metas de ahorro
 - Inversiones (si aplica)
+
+<Callout type="success" title="Regla de Oro">
+**Págate primero a ti mismo.** Configura una transferencia automática el día que recibes tu salario.
+</Callout>
 
 ### 3. Estilo de Vida (20-30%)
 - Entretenimiento
@@ -52,40 +79,60 @@ Olvida las 47 categorías. Solo necesitas **4 grandes grupos**:
 - Préstamos personales
 - Otras deudas
 
+<Callout type="warning" title="Alerta de Deudas">
+Si tus deudas superan el 20% de tus ingresos, **necesitas un plan urgente** para reducirlas.
+</Callout>
+
 ## Paso a Paso: Crea tu Presupuesto en 30 Minutos
 
-### Paso 1: Calcula tus ingresos mensuales (5 min)
 
-Suma todo lo que entra:
-- Salario neto (después de impuestos)
-- Ingresos extras constantes
-- Otros ingresos regulares
+<StepByStep
+  steps={[
+    {
+      title: "Calcula tus ingresos mensuales (5 min)",
+      description: "Suma todo lo que entra: salario neto (después de impuestos), ingresos extras constantes y otros ingresos regulares. Ejemplo: $3,500,000 COP mensuales",
+      icon: "💵"
+    },
+    {
+      title: "Analiza tus gastos reales (10 min)",
+      description: "Aquí es donde Ahorra Tranquilo brilla. Ve a tus reportes y mira: ¿Cuánto gastaste en promedio los últimos 3 meses? ¿En qué categorías? ¿Hay gastos sorpresa?",
+      icon: "📊"
+    },
+    {
+      title: "Define tus límites por categoría (10 min)",
+      description: "Usa el método MPS: 50-60% esenciales, 10-20% ahorros, 20-30% estilo de vida, 5-10% entretenimiento. Ajústalo según tu realidad.",
+      icon: "🎯"
+    },
+    {
+      title: "Configura alertas y seguimiento (5 min)",
+      description: "En Ahorra Tranquilo, activa notificaciones cuando llegues al 80% de cualquier categoría. Revisa tu presupuesto cada semana los domingos.",
+      icon: "🔔"
+    }
+  ]}
+/>
 
-**Ejemplo:** $3,500,000 COP mensuales
 
-### Paso 2: Analiza tus gastos reales (10 min)
-
-Aquí es donde Ahorra Tranquilo brilla. Ve a tus reportes y mira:
-- ¿Cuánto gastaste en promedio los últimos 3 meses?
-- ¿En qué categorías?
-- ¿Hay gastos sorpresa?
-
+<Callout type="tip">
 **No juzgues, solo observa.** Necesitas la verdad para crear un plan realista.
+</Callout>
 
-### Paso 3: Asigna porcentajes (10 min)
 
-Basándote en tus números reales, distribuye:
+<ComparisonTable title="Ejemplo de Distribución: Ingresos $3,500,000 COP">
 
-```
-Ingresos totales: $3,500,000
+| Categoría | Porcentaje | Monto |
+|-----------|------------|-------|
+| Esenciales | 55% | $1,925,000 |
+| Ahorros | 15% | $525,000 |
+| Estilo de Vida | 25% | $875,000 |
+| Deudas | 5% | $175,000 |
+| **Total** | **100%** | **$3,500,000** |
 
-Esenciales (55%):     $1,925,000
-Ahorros (15%):         $525,000
-Estilo de vida (25%):  $875,000
-Deudas (5%):           $175,000
-```
+</ComparisonTable>
 
+
+<Callout type="info">
 **Ajusta según tu situación.** Si tienes muchas deudas, puede ser 60% esenciales, 20% deudas, 10% ahorros, 10% estilo de vida.
+</Callout>
 
 ### Paso 4: Define límites específicos (5 min)
 
@@ -106,7 +153,10 @@ Dentro de cada categoría, establece topes:
 ## Reglas de Oro para Mantener tu Presupuesto
 
 ### Regla #1: Registra al instante
+
+<HighlightBox emoji="📱">
 Cada gasto se registra inmediatamente. No "después", no "mañana". **Ahora.**
+</HighlightBox>
 
 ### Regla #2: Revisa semanalmente
 15 minutos cada domingo para ver cómo vas. Sin juicio, solo datos.
@@ -115,7 +165,10 @@ Cada gasto se registra inmediatamente. No "después", no "mañana". **Ahora.**
 Tu presupuesto no es estático. Si una categoría siempre se excede, ajústala (y compensa reduciendo otra).
 
 ### Regla #4: Sé flexible, no estricto
+
+<Callout type="success">
 Te pasaste $50,000 en restaurantes pero ahorraste $50,000 en ropa? **Perfecto.** El balance importa más que la perfección categórica.
+</Callout>
 
 ## Manejo de Situaciones Especiales
 
@@ -194,3 +247,4 @@ Recuerda:
 Registra tus gastos durante 1 semana en [Ahorra Tranquilo](https://app.ahorratranquilo.com) para tener datos reales antes de crear tu presupuesto.
 
 **¿Ya tienes un presupuesto? ¿Cuál es tu mayor desafío para mantenerlo? Cuéntame en los comentarios.**
+

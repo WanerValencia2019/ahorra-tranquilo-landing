@@ -1,0 +1,395 @@
+/* ============================================
+   BLOG PROSE STYLES
+   Sistema completo de estilos para contenido markdown del blog
+   ============================================ */
+
+.prose-blog {
+  color: var(--foreground);
+  max-width: 100%;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+/* Headings con espaciado y estilos consistentes */
+.prose-blog h1 {
+  color: var(--foreground);
+  font-weight: 800;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+.prose-blog h2 {
+  color: var(--foreground);
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 1.3;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.prose-blog h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 5px;
+  height: 1.2em;
+  background: linear-gradient(to bottom, var(--primary), var(--success));
+  border-radius: 10px;
+}
+
+.prose-blog h3 {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.0125em;
+}
+
+.prose-blog h4 {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog h5 {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog h6 {
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Párrafos con espaciado adecuado */
+.prose-blog p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  line-height: 1.75;
+}
+
+/* Links con estilo y hover animado */
+.prose-blog a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.prose-blog a:hover {
+  color: var(--primary-hover);
+}
+
+.prose-blog a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.prose-blog a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Links externos con icono */
+.prose-blog a[href^="http"]::before {
+  content: "↗";
+  display: inline-block;
+  margin-right: 0.25rem;
+  font-size: 0.875em;
+  opacity: 0.6;
+}
+
+/* Strong/Bold con fondo sutil */
+.prose-blog strong {
+  color: var(--foreground);
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 30%;
+  background-position: 0 85%;
+  background-clip: padding-box;
+  padding: 0 0.15em;
+  opacity: 0.95;
+}
+
+/* Emphasis/Italic */
+.prose-blog em {
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+/* Inline code */
+.prose-blog :not(pre) > code {
+  background: var(--muted);
+  color: var(--primary);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-weight: 600;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  border: 1px solid var(--border);
+}
+
+/* Code blocks */
+.prose-blog pre {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.prose-blog pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--foreground);
+  font-size: inherit;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Blockquotes */
+.prose-blog blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: var(--muted-foreground);
+  background: var(--muted);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose-blog blockquote p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Listas desordenadas con bullets personalizados */
+.prose-blog ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog ul > li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid var(--primary);
+}
+
+/* Listas anidadas */
+.prose-blog ul ul,
+.prose-blog ul ol,
+.prose-blog ol ul,
+.prose-blog ol ol {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Listas ordenadas con números circulares */
+.prose-blog ol {
+  counter-reset: list-counter;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog ol > li {
+  counter-increment: list-counter;
+  position: relative;
+  padding-left: 2.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog ol > li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, var(--primary), var(--success));
+  color: white;
+  font-weight: 700;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.813rem;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+}
+
+/* Tablas markdown */
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 0.938rem;
+  line-height: 1.5;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.prose-blog thead {
+  background: linear-gradient(135deg, var(--primary), var(--success));
+  color: white;
+}
+
+.prose-blog thead th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.prose-blog tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.prose-blog tbody tr:hover {
+  background: var(--muted);
+}
+
+.prose-blog tbody tr:last-child {
+  border-bottom: none;
+}
+
+.prose-blog td {
+  padding: 0.875rem 1rem;
+  color: var(--foreground);
+}
+
+.prose-blog tbody td:first-child {
+  font-weight: 600;
+}
+
+/* Scroll horizontal para tablas en móvil */
+@media (max-width: 768px) {
+  .prose-blog table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Línea horizontal */
+.prose-blog hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Imágenes */
+.prose-blog img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+}
+
+/* Figure con caption */
+.prose-blog figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose-blog figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Espaciado entre componentes y texto */
+.prose-blog > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Primer párrafo después de heading sin margin-top extra */
+.prose-blog h2 + p,
+.prose-blog h3 + p,
+.prose-blog h4 + p {
+  margin-top: 0.75rem;
+}
+
+/* Wrapper para contenido de texto con max-width */
+.prose-blog .blog-text-content {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* Wrapper para componentes full-width */
+.prose-blog > .grid,
+.prose-blog > .space-y-6,
+.prose-blog > div[class*="gap"] {
+  max-width: 100%;
+  margin-inline: 0;
+}

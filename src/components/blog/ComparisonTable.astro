@@ -1,0 +1,79 @@
+---
+interface Props {
+  title?: string;
+  variant?: 'default' | 'compact' | 'striped';
+}
+
+const { title, variant = 'default' } = Astro.props;
+---
+
+<div class="my-10 overflow-hidden rounded-xl border border-border/50 shadow-card hover:shadow-card-hover transition-all duration-300">
+  {title && (
+    <div class="bg-gradient-to-r from-primary via-primary/90 to-success text-white px-6 py-4">
+      <h3 class="text-xl font-bold">{title}</h3>
+    </div>
+  )}
+  <div class="overflow-x-auto">
+    <slot />
+  </div>
+</div>
+
+<style>
+  :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  :global(thead) {
+    background: hsl(var(--muted));
+  }
+  
+  :global(th) {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--foreground));
+    border-bottom: 2px solid hsl(var(--primary) / 0.3);
+  }
+  
+  :global(td) {
+    padding: 1rem;
+    border-bottom: 1px solid hsl(var(--border));
+    font-size: 0.9375rem;
+  }
+  
+  :global(tbody tr) {
+    transition: background-color 200ms ease;
+  }
+  
+  :global(tbody tr:hover) {
+    background: hsl(var(--accent));
+  }
+  
+  :global(tbody tr:nth-child(even)) {
+    background: hsl(var(--muted) / 0.3);
+  }
+  
+  :global(tbody tr:last-child td) {
+    border-bottom: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 640px) {
+    :global(th),
+    :global(td) {
+      padding: 0.75rem;
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* Números */
+  :global(td:has(> strong)),
+  :global(th:nth-child(2)),
+  :global(td:nth-child(2)) {
+    font-variant-numeric: tabular-nums;
+  }
+</style>

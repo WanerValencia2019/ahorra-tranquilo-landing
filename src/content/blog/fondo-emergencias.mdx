@@ -10,31 +10,53 @@ featured: false
 readTime: "8 min"
 ---
 
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import ComparisonTable from '../../components/blog/ComparisonTable.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import QuickStats from '../../components/blog/QuickStats.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+
+import QuickStats from '../../components/blog/QuickStats.astro';
+import ProgressBar from '../../components/blog/ProgressBar.astro';
+import BeforeAfter from '../../components/blog/BeforeAfter.astro';
+
 ## ¿Qué es un Fondo de Emergencias?
 
 Un fondo de emergencias es **dinero guardado específicamente para imprevistos**. No para vacaciones, no para regalos de navidad, no para el nuevo celular.
 
-Solo para verdaderas emergencias:
+<Callout type="warning" title="Solo para verdaderas emergencias">
 - 🏥 Gastos médicos urgentes
 - 💼 Pérdida de empleo
 - 🔧 Reparaciones del hogar o carro
 - 👨‍👩‍👧 Emergencia familiar
 - 📉 Crisis económica personal
+</Callout>
 
 ## La Triste Realidad en Colombia
 
-Según estudios recientes:
-- **67% de colombianos** no tiene ahorros para emergencias
-- **45%** no podría cubrir un gasto inesperado de $500,000
-- El promedio de colombianos aguantaría **menos de 1 mes** sin salario
+<QuickStats
+  stats={[
+    { value: "67%", label: "Sin ahorros para emergencias", icon: "🚨", trend: "down" },
+    { value: "45%", label: "No puede cubrir $500K", icon: "🚫", trend: "down" },
+    { value: "<1 mes", label: "Sin salario no aguantaría", icon: "⌛", trend: "down" }
+  ]}
+  columns={3}
+/>
 
 ¿Qué significa esto? Que ante cualquier imprevisto, la única opción es:
+
+<Callout type="warning" title="Las Terribles Alternativas">
 - Tarjetas de crédito con intereses del 30-40% anual
 - Préstamos gota a gota
 - Pedirle prestado a familiares
 - Vender cosas importantes
+</Callout>
 
-**Todo esto se evita con un fondo de emergencias.**
+<HighlightBox emoji="💰">
+**Todo esto se evita con un fondo de emergencias.** Es la diferencia entre un problema solucionable y una crisis financiera.
+</HighlightBox>
 
 ## ¿Cuánto Dinero Necesitas?
 
@@ -42,7 +64,9 @@ La regla general: **3 a 6 meses de gastos esenciales**.
 
 ### ¿Gastos totales o solo esenciales?
 
+<Callout type="info">
 **Solo esenciales.** Si pierdes tu trabajo, vas a cortar Netflix, no comer fuera, no comprar ropa.
+</Callout>
 
 Tus gastos esenciales incluyen:
 - Arriendo o cuota de vivienda
@@ -56,28 +80,25 @@ Tus gastos esenciales incluyen:
 
 Gastos esenciales mensuales: **$1,800,000**
 
-- Mínimo (3 meses): $5,400,000
-- Ideal (6 meses): $10,800,000
+</div>
+
+<div class="grid md:grid-cols-2 gap-6 my-8">
+  <StatsCard number="$5.4M" label="Mínimo (3 meses)" color="primary" icon="🛡️" />
+  <StatsCard number="$10.8M" label="Ideal (6 meses)" color="success" icon="🏆" />
+</div>
 
 ### ¿3 o 6 meses? Depende de tu situación
 
-**3 meses si:**
-- Tienes empleo estable
-- Trabajas en sector con alta demanda
-- Tienes familia que puede ayudar
-- Sin dependientes económicos
+<ComparisonTable title="¿Cuántos Meses Necesitas?">
 
-**6 meses (o más) si:**
-- Eres freelancer o emprendedor
-- Ingresos variables
-- Único sustento del hogar
-- Tienes dependientes (hijos, padres)
-- Salud delicada
+| Situación | Meses Recomendados | Razón |
+|-----------|-------------------|-------|
+| Empleo estable, sin dependientes | 3 meses | Menor riesgo |
+| Freelancer o ingresos variables | 6+ meses | Mayor incertidumbre |
+| Único sustento del hogar | 6+ meses | Responsabilidad familiar |
+| Emprendedor sin ingresos fijos | 12 meses | Alto riesgo |
 
-**Caso especial - 12 meses:**
-- Emprendedor sin ingresos fijos
-- Sector laboral muy competido
-- Quieres cambiar de carrera
+</ComparisonTable>
 
 ## Por Qué NO Debes Usar Inversiones como Fondo de Emergencias
 
@@ -200,13 +221,29 @@ Crea barreras psicológicas:
 
 15 meses para completar el fondo es mucho. Celebra hitos:
 
-✅ **$500,000:** Primera barrera psicológica
-✅ **$1,000,000:** Ya tienes un colchón básico
-✅ **1 mes de gastos ($1,500,000):** Primera meta seria
-✅ **$3,000,000:** 2 meses de gastos
-✅ **$4,500,000:** 3 meses (mínimo recomendado) 🎉
-✅ **$6,000,000:** 4 meses
-✅ **$9,000,000:** 6 meses (META CUMPLIDA) 🏆
+<div class="space-y-6 my-10">
+
+<div>
+<ProgressBar current={500000} total={9000000} label="Primera barrera psicológica" color="primary" />
+<p class="text-sm text-muted-foreground mt-2">✅ **$500,000** - Ya empezaste tu colchón</p>
+</div>
+
+<div>
+<ProgressBar current={1500000} total={9000000} label="1 mes de gastos" color="primary" />
+<p class="text-sm text-muted-foreground mt-2">✅ **$1,500,000** - Primera meta seria</p>
+</div>
+
+<div>
+<ProgressBar current={4500000} total={9000000} label="3 meses (mínimo recomendado)" color="warning" />
+<p class="text-sm text-muted-foreground mt-2">🎉 **$4,500,000** - Mínimo alcanzado</p>
+</div>
+
+<div>
+<ProgressBar current={9000000} total={9000000} label="6 meses (META CUMPLIDA)" color="success" />
+<p class="text-sm text-success font-bold mt-2">🏆 **$9,000,000** - ¡Lo lograste!</p>
+</div>
+
+</div>
 
 ## Qué SÍ Cuenta como Emergencia
 

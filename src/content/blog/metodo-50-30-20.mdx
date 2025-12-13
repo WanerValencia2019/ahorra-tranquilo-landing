@@ -10,17 +10,29 @@ featured: false
 readTime: "6 min"
 ---
 
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import ComparisonTable from '../../components/blog/ComparisonTable.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import QuickStats from '../../components/blog/QuickStats.astro';
+import StepByStep from '../../components/blog/StepByStep.astro';
+
+
 ## ¿Qué es el Método 50/30/20?
 
 El método 50/30/20 es una de las reglas más populares de finanzas personales, y por una buena razón: **es simple, flexible y funciona**.
 
-La idea es dividir tus ingresos netos en tres categorías:
 
-- **50%** para Necesidades
-- **30%** para Gustos
-- **20%** para Ahorros y Deudas
+<div class="grid md:grid-cols-3 gap-6 my-10">
+  <StatsCard number="50%" label="Necesidades Básicas" color="primary" icon="🏠" />
+  <StatsCard number="30%" label="Gustos y Deseos" color="success" icon="🎉" />
+  <StatsCard number="20%" label="Ahorros y Deudas" color="warning" icon="💰" />
+</div>
 
-Pero cuidado, la mayoría de personas lo aplica mal. Te voy a mostrar cómo hacerlo correctamente, adaptado a la realidad colombiana.
+<HighlightBox emoji="⚠️">
+**Atención:** La mayoría de personas lo aplica mal. Te voy a mostrar cómo hacerlo correctamente, adaptado a la realidad colombiana.
+</HighlightBox>
 
 ## Desglosando el 50%: Necesidades
 
@@ -28,66 +40,85 @@ Pero cuidado, la mayoría de personas lo aplica mal. Te voy a mostrar cómo hace
 
 Solo lo que **necesitas para vivir y trabajar**:
 
-✅ **SÍ son necesidades:**
+<Callout type="success" title="SÍ son necesidades">
 - Arriendo o cuota de vivienda
 - Servicios públicos (luz, agua, gas, internet)
 - Mercado (comida en casa)
 - Transporte para trabajar
 - Seguro de salud (si no está en tu nómina)
 - Mínimo de ropa y calzado
+</Callout>
 
-❌ **NO son necesidades:**
+<Callout type="warning" title="NO son necesidades">
 - Netflix, Spotify, Disney+ (son gustos)
 - Comer en restaurantes
 - Uber cuando puedes tomar bus
 - Ropa de marca
 - Gimnasio (sí, es un gusto, aunque sea saludable)
+</Callout>
 
 ### Ejemplo real con salario de $3,000,000
 
 50% = **$1,500,000** para necesidades:
 
-```
-Arriendo:           $800,000
-Servicios:          $180,000
-Mercado:            $400,000
-Transporte:         $100,000
-Otros esenciales:    $20,000
----
-TOTAL:            $1,500,000
-```
+
+<ComparisonTable title="Distribución de Necesidades ($3,000,000 mensual)">
+
+| Concepto | Monto | % del Total |
+|----------|-------|-------------|
+| Arriendo | $800,000 | 27% |
+| Servicios | $180,000 | 6% |
+| Mercado | $400,000 | 13% |
+| Transporte | $100,000 | 3% |
+| Otros esenciales | $20,000 | 1% |
+| **TOTAL** | **$1,500,000** | **50%** |
+
+</ComparisonTable>
+
 
 ### ¿Qué pasa si tus necesidades superan el 50%?
 
-**Opción 1: Reduce costos**
+<Callout type="info" title="Opción 1: Reduce costos">
 - ¿Puedes conseguir arriendo más barato?
 - ¿Puedes compartir vivienda?
 - ¿Hay formas de ahorrar en transporte?
+</Callout>
 
-**Opción 2: Aumenta ingresos**
+<Callout type="success" title="Opción 2: Aumenta ingresos">
 - Trabajo extra
 - Freelancing
 - Monetiza un hobby
+</Callout>
 
-**Opción 3: Ajusta temporalmente a 60/25/15**
-No es ideal, pero es mejor que no ahorrar nada.
+<Callout type="warning" title="Opción 3: Ajusta temporalmente">
+No es ideal, pero es mejor 60/25/15 que no ahorrar nada. El objetivo es eventualmente llegar al 50/30/20.
+</Callout>
 
 ## El 30%: Gustos (Sin Culpa)
 
 Esta es la parte que hace al método 50/30/20 **sostenible**. Tienes permiso para **disfrutar** el 30% de tus ingresos.
 
-### ¿Qué entra aquí?
+<HighlightBox emoji="🎉" variant="solid">
+**La clave del éxito:** Un presupuesto que no te permite disfrutar es un presupuesto que vas a abandonar. El 30% para gustos es lo que hace que puedas mantener este sistema por años.
+</HighlightBox>
 
 TODO lo que disfrutas pero podrías vivir sin ello:
 
-- 🍔 Restaurantes y domicilios
-- 🎬 Suscripciones (Netflix, Spotify, etc.)
-- 🎮 Entretenimiento
-- 👟 Ropa y accesorios (más allá de lo básico)
-- 💪 Gimnasio
-- ✈️ Viajes y salidas
-- 🎁 Regalos
-- ☕ Cafés y snacks
+
+<QuickStats
+  stats={[
+    { value: "🍔", label: "Restaurantes y domicilios" },
+    { value: "🎬", label: "Suscripciones digitales" },
+    { value: "🎮", label: "Entretenimiento" },
+    { value: "👟", label: "Ropa y accesorios" },
+    { value: "💪", label: "Gimnasio" },
+    { value: "✈️", label: "Viajes y salidas" },
+    { value: "🎁", label: "Regalos" },
+    { value: "☕", label: "Cafés y snacks" }
+  ]}
+  columns={4}
+/>
+
 
 ### Con $3,000,000 mensuales
 
@@ -156,54 +187,43 @@ Fondo viaje:        $50,000
 
 ## Cómo Implementar el Método 50/30/20 Paso a Paso
 
-### Semana 1: Calcula tus porcentajes actuales
 
-1. Suma tus ingresos netos mensuales
-2. Revisa tus gastos de los últimos 3 meses
-3. Clasifica cada gasto: Necesidad, Gusto o Ahorro
-4. Calcula qué porcentaje representa cada categoría
+<StepByStep
+  steps={[
+    {
+      title: "Calcula tus porcentajes actuales",
+      description: "Suma tus ingresos netos mensuales, revisa tus gastos de los últimos 3 meses y clasifica cada gasto: Necesidad, Gusto o Ahorro. Usa Ahorra Tranquilo para esto, te ahorra horas de trabajo.",
+      icon: "📊"
+    },
+    {
+      title: "Identifica desbalances",
+      description: "¿Estás en 70/25/5? Es común. La mayoría de personas gastan de más en necesidades (porque incluyen gustos), gastan de más en gustos (sin darse cuenta) y ahorran poco o nada.",
+      icon: "🔍"
+    },
+    {
+      title: "Ajusta gradualmente",
+      description: "No hagas cambios drásticos. Mejora 5% al mes. Si estás en 70/25/5, avanza a 65/25/10, luego 60/28/12, hasta llegar a 50/30/20.",
+      icon: "📈"
+    },
+    {
+      title: "Automatiza",
+      description: "Crea 3 cuentas bancarias o bolsillos. Apenas recibas tu salario, transfiere automáticamente: 20% a ahorros (PRIMERO), 30% a gustos, 50% queda para necesidades.",
+      icon: "⚙️"
+    }
+  ]}
+/>
 
-**Herramienta:** Usa Ahorra Tranquilo para esto. Te ahorra horas de trabajo.
-
-### Semana 2: Identifica desbalances
-
-¿Estás en 70/25/5? Es común. La mayoría de personas:
-- Gastan de más en necesidades (porque incluyen gustos)
-- Gastan de más en gustos (sin darse cuenta)
-- Ahorran poco o nada
-
-### Semana 3: Ajusta gradualmente
-
-**No hagas cambios drásticos.** Mejora 5% al mes.
-
-Si estás en 70/25/5:
-- **Mes 1:** 65/25/10
-- **Mes 2:** 60/28/12
-- **Mes 3:** 55/30/15
-- **Mes 4:** 50/30/20 ✅
-
-### Semana 4: Automatiza
-
-1. Crea 3 cuentas bancarias o bolsillos:
-   - Cuenta Necesidades (50%)
-   - Cuenta Gustos (30%)
-   - Cuenta Ahorros (20%)
-
-2. Apenas recibas tu salario, transfiere automáticamente:
-   - 20% a ahorros (PRIMERO)
-   - 30% a gustos
-   - 50% queda para necesidades
 
 ## Variaciones del Método según tu Situación
 
-### Para salarios bajos (<$1,500,000)
+### Para salarios bajos (&lt;$1,500,000)
 
 Puede ser difícil llegar al 50/30/20. Intenta:
 - **60/25/15** mientras aumentas ingresos
 - Enfócate en reducir necesidades (comparte arriendo, etc.)
 - Incluso 10% de ahorro es mejor que 0%
 
-### Para salarios altos (>$5,000,000)
+### Para salarios altos (&gt;$5,000,000)
 
 Puedes ser más agresivo:
 - **40/30/30** (ahorra más)
@@ -217,41 +237,44 @@ Temporalmente:
 
 ## Errores Comunes al Aplicar el 50/30/20
 
-### ❌ Error #1: Calcular sobre ingresos brutos
-**Correcto:** Usa tu salario NETO (después de impuestos y descuentos)
 
-### ❌ Error #2: Clasificar mal necesidades vs gustos
+<div class="space-y-6 my-10">
+
+<Callout type="warning" title="Error #1: Calcular sobre ingresos brutos">
+**Correcto:** Usa tu salario NETO (después de impuestos y descuentos), no el bruto que aparece en tu contrato.
+</Callout>
+
+<Callout type="warning" title="Error #2: Clasificar mal necesidades vs gustos">
 Uber no es necesidad. Internet de 100 MB cuando 20 MB bastan, tampoco.
 
 **Pregunta clave:** ¿Podría vivir sin esto? Si sí → es un gusto.
+</Callout>
 
-### ❌ Error #3: Ser demasiado flexible con el 30%
+<Callout type="warning" title="Error #3: Ser demasiado flexible con el 30%">
 "Solo esta vez me paso un poco" → Todos los meses.
 
 **Solución:** Usa efectivo o una tarjeta débito solo para gustos.
+</Callout>
 
-### ❌ Error #4: No ajustar cuando cambian ingresos
-Aumentaste de salario? Actualiza tus porcentajes inmediatamente.
+<Callout type="warning" title="Error #4: No ajustar cuando cambian ingresos">
+¿Aumentaste de salario? Actualiza tus porcentajes inmediatamente. No dejes que el dinero extra se "evapore".
+</Callout>
+
+</div>
 
 ## Seguimiento con Ahorra Tranquilo
 
-Configurar el método en la app:
+<ProTip title="Configura el método en la app" icon="📱">
 
-1. **Categorías:**
-   - Agrupa automáticamente en Necesidades, Gustos, Ahorros
+1. **Categorías:** Agrupa automáticamente tus gastos en Necesidades, Gustos y Ahorros
 
-2. **Presupuestos:**
-   - Define límite de 50% para necesidades
-   - Define límite de 30% para gustos
-   - Meta de 20% para ahorros
+2. **Presupuestos:** Define límite de 50% para necesidades y 30% para gustos, con meta de 20% para ahorros
 
-3. **Alertas:**
-   - Te notifica cuando te acercas al límite de gustos
-   - Te felicita cuando cumples tu meta de ahorro
+3. **Alertas:** Recibe notificaciones cuando te acercas al límite de gustos y felicitaciones cuando cumples tu meta de ahorro
 
-4. **Reportes:**
-   - Visualiza tu distribución mensual
-   - Compara contra el ideal 50/30/20
+4. **Reportes:** Visualiza tu distribución mensual y compara contra el ideal 50/30/20
+
+</ProTip>
 
 ## Conclusión
 
@@ -273,3 +296,4 @@ No es perfecto para todos, pero es un excelente punto de partida. Incluso si ter
 4. Define tu meta de ajuste para los próximos 3 meses
 
 **¿Aplicás el 50/30/20 o tienes tu propia regla? Cuéntame en los comentarios qué funciona para ti.**
+

@@ -1,0 +1,99 @@
+---
+interface Props {
+  current: number;
+  total: number;
+  label?: string;
+  color?: 'primary' | 'success' | 'warning' | 'info';
+  showPercentage?: boolean;
+}
+
+const { current, total, label, color = 'primary', showPercentage = true } = Astro.props;
+
+const percentage = Math.min(100, Math.round((current / total) * 100));
+
+const colorClasses = {
+  primary: {
+    bar: 'bg-primary',
+    bg: 'bg-primary/10',
+    text: 'text-primary'
+  },
+  success: {
+    bar: 'bg-success',
+    bg: 'bg-success/10',
+    text: 'text-success'
+  },
+  warning: {
+    bar: 'bg-warning',
+    bg: 'bg-warning/10',
+    text: 'text-warning'
+  },
+  info: {
+    bar: 'bg-info',
+    bg: 'bg-info/10',
+    text: 'text-info'
+  }
+};
+
+const styles = colorClasses[color];
+
+// Determinar el color basado en el porcentaje
+let statusColor = color;
+if (color === 'primary') {
+  if (percentage >= 100) statusColor = 'success';
+  else if (percentage >= 80) statusColor = 'warning';
+}
+const statusStyles = colorClasses[statusColor];
+---
+
+<div class="my-6">
+  {label && (
+    <div class="flex justify-between items-center mb-2">
+      <span class="text-sm font-medium text-foreground">{label}</span>
+      {showPercentage && (
+        <span class={`text-sm font-bold tabular-nums ${statusStyles.text}`}>
+          {percentage}%
+        </span>
+      )}
+    </div>
+  )}
+  
+  <div class={`relative h-4 ${styles.bg} rounded-full overflow-hidden shadow-inner`}>
+    <div 
+      class={`h-full ${statusStyles.bar} rounded-full transition-all duration-700 ease-out shadow-sm`}
+      style={`width: ${percentage}%`}
+      role="progressbar"
+      aria-valuenow={percentage}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={label || 'Progress'}
+    >
+      <div class="h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+    </div>
+  </div>
+  
+  {(current !== undefined && total !== undefined) && (
+    <div class="flex justify-between items-center mt-2">
+      <span class="text-xs text-muted-foreground tabular-nums">
+        {current.toLocaleString('es-CO')}
+      </span>
+      <span class="text-xs text-muted-foreground tabular-nums">
+        {total.toLocaleString('es-CO')}
+      </span>
+    </div>
+  )}
+</div>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+</style>

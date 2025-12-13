@@ -1,0 +1,49 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  icon?: string;
+  external?: boolean;
+}
+
+const { href, variant = 'primary', size = 'md', icon, external = false } = Astro.props;
+
+const variantClasses = {
+  primary: 'bg-gradient-to-r from-primary to-success text-white hover:shadow-lg hover:shadow-primary/30',
+  secondary: 'bg-gradient-to-r from-success to-info text-white hover:shadow-lg hover:shadow-success/30',
+  outline: 'border-2 border-primary text-primary hover:bg-primary/10'
+};
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg'
+};
+
+const classes = `
+  inline-flex items-center gap-2 justify-center
+  font-semibold rounded-lg
+  transition-all duration-300
+  hover:scale-105 hover:-translate-y-0.5
+  active:scale-95
+  ${variantClasses[variant]}
+  ${sizeClasses[size]}
+`;
+
+const linkAttrs = external
+  ? { target: '_blank', rel: 'noopener noreferrer' }
+  : {};
+---
+
+<a href={href} class={classes} {...linkAttrs}>
+  {icon && <span>{icon}</span>}
+  <slot />
+  {external && <span class="text-xs">↗</span>}
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>

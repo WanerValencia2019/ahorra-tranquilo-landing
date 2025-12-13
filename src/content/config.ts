@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 const blogCollection = defineCollection({
-  type: 'content',
+  type: 'content', // Soporta tanto .md como .mdx
   schema: z.object({
     title: z.string(),
     description: z.string(),

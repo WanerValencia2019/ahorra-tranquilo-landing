@@ -10,9 +10,21 @@ featured: true
 readTime: "5 min"
 ---
 
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import QuickStats from '../../components/blog/QuickStats.astro';
+import StepByStep from '../../components/blog/StepByStep.astro';
+
+
 ## Introducción
 
 El año 2025 es la oportunidad perfecta para transformar tu relación con el dinero. No necesitas cambios drásticos, solo **hábitos consistentes** que, con el tiempo, generarán resultados extraordinarios.
+
+<HighlightBox emoji="🎯" variant="gradient">
+**El poder de los hábitos:** Un cambio del 1% diario resulta en una mejora del 37% en un año. No necesitas revolución, necesitas evolución.
+</HighlightBox>
 
 En este artículo te compartiré los 5 hábitos que han ayudado a miles de colombianos a mejorar su salud financiera.
 
@@ -20,17 +32,28 @@ En este artículo te compartiré los 5 hábitos que han ayudado a miles de colom
 
 El primer paso para controlar tu dinero es **saber a dónde va**. Suena obvio, pero la mayoría de personas no tiene idea de cuánto gasta en cafés, transporte o compras impulsivas.
 
+<Callout type="warning" title="La Realidad">
+El 78% de colombianos no sabe exactamente cuánto gastó el mes pasado. Si no mides, no puedes mejorar.
+</Callout>
+
 ### ¿Cómo empezar?
 
 - Usa Ahorra Tranquilo para registrar cada gasto, por pequeño que sea
 - Hazlo inmediatamente después de cada compra (toma solo 10 segundos)
 - Revisa tu resumen semanal cada domingo
 
-**Resultado esperado:** En solo un mes tendrás claridad total sobre tus patrones de gasto.
+<Callout type="success" title="Resultado esperado">
+En solo un mes tendrás claridad total sobre tus patrones de gasto. La mayoría descubre que gasta 30% más de lo que pensaba.
+</Callout>
 
-## 2. Automatiza tus ahorros
+## 2. Automatiza tu ahorro (Págate primero a ti mismo)
 
-Esperar a "ver qué sobra" al final del mes **nunca funciona**. El secreto es pagar primero a ti mismo.
+
+<div class="grid md:grid-cols-3 gap-6 my-8">
+  <StatsCard number="10%" label="Ahorro mínimo mensual" color="success" icon="💰" />
+  <StatsCard number="$300K" label="Ahorro mensual (si ganas $3M)" color="primary" icon="📈" />
+  <StatsCard number="$3.6M" label="En un año" color="warning" icon="🏆" />
+</div>
 
 ### La regla del 10%
 
@@ -39,29 +62,39 @@ Apenas recibas tu salario:
 2. Considera ese dinero como un gasto no negociable
 3. Vive con el 90% restante
 
+<Callout type="tip">
+**Automatiza y olvida:** Configura la transferencia automática el día después de que recibes tu salario. No le des tiempo a tu cerebro de encontrar excusas.
+</Callout>
+
 Si ganas $3,000,000 COP mensuales, eso son $300,000 de ahorro automático. **En un año: $3,600,000.**
 
-## 3. Revisa tu situación financiera semanalmente
+## 3. Revisa tus finanzas cada semana
+
+<HighlightBox emoji="☕" variant="solid">
+**Consejo pro:** Haz esto todos los domingos en la mañana con un café. Se convertirá en un ritual que disfrutes. La consistencia es más importante que la perfección.
+</HighlightBox>
 
 Dedica 15 minutos cada semana para:
+- ¿Cómo fueron mis gastos esta semana?
+- ¿Estoy dentro de mi presupuesto?
+- ¿Hubo gastos innecesarios?
+- ¿Cómo va mi progreso hacia mis metas?
 
-- Revisar tus gastos de la semana
-- Verificar que estás dentro de tu presupuesto
-- Ajustar si es necesario
+## 4. Define metas financieras claras
 
-**Consejo pro:** Haz esto todos los domingos en la mañana con un café. Se convertirá en un ritual que disfrutes.
-
-## 4. Define metas financieras específicas
-
-"Quiero ahorrar más" es demasiado vago. Necesitas metas **SMART**:
-
+<Callout type="info" title="Metas SMART">
 - **S**pecífica: "Ahorrar $5,000,000 para el enganche de un apartamento"
 - **M**edible: Puedes seguir tu progreso
 - **A**lcanzable: Realista según tus ingresos
 - **R**elevante: Importante para ti
 - **T**emporal: Con fecha límite (ej: diciembre 2025)
+</Callout>
 
 En Ahorra Tranquilo puedes crear metas y ver tu progreso en tiempo real. Esto mantiene tu motivación alta.
+
+<HighlightBox emoji="🎯">
+**Dato clave:** Las personas con metas escritas son 42% más propensas a alcanzarlas que quienes solo las piensan.
+</HighlightBox>
 
 ## 5. Educa tus decisiones financieras
 
@@ -91,3 +124,4 @@ Recuerda: **No necesitas ser perfecto, solo consistente**. Empieza con un hábit
 Registra tus primeros gastos hoy en [Ahorra Tranquilo](https://app.ahorratranquilo.com) y da el primer paso hacia tu libertad financiera.
 
 **¿Cuál hábito implementarás primero? Cuéntame en los comentarios.**
+

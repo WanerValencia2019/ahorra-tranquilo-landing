@@ -1,0 +1,37 @@
+---
+interface Step {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+---
+
+<div class="my-10 space-y-4">
+  {steps.map((step, index) => (
+    <div class="flex gap-4 group">
+      <div class="flex flex-col items-center shrink-0">
+        <div class="flex items-center justify-center size-12 rounded-full bg-gradient-to-br from-primary to-primary/60 text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+          {step.icon || (index + 1)}
+        </div>
+        {index < steps.length - 1 && (
+          <div class="w-0.5 h-full min-h-[2rem] bg-gradient-to-b from-primary/50 to-primary/10 mt-2"></div>
+        )}
+      </div>
+      
+      <div class="flex-1 pb-6">
+        <h3 class="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+          {step.title}
+        </h3>
+        <p class="text-foreground/80 leading-relaxed">
+          {step.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,63 @@
+---
+interface Props {
+  type?: 'info' | 'warning' | 'success' | 'tip';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const styles = {
+  info: {
+    bg: 'bg-info/5 dark:bg-info/10',
+    border: 'border-info/30 dark:border-info/40',
+    iconBg: 'bg-info/10 dark:bg-info/20',
+    iconColor: 'text-info',
+    icon: '💡',
+    title: 'Info'
+  },
+  warning: {
+    bg: 'bg-warning/5 dark:bg-warning/10',
+    border: 'border-warning/30 dark:border-warning/40',
+    iconBg: 'bg-warning/10 dark:bg-warning/20',
+    iconColor: 'text-warning',
+    icon: '⚠️',
+    title: 'Importante'
+  },
+  success: {
+    bg: 'bg-success/5 dark:bg-success/10',
+    border: 'border-success/30 dark:border-success/40',
+    iconBg: 'bg-success/10 dark:bg-success/20',
+    iconColor: 'text-success',
+    icon: '✅',
+    title: 'Consejo'
+  },
+  tip: {
+    bg: 'bg-primary/5 dark:bg-primary/10',
+    border: 'border-primary/30 dark:border-primary/40',
+    iconBg: 'bg-primary/10 dark:bg-primary/20',
+    iconColor: 'text-primary',
+    icon: '💰',
+    title: 'Tip Financiero'
+  }
+};
+
+const style = styles[type];
+---
+
+<div 
+  class={`${style.bg} ${style.border} border-l-4 rounded-xl p-6 my-8 shadow-card hover:shadow-card-hover transition-all duration-300 group`}
+  role="note"
+  aria-label={title || style.title}
+>
+  <div class="flex items-start gap-4">
+    <div class={`${style.iconBg} ${style.iconColor} rounded-lg p-3 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+      <span class="text-2xl" aria-hidden="true">{style.icon}</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <h4 class="font-semibold text-lg mb-3 text-foreground">{title || style.title}</h4>
+      <div class="text-foreground/80 space-y-2 prose prose-slate dark:prose-invert max-w-none">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

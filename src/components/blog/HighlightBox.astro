@@ -1,0 +1,25 @@
+---
+interface Props {
+  emoji?: string;
+  variant?: 'gradient' | 'solid' | 'outline';
+}
+
+const { emoji = '📊', variant = 'gradient' } = Astro.props;
+
+const variants = {
+  gradient: 'bg-gradient-to-r from-primary/10 via-success/10 to-info/10 border-l-4 border-primary',
+  solid: 'bg-primary/5 border-l-4 border-primary',
+  outline: 'bg-transparent border-2 border-primary/30'
+};
+---
+
+<div class="my-10 relative group">
+  <div class="absolute -left-3 md:-left-4 top-4 md:top-6 text-4xl md:text-5xl opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300">
+    {emoji}
+  </div>
+  <div class={`${variants[variant]} rounded-xl md:rounded-r-xl p-6 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300`}>
+    <div class="text-base md:text-lg font-medium leading-relaxed prose prose-slate dark:prose-invert max-w-none">
+      <slot />
+    </div>
+  </div>
+</div>
