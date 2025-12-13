@@ -1,6 +1,7 @@
 ---
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
+import dashboardImage from '@/assets/dashboard-1200x800.png';
 ---
 
 <section
@@ -146,44 +147,11 @@ import { Badge } from '../ui/Badge';
         
         <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 bg-card backdrop-blur-sm group">
           <img
-            src="https://placehold.co/1200x800/14b8a6/ffffff?text=Dashboard+Preview+(1200x800)"
+            src={dashboardImage.src}
             alt="Vista previa de Ahorra Tranquilo Dashboard"
             class="w-full h-auto group-hover:scale-105 transition-transform duration-700"
             loading="eager"
           />
-
-          <div class="absolute -top-6 -right-6 animate-float">
-            <div class="bg-gradient-to-br from-success to-success/80 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-success/40 text-base font-bold backdrop-blur-sm border border-success/20">
-              <span class="block text-sm font-normal opacity-90 mb-0.5">Este mes</span>
-              +$500.000 💰
-            </div>
-          </div>
-
-          <div class="absolute -bottom-6 -left-6 animate-float animation-delay-200">
-            <div class="bg-gradient-to-br from-info to-info/80 text-white px-6 py-3 rounded-2xl shadow-2xl shadow-info/40 text-base font-bold backdrop-blur-sm border border-info/20">
-              <span class="block text-sm font-normal opacity-90 mb-0.5">Meta</span>
-              80% alcanzada 🎯
-            </div>
-          </div>
-
-          <div class="absolute top-1/2 -left-8 animate-bounce-soft animation-delay-400 hidden lg:block">
-            <div class="bg-gradient-to-br from-warning to-warning/80 text-white p-4 rounded-full shadow-2xl shadow-warning/40 backdrop-blur-sm border border-warning/20">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-4 animate-fade-in-up animation-delay-500">
-          <div class="bg-card/80 backdrop-blur-md px-6 py-3 rounded-full shadow-lg border border-border/50">
-            <span class="text-lg font-bold text-primary">10K+</span>
-            <span class="text-sm text-muted-foreground ml-2">Usuarios</span>
-          </div>
-          <div class="bg-card/80 backdrop-blur-md px-6 py-3 rounded-full shadow-lg border border-border/50">
-            <span class="text-lg font-bold text-success">$50B+</span>
-            <span class="text-sm text-muted-foreground ml-2">Gestionados</span>
-          </div>
         </div>
       </div>
     </div>
