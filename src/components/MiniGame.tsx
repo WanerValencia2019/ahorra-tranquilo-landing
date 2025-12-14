@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/Card.tsx';
 import { Badge } from './ui/Badge.tsx';
 import { Button } from './ui/Button.tsx';
-import { Gamepad2, Trophy, RefreshCw, Sparkles, ArrowDown } from 'lucide-react';
+import { Gamepad2, Trophy, RefreshCw, Sparkles, ArrowRight, ArrowLeft, Zap, Clock, TrendingUp, Info } from 'lucide-react';
 
 interface Transaction {
   id: number;
   name: string;
   amount: number;
   emoji: string;
+  category?: string;
 }
 
 interface MiniGameProps {
@@ -17,136 +18,259 @@ interface MiniGameProps {
 
 const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
   const [score, setScore] = useState(0);
-  const [level, setLevel] = useState(1);
+  const [streak, setStreak] = useState(0);
+  const [bestStreak, setBestStreak] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  const [draggedItem, setDraggedItem] = useState<Transaction | null>(null);
+  const [currentTransaction, setCurrentTransaction] = useState<Transaction | null>(null);
   const [feedback, setFeedback] = useState<string>('');
+  const [timeLeft, setTimeLeft] = useState(60);
+  const [isGameOver, setIsGameOver] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
 
-  const transactions: Transaction[] = [
-    { id: 1, name: 'Salario', amount: 3000000, emoji: '💰' },
-    { id: 2, name: 'Compras supermercado', amount: -250000, emoji: '🛒' },
-    { id: 3, name: 'Netflix', amount: -45000, emoji: '🎬' },
-    { id: 4, name: 'Restaurante', amount: -120000, emoji: '🍽️' },
-    { id: 5, name: 'Gasolina', amount: -150000, emoji: '⛽' },
-    { id: 6, name: 'Freelance', amount: 500000, emoji: '💻' },
+  const allTransactions: Transaction[] = [
+    { id: 1, name: 'Salario', amount: 3000000, emoji: '💰', category: 'Ingreso Laboral' },
+    { id: 2, name: 'Compras supermercado', amount: -250000, emoji: '🛒', category: 'Alimentación' },
+    { id: 3, name: 'Netflix', amount: -45000, emoji: '🎬', category: 'Entretenimiento' },
+    { id: 4, name: 'Restaurante', amount: -120000, emoji: '🍽️', category: 'Alimentación' },
+    { id: 5, name: 'Gasolina', amount: -150000, emoji: '⛽', category: 'Transporte' },
+    { id: 6, name: 'Freelance', amount: 500000, emoji: '💻', category: 'Ingreso Extra' },
+    { id: 7, name: 'Gimnasio', amount: -85000, emoji: '💪', category: 'Salud' },
+    { id: 8, name: 'Bonificación', amount: 400000, emoji: '🎁', category: 'Ingreso Extra' },
+    { id: 9, name: 'Uber', amount: -35000, emoji: '🚗', category: 'Transporte' },
+    { id: 10, name: 'Spotify', amount: -20000, emoji: '🎵', category: 'Entretenimiento' },
+    { id: 11, name: 'Venta online', amount: 180000, emoji: '📦', category: 'Ingreso Extra' },
+    { id: 12, name: 'Farmacia', amount: -65000, emoji: '💊', category: 'Salud' },
   ];
 
-  const [availableTransactions, setAvailableTransactions] = useState(transactions);
-  const [incomeList, setIncomeList] = useState<Transaction[]>([]);
-  const [expenseList, setExpenseList] = useState<Transaction[]>([]);
+  const [remainingTransactions, setRemainingTransactions] = useState([...allTransactions]);
+  const [totalAnswered, setTotalAnswered] = useState(0);
 
-  const handleDragStart = (transaction: Transaction) => {
-    setDraggedItem(transaction);
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Timer
+  useEffect(() => {
+    if (gameStarted && !isGameOver && timeLeft > 0) {
+      const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
+      return () => clearTimeout(timer);
+    } else if (timeLeft === 0 && gameStarted) {
+      setIsGameOver(true);
+    }
+  }, [timeLeft, gameStarted, isGameOver]);
+
+  // Seleccionar transacción aleatoria
+  const selectRandomTransaction = () => {
+    if (remainingTransactions.length === 0) {
+      setIsGameOver(true);
+      return;
+    }
+    const randomIndex = Math.floor(Math.random() * remainingTransactions.length);
+    setCurrentTransaction(remainingTransactions[randomIndex]);
   };
 
-  const handleDrop = (category: 'income' | 'expense') => {
-    if (!draggedItem) return;
+  const handleAnswer = (isIncome: boolean) => {
+    if (!currentTransaction) return;
 
     const isCorrect =
-      (category === 'income' && draggedItem.amount > 0) ||
-      (category === 'expense' && draggedItem.amount < 0);
+      (isIncome && currentTransaction.amount > 0) ||
+      (!isIncome && currentTransaction.amount < 0);
 
     if (isCorrect) {
-      setScore((prev) => prev + 10);
-      setFeedback('¡Correcto! 🎉');
-      
-      if (category === 'income') {
-        setIncomeList((prev) => [...prev, draggedItem]);
-      } else {
-        setExpenseList((prev) => [...prev, draggedItem]);
-      }
-
-      setAvailableTransactions((prev) => prev.filter((t) => t.id !== draggedItem.id));
+      const points = 10 + (streak * 2); // Bonus por racha
+      setScore((prev) => prev + points);
+      setStreak((prev) => prev + 1);
+      setBestStreak((prev) => Math.max(prev, streak + 1));
+      setFeedback(`¡Correcto! +${points} 🎉`);
     } else {
       setScore((prev) => Math.max(0, prev - 5));
-      setFeedback('¡Ups! Intenta de nuevo 😅');
+      setStreak(0);
+      setFeedback('¡Ups! Racha perdida 😅');
     }
 
-    setTimeout(() => setFeedback(''), 2000);
-    setDraggedItem(null);
+    setRemainingTransactions((prev) => prev.filter((t) => t.id !== currentTransaction.id));
+    setTotalAnswered((prev) => prev + 1);
+    
+    setTimeout(() => {
+      setFeedback('');
+      selectRandomTransaction();
+    }, 1000);
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
+  // Touch handlers para swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+    setSwipeDirection(null);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    
+    const currentTouch = e.touches[0].clientX;
+    const diff = touchStart - currentTouch;
+    
+    if (Math.abs(diff) > 50) {
+      setSwipeDirection(diff > 0 ? 'left' : 'right');
+    } else {
+      setSwipeDirection(null);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!swipeDirection) {
+      setTouchStart(null);
+      return;
+    }
+    
+    // Izquierda = Gasto, Derecha = Ingreso
+    handleAnswer(swipeDirection === 'right');
+    setTouchStart(null);
+    setSwipeDirection(null);
   };
 
   const resetGame = () => {
     setScore(0);
-    setLevel(1);
-    setAvailableTransactions(transactions);
-    setIncomeList([]);
-    setExpenseList([]);
+    setStreak(0);
+    setBestStreak(0);
+    setRemainingTransactions([...allTransactions]);
+    setTimeLeft(60);
+    setIsGameOver(false);
     setFeedback('');
+    setTotalAnswered(0);
     setGameStarted(true);
+    selectRandomTransaction();
   };
 
   const startGame = () => {
-    setGameStarted(true);
+    resetGame();
   };
 
   return (
-    <section id="mini-game" className={`py-8 md:py-8 bg-gradient-to-b from-accent/30 to-background ${className}`}>
+    <section id="mini-game" className={`py-8 md:py-12 ${className}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <Badge variant="outline" className="mb-4 gap-1">
-            <Gamepad2 className="size-3" />
-            Mini Juego
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Aprende Jugando 🎮
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Arrastra cada transacción a la categoría correcta: ¿Ingreso o Gasto?
-          </p>
-        </div>
-
         {!gameStarted ? (
           // Start Screen
-          <Card className="max-w-2xl mx-auto text-center p-12">
-            <div className="mb-8">
-              <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                <Gamepad2 className="size-12 text-primary" />
+          <Card className="max-w-3xl mx-auto border-2">
+            <CardHeader className="text-center space-y-4 pb-4">
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-success flex items-center justify-center mx-auto">
+                <Gamepad2 className="size-10 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">¿Listo para el desafío?</h3>
-              <p className="text-muted-foreground mb-6">
-                Clasifica correctamente todas las transacciones y mejora tu comprensión financiera
-              </p>
-            </div>
-            <Button onClick={startGame} size="lg" className="gap-2">
-              Comenzar Juego
-              <Sparkles className="size-4" />
-            </Button>
+              <div>
+                <CardTitle className="text-3xl md:text-4xl mb-3">Clasifica y Gana 🎯</CardTitle>
+                <CardDescription className="text-base">
+                  Diferencia entre Ingresos y Gastos - La base de la gestión financiera
+                </CardDescription>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Instrucciones */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-xl bg-success/10 border border-success/30">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-success/20">
+                      <ArrowRight className="size-5 text-success" />
+                    </div>
+                    <h4 className="font-bold text-success">Ingreso →</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {isMobile ? 'Desliza a la derecha' : 'Presiona el botón verde'} para transacciones que SUMAN dinero
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/30">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-destructive/20">
+                      <ArrowLeft className="size-5 text-destructive" />
+                    </div>
+                    <h4 className="font-bold text-destructive">Gasto ←</h4>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    {isMobile ? 'Desliza a la izquierda' : 'Presiona el botón rojo'} para transacciones que RESTAN dinero
+                  </p>
+                </div>
+              </div>
+
+              {/* Reglas */}
+              <div className="p-4 rounded-xl bg-card border">
+                <h4 className="font-bold mb-3 flex items-center gap-2">
+                  <Info className="size-4 text-primary" />
+                  Cómo Jugar
+                </h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Zap className="size-4 text-warning mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">Racha:</strong> Mantén respuestas correctas para multiplicar tus puntos (x2, x3...)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Clock className="size-4 text-info mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">Tiempo:</strong> Tienes 60 segundos para clasificar el máximo de transacciones</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Trophy className="size-4 text-warning mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">Puntos:</strong> +10 puntos base + bonus por racha. -5 por error</span>
+                  </li>
+                </ul>
+              </div>
+
+              <Button onClick={startGame} size="lg" className="w-full gap-2 text-lg h-14">
+                <Sparkles className="size-5" />
+                Comenzar Juego
+              </Button>
+            </CardContent>
           </Card>
         ) : (
           // Game Screen
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto space-y-6">
             {/* Score Bar */}
-            <div className="flex justify-between items-center mb-8 p-4 bg-card rounded-lg border">
-              <div className="flex items-center gap-4">
-                <div>
-                  <p className="text-sm text-muted-foreground">Puntuación</p>
-                  <p className="text-2xl font-bold text-primary">{score}</p>
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Nivel</p>
-                  <p className="text-2xl font-bold text-foreground">{level}</p>
-                </div>
-              </div>
-              <Button onClick={resetGame} variant="outline" size="sm" className="gap-2">
-                <RefreshCw className="size-4" />
-                Reiniciar
-              </Button>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <Card className="border-2 border-primary/50">
+                <CardContent className="p-4 text-center">
+                  <p className="text-xs text-muted-foreground mb-1">Puntuación</p>
+                  <p className="text-2xl md:text-3xl font-bold text-primary">{score}</p>
+                </CardContent>
+              </Card>
+              <Card className="border-2 border-warning/50">
+                <CardContent className="p-4 text-center">
+                  <p className="text-xs text-muted-foreground mb-1">Racha</p>
+                  <p className="text-2xl md:text-3xl font-bold text-warning flex items-center justify-center gap-1">
+                    <Zap className="size-5" />
+                    {streak}
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-2 border-info/50">
+                <CardContent className="p-4 text-center">
+                  <p className="text-xs text-muted-foreground mb-1">Tiempo</p>
+                  <p className={`text-2xl md:text-3xl font-bold ${timeLeft < 10 ? 'text-destructive' : 'text-info'}`}>
+                    {timeLeft}s
+                  </p>
+                </CardContent>
+              </Card>
+              <Card className="border-2">
+                <CardContent className="p-4 text-center">
+                  <p className="text-xs text-muted-foreground mb-1">Progreso</p>
+                  <p className="text-2xl md:text-3xl font-bold text-foreground">
+                    {totalAnswered}/{allTransactions.length}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Feedback */}
             {feedback && (
-              <div className="text-center mb-6">
+              <div className="text-center animate-bounce">
                 <Badge
-                  className={`text-lg py-2 px-4 ${
+                  className={`text-lg py-2 px-6 ${
                     feedback.includes('Correcto')
-                      ? 'bg-success text-success-foreground'
-                      : 'bg-destructive text-destructive-foreground'
+                      ? 'bg-success text-white'
+                      : 'bg-destructive text-white'
                   }`}
                 >
                   {feedback}
@@ -154,120 +278,119 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
               </div>
             )}
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Available Transactions */}
-              <Card className="md:col-span-1">
-                <CardHeader>
-                  <CardTitle className="text-lg">Transacciones</CardTitle>
-                  <CardDescription>Arrastra cada una a su categoría</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {availableTransactions.length > 0 ? (
-                    availableTransactions.map((transaction) => (
-                      <div
-                        key={transaction.id}
-                        draggable
-                        onDragStart={() => handleDragStart(transaction)}
-                        className="p-3 rounded-lg border-2 border-dashed border-border bg-card hover:bg-accent cursor-grab active:cursor-grabbing transition-colors"
+            {/* Game Over Screen */}
+            {isGameOver ? (
+              <Card className="border-2 border-warning/50">
+                <CardContent className="p-8 md:p-12 text-center space-y-6">
+                  <Trophy className="size-16 md:size-20 text-warning mx-auto" />
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">¡Juego Terminado!</h3>
+                    <p className="text-muted-foreground">
+                      {score > 100 ? '¡Excelente trabajo!' : score > 50 ? '¡Bien hecho!' : '¡Sigue practicando!'}
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                    <div className="p-4 rounded-xl bg-primary/10 border border-primary/30">
+                      <p className="text-sm text-muted-foreground mb-1">Puntuación Final</p>
+                      <p className="text-3xl font-bold text-primary">{score}</p>
+                    </div>
+                    <div className="p-4 rounded-xl bg-warning/10 border border-warning/30">
+                      <p className="text-sm text-muted-foreground mb-1">Mejor Racha</p>
+                      <p className="text-3xl font-bold text-warning">{bestStreak}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button onClick={resetGame} size="lg" className="gap-2">
+                      <RefreshCw className="size-4" />
+                      Jugar de Nuevo
+                    </Button>
+                    <Button onClick={() => setGameStarted(false)} variant="outline" size="lg">
+                      Ver Instrucciones
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : currentTransaction && (
+              // Current Transaction Card
+              <Card
+                className={`border-4 transition-all duration-300 ${
+                  swipeDirection === 'right'
+                    ? 'border-success/50 translate-x-2'
+                    : swipeDirection === 'left'
+                    ? 'border-destructive/50 -translate-x-2'
+                    : 'border-border'
+                }`}
+                onTouchStart={isMobile ? handleTouchStart : undefined}
+                onTouchMove={isMobile ? handleTouchMove : undefined}
+                onTouchEnd={isMobile ? handleTouchEnd : undefined}
+              >
+                <CardContent className="p-8 md:p-12">
+                  <div className="text-center space-y-6">
+                    {/* Emoji y Categoría */}
+                    <div>
+                      <div className="text-7xl md:text-8xl mb-4">{currentTransaction.emoji}</div>
+                      <Badge variant="outline" className="mb-2">
+                        {currentTransaction.category}
+                      </Badge>
+                    </div>
+
+                    {/* Nombre */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                      {currentTransaction.name}
+                    </h3>
+
+                    {/* Monto */}
+                    <p className="text-3xl md:text-4xl font-extrabold text-primary">
+                      {new Intl.NumberFormat('es-CO', {
+                        style: 'currency',
+                        currency: 'COP',
+                        minimumFractionDigits: 0,
+                      }).format(Math.abs(currentTransaction.amount))}
+                    </p>
+
+                    {/* Instrucción mobile */}
+                    {isMobile && (
+                      <p className="text-sm text-muted-foreground animate-pulse">
+                        Desliza → Ingreso | Desliza ← Gasto
+                      </p>
+                    )}
+
+                    {/* Botones (Desktop y Mobile) */}
+                    <div className="grid grid-cols-2 gap-4 max-w-md mx-auto pt-4">
+                      <Button
+                        onClick={() => handleAnswer(false)}
+                        variant="outline"
+                        size="lg"
+                        className="h-16 md:h-20 text-lg border-2 border-destructive/50 hover:bg-destructive hover:text-white group"
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-2xl">{transaction.emoji}</span>
-                            <span className="text-sm font-medium">{transaction.name}</span>
-                          </div>
-                          <ArrowDown className="size-4 text-muted-foreground" />
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="text-center py-8">
-                      <Trophy className="size-12 text-warning mx-auto mb-4" />
-                      <p className="font-semibold text-foreground mb-2">¡Completado!</p>
-                      <p className="text-sm text-muted-foreground">Puntuación final: {score}</p>
-                      <Button onClick={resetGame} className="mt-4" size="sm">
-                        Jugar de nuevo
+                        <ArrowLeft className="size-6 mr-2 group-hover:animate-pulse" />
+                        Gasto
+                      </Button>
+                      <Button
+                        onClick={() => handleAnswer(true)}
+                        size="lg"
+                        className="h-16 md:h-20 text-lg bg-success hover:bg-success/90 group"
+                      >
+                        Ingreso
+                        <ArrowRight className="size-6 ml-2 group-hover:animate-pulse" />
                       </Button>
                     </div>
-                  )}
+                  </div>
                 </CardContent>
               </Card>
+            )}
 
-              {/* Income Drop Zone */}
-              <Card
-                onDrop={() => handleDrop('income')}
-                onDragOver={handleDragOver}
-                className="md:col-span-1 border-2 border-dashed border-success/50 hover:border-success hover:bg-success/5 transition-all"
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg text-success flex items-center gap-2">
-                    💰 Ingresos
-                    <Badge variant="outline" className="ml-auto">
-                      {incomeList.length}
-                    </Badge>
-                  </CardTitle>
-                  <CardDescription>Dinero que recibes</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {incomeList.length > 0 ? (
-                    incomeList.map((transaction) => (
-                      <div key={transaction.id} className="p-3 rounded-lg bg-success/10 border border-success/20">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xl">{transaction.emoji}</span>
-                            <span className="text-sm font-medium">{transaction.name}</span>
-                          </div>
-                          <span className="text-sm font-semibold text-success">
-                            +{new Intl.NumberFormat('es-CO').format(transaction.amount)}
-                          </span>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="text-center py-8 text-muted-foreground">
-                      <p className="text-sm">Arrastra los ingresos aquí</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
-              {/* Expense Drop Zone */}
-              <Card
-                onDrop={() => handleDrop('expense')}
-                onDragOver={handleDragOver}
-                className="md:col-span-1 border-2 border-dashed border-destructive/50 hover:border-destructive hover:bg-destructive/5 transition-all"
-              >
-                <CardHeader>
-                  <CardTitle className="text-lg text-destructive flex items-center gap-2">
-                    💸 Gastos
-                    <Badge variant="outline" className="ml-auto">
-                      {expenseList.length}
-                    </Badge>
-                  </CardTitle>
-                  <CardDescription>Dinero que gastas</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {expenseList.length > 0 ? (
-                    expenseList.map((transaction) => (
-                      <div key={transaction.id} className="p-3 rounded-lg bg-destructive/10 border border-destructive/20">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xl">{transaction.emoji}</span>
-                            <span className="text-sm font-medium">{transaction.name}</span>
-                          </div>
-                          <span className="text-sm font-semibold text-destructive">
-                            {new Intl.NumberFormat('es-CO').format(transaction.amount)}
-                          </span>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <div className="text-center py-8 text-muted-foreground">
-                      <p className="text-sm">Arrastra los gastos aquí</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
+            {/* Instrucción para resetear */}
+            {!isGameOver && (
+              <div className="text-center">
+                <Button onClick={resetGame} variant="ghost" size="sm" className="gap-2">
+                  <RefreshCw className="size-3" />
+                  Reiniciar Juego
+                </Button>
+              </div>
+            )}
           </div>
         )}
       </div>
