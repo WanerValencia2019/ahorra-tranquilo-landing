@@ -159,18 +159,18 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
         {!gameStarted ? (
           // Start Screen
           <Card className="max-w-3xl mx-auto border-2">
-            <CardHeader className="text-center space-y-4 pb-4">
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-success flex items-center justify-center mx-auto">
+            <CardHeader className="text-center space-y-3 pb-3 px-4 md:px-6">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary to-success flex items-center justify-center mx-auto">
                 <Gamepad2 className="size-10 text-white" />
               </div>
               <div>
-                <CardTitle className="text-3xl md:text-4xl mb-3">Clasifica y Gana 🎯</CardTitle>
-                <CardDescription className="text-base">
+                <CardTitle className="text-2xl md:text-4xl mb-2">Clasifica y Gana 🎯</CardTitle>
+                <CardDescription className="text-sm md:text-base">
                   Diferencia entre Ingresos y Gastos - La base de la gestión financiera
                 </CardDescription>
               </div>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 md:space-y-6 px-4 md:px-6">
               {/* Instrucciones */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-success/10 border border-success/30">
@@ -229,11 +229,11 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
           // Game Screen
           <div className="max-w-4xl mx-auto space-y-6">
             {/* Score Bar */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
               <Card className="border-2 border-primary/50">
-                <CardContent className="p-4 text-center">
-                  <p className="text-xs text-muted-foreground mb-1">Puntuación</p>
-                  <p className="text-2xl md:text-3xl font-bold text-primary">{score}</p>
+                <CardContent className="p-2 md:p-4 text-center">
+                  <p className="text-[10px] md:text-xs text-muted-foreground mb-0.5 md:mb-1">Puntuación</p>
+                  <p className="text-xl md:text-3xl font-bold text-primary">{score}</p>
                 </CardContent>
               </Card>
               <Card className="border-2 border-warning/50">
@@ -326,23 +326,23 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
                 onTouchMove={isMobile ? handleTouchMove : undefined}
                 onTouchEnd={isMobile ? handleTouchEnd : undefined}
               >
-                <CardContent className="p-8 md:p-12">
-                  <div className="text-center space-y-6">
+                <CardContent className="p-4 md:p-12">
+                  <div className="text-center space-y-3 md:space-y-6">
                     {/* Emoji y Categoría */}
                     <div>
-                      <div className="text-7xl md:text-8xl mb-4">{currentTransaction.emoji}</div>
+                      <div className="text-5xl md:text-8xl mb-2 md:mb-4">{currentTransaction.emoji}</div>
                       <Badge variant="outline" className="mb-2">
                         {currentTransaction.category}
                       </Badge>
                     </div>
 
                     {/* Nombre */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                    <h3 className="text-xl md:text-3xl font-bold text-foreground">
                       {currentTransaction.name}
                     </h3>
 
                     {/* Monto */}
-                    <p className="text-3xl md:text-4xl font-extrabold text-primary">
+                    <p className="text-2xl md:text-4xl font-extrabold text-primary">
                       {new Intl.NumberFormat('es-CO', {
                         style: 'currency',
                         currency: 'COP',
@@ -358,21 +358,19 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
                     )}
 
                     {/* Botones (Desktop y Mobile) */}
-                    <div className="grid grid-cols-2 gap-4 max-w-md mx-auto pt-4">
+                    <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-md mx-auto pt-2 md:pt-4">
                       <Button
                         onClick={() => handleAnswer(false)}
                         variant="outline"
                         size="lg"
-                        className="h-16 md:h-20 text-lg border-2 border-destructive/50 hover:bg-destructive hover:text-white group"
-                      >
+                        className="h-12 md:h-20 text-base md:text-lg border-2 border-destructive/50 hover:bg-destructive hover:text-white group">
                         <ArrowLeft className="size-6 mr-2 group-hover:animate-pulse" />
                         Gasto
                       </Button>
                       <Button
                         onClick={() => handleAnswer(true)}
                         size="lg"
-                        className="h-16 md:h-20 text-lg bg-success hover:bg-success/90 group"
-                      >
+                        className="h-12 md:h-20 text-base md:text-lg bg-success hover:bg-success/90 group">
                         Ingreso
                         <ArrowRight className="size-6 ml-2 group-hover:animate-pulse" />
                       </Button>

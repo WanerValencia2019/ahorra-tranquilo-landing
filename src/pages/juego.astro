@@ -3,170 +3,191 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import MiniGame from '../components/MiniGame.tsx';
-import { Badge } from '../components/ui/Badge.tsx';
-import { Gamepad2, ArrowLeft } from 'lucide-react';
+import SavingRaceGame from '../components/SavingRaceGame.tsx';
 ---
 
 <Layout
-  title="Mini Juego Financiero | Ahorra Tranquilo"
-  description="Aprende educación financiera jugando. Clasifica transacciones y mejora tu conocimiento sobre ingresos y gastos."
+  title="Mini Juegos Financieros | Ahorra Tranquilo"
+  description="Aprende educación financiera jugando. Dos juegos interactivos para mejorar tu conocimiento sobre finanzas personales."
 >
   <Navbar />
   <main id="main-content">
     <!-- Hero -->
-    <section class="py-8 md:py-12 bg-background dark:bg-slate-900">
+    <section class="py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="/" class="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6 transition-colors">
-          <ArrowLeft className="size-4" />
-          Volver al inicio
-        </a>
-        <div class="text-center max-w-4xl mx-auto">
-          <Badge variant="outline" className="mb-4 gap-1.5">
-            <Gamepad2 className="size-4" />
-            Educación Financiera Interactiva
-          </Badge>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Aprende Finanzas Jugando 🎮
+        <div class="text-center max-w-4xl mx-auto space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/30 text-primary font-medium text-sm">
+            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Educación Financiera Interactiva</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+            Aprende Finanzas Jugando
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-success to-info mt-2">🎮</span>
           </h1>
-          <p class="text-muted-foreground text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
-            Mejora tu conocimiento financiero de forma divertida. Clasificar transacciones es la base para gestionar tu dinero inteligentemente.
+          <p class="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+            Dos juegos interactivos para dominar conceptos clave de finanzas personales
           </p>
+        </div>
+      </div>
+    </section>
 
-          {/* Stats del juego */}
-          <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
-            <div class="text-center p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <div class="text-2xl font-bold text-primary mb-1">60s</div>
-              <div class="text-xs text-muted-foreground">Por Partida</div>
-            </div>
-            <div class="text-center p-4 rounded-xl bg-success/10 border border-success/20">
-              <div class="text-2xl font-bold text-success mb-1">12</div>
-              <div class="text-xs text-muted-foreground">Transacciones</div>
-            </div>
-            <div class="text-center p-4 rounded-xl bg-warning/10 border border-warning/20">
-              <div class="text-2xl font-bold text-warning mb-1">∞</div>
-              <div class="text-xs text-muted-foreground">Rachas Posibles</div>
-            </div>
+    <!-- Game Selector -->
+    <section class="py-8 md:py-12 bg-gradient-to-b from-background to-accent/20 dark:from-slate-900 dark:to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto space-y-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Elige tu Juego</h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Clasifica y Gana Card -->
+            <button
+              onclick="showGame('classify')"
+              class="game-card text-left p-6 rounded-2xl bg-card border-2 border-border hover:border-primary/50 transition-all group"
+            >
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-success flex items-center justify-center flex-shrink-0">
+                  <svg class="size-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Clasifica y Gana 🎯</h3>
+                  <p class="text-sm text-muted-foreground mb-3">Diferencia entre Ingresos y Gastos</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 rounded-md bg-primary/10 text-primary">60 segundos</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-success/10 text-success">12 transacciones</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-warning/10 text-warning">Sistema de racha</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-border">
+                <span class="text-sm font-medium text-foreground">Nivel: Principiante</span>
+                <svg class="size-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- La Carrera del Ahorro Card -->
+            <button
+              onclick="showGame('saving')"
+              class="game-card text-left p-6 rounded-2xl bg-card border-2 border-border hover:border-success/50 transition-all group"
+            >
+              <div class="flex items-start gap-4 mb-4">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-success to-info flex items-center justify-center flex-shrink-0">
+                  <svg class="size-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold mb-2 group-hover:text-success transition-colors">La Carrera del Ahorro 🚀</h3>
+                  <p class="text-sm text-muted-foreground mb-3">Alcanza tu meta de ahorro</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 rounded-md bg-info/10 text-info">90 segundos</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-success/10 text-success">Interés compuesto</span>
+                    <span class="text-xs px-2 py-1 rounded-md bg-warning/10 text-warning">5 logros</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-4 border-t border-border">
+                <span class="text-sm font-medium text-foreground">Nivel: Intermedio</span>
+                <svg class="size-5 text-success group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Game Component -->
-    <MiniGame client:load />
+    <!-- Game Components (Hidden by default) -->
+    <div id="classify-game" class="hidden bg-gradient-to-b from-background to-accent/20 dark:from-slate-900 dark:to-slate-800">
+      <MiniGame client:load />
+    </div>
+    
+    <div id="saving-game" class="hidden bg-gradient-to-b from-background to-accent/20 dark:from-slate-900 dark:to-slate-800">
+      <SavingRaceGame client:load />
+    </div>
 
-    <!-- Tips -->
-    <section class="py-8 md:py-12 bg-gradient-to-b from-accent/30 to-background dark:from-slate-800 dark:to-slate-900">
+    <!-- Educational Content -->
+    <section class="py-12 md:py-16 bg-gradient-to-b from-accent/30 to-background dark:from-slate-800 dark:to-slate-900">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center text-foreground">
-            💡 Aprende Mientras Juegas
-          </h2>
+        <div class="max-w-5xl mx-auto space-y-10">
+          <div class="text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-3">
+              💡 Conceptos que Aprenderás
+            </h2>
+            <p class="text-muted-foreground">Educación financiera práctica mientras te diviertes</p>
+          </div>
           
-          <div class="grid md:grid-cols-2 gap-6 mb-8">
-            {/* Ingresos */}
-            <div class="p-6 rounded-2xl bg-card border-2 border-success/30 hover:border-success/50 transition-all">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="p-3 rounded-xl bg-success/20">
-                  <svg class="size-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
-                  </svg>
-                </div>
-                <h3 class="font-bold text-xl text-success">💰 Ingresos</h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-5 rounded-xl bg-gradient-to-br from-success/10 to-success/5 border border-success/20">
+              <div class="w-10 h-10 rounded-lg bg-success/20 flex items-center justify-center mb-3">
+                <svg class="size-5 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+                </svg>
               </div>
-              <p class="text-muted-foreground mb-4 leading-relaxed">
-                Cualquier dinero que <strong class="text-foreground">recibes o entra</strong> a tu bolsillo
+              <h4 class="font-bold text-foreground mb-2">Ingresos vs Gastos</h4>
+              <p class="text-sm text-muted-foreground">
+                Aprende a diferenciar entre el dinero que entra y el que sale
               </p>
-              <ul class="space-y-2 text-sm">
-                <li class="flex items-start gap-2">
-                  <span class="text-success">✓</span>
-                  <span><strong>Salario:</strong> Tu pago mensual del trabajo</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-success">✓</span>
-                  <span><strong>Freelance:</strong> Trabajos independientes</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-success">✓</span>
-                  <span><strong>Bonos:</strong> Primas, aguinaldos, etc.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-success">✓</span>
-                  <span><strong>Ventas:</strong> Dinero de productos vendidos</span>
-                </li>
-              </ul>
+            </div>
+            
+            <div class="p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
+              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-3">
+                <svg class="size-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-foreground mb-2">Sistema de Racha</h4>
+              <p class="text-sm text-muted-foreground">
+                Multiplica tus puntos con decisiones correctas consecutivas
+              </p>
             </div>
 
-            {/* Gastos */}
-            <div class="p-6 rounded-2xl bg-card border-2 border-destructive/30 hover:border-destructive/50 transition-all">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="p-3 rounded-xl bg-destructive/20">
-                  <svg class="size-6 text-destructive" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4"></path>
-                  </svg>
-                </div>
-                <h3 class="font-bold text-xl text-destructive">💸 Gastos</h3>
+            <div class="p-5 rounded-xl bg-gradient-to-br from-info/10 to-info/5 border border-info/20">
+              <div class="w-10 h-10 rounded-lg bg-info/20 flex items-center justify-center mb-3">
+                <svg class="size-5 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
               </div>
-              <p class="text-muted-foreground mb-4 leading-relaxed">
-                Todo lo que <strong class="text-foreground">pagas o sale</strong> de tu bolsillo
+              <h4 class="font-bold text-foreground mb-2">Interés Compuesto</h4>
+              <p class="text-sm text-muted-foreground">
+                Observa cómo tu ahorro crece automáticamente con el tiempo
               </p>
-              <ul class="space-y-2 text-sm">
-                <li class="flex items-start gap-2">
-                  <span class="text-destructive">✓</span>
-                  <span><strong>Compras:</strong> Supermercado, ropa, etc.</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-destructive">✓</span>
-                  <span><strong>Servicios:</strong> Netflix, Spotify, gimnasio</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-destructive">✓</span>
-                  <span><strong>Transporte:</strong> Gasolina, Uber, bus</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-destructive">✓</span>
-                  <span><strong>Comida:</strong> Restaurantes, domicilios</span>
-                </li>
-              </ul>
+            </div>
+            
+            <div class="p-5 rounded-xl bg-gradient-to-br from-warning/10 to-warning/5 border border-warning/20">
+              <div class="w-10 h-10 rounded-lg bg-warning/20 flex items-center justify-center mb-3">
+                <svg class="size-5 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-foreground mb-2">Logros & Badges</h4>
+              <p class="text-sm text-muted-foreground">
+                Desbloquea logros alcanzando metas y mejorando tus habilidades
+              </p>
             </div>
           </div>
 
-          {/* Conceptos clave */}
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20">
-              <h4 class="font-bold text-foreground mb-2 flex items-center gap-2">
-                <svg class="size-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-                Sistema de Racha
-              </h4>
-              <p class="text-sm text-muted-foreground">
-                Respuestas correctas consecutivas multiplican tus puntos: x2, x3, x4...
-              </p>
-            </div>
-            
-            <div class="p-4 rounded-xl bg-gradient-to-br from-warning/10 to-warning/5 border border-warning/20">
-              <h4 class="font-bold text-foreground mb-2 flex items-center gap-2">
-                <svg class="size-5 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Contrareloj
-              </h4>
-              <p class="text-sm text-muted-foreground">
-                60 segundos para clasificar todas las transacciones que puedas
-              </p>
-            </div>
-            
-            <div class="p-4 rounded-xl bg-gradient-to-br from-info/10 to-info/5 border border-info/20 sm:col-span-2 lg:col-span-1">
-              <h4 class="font-bold text-foreground mb-2 flex items-center gap-2">
-                <svg class="size-5 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                </svg>
-                Mobile Friendly
-              </h4>
-              <p class="text-sm text-muted-foreground">
-                Desliza con el dedo: → Ingreso, ← Gasto. ¡Rápido y divertido!
-              </p>
-            </div>
+          <!-- CTA Section -->
+          <div class="text-center p-8 rounded-2xl bg-gradient-to-r from-primary/10 to-success/10 dark:from-primary/5 dark:to-success/5 border border-border mt-8">
+            <h3 class="text-xl md:text-2xl font-bold mb-3">¿Listo para Aprender Jugando?</h3>
+            <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Selecciona un juego arriba y comienza tu camino hacia la educación financiera
+            </p>
+            <a 
+              href="/planes" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary/90 text-white transition-all font-semibold"
+            >
+              Ver Planes Premium
+              <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -174,3 +195,38 @@ import { Gamepad2, ArrowLeft } from 'lucide-react';
   </main>
   <Footer />
 </Layout>
+
+<script>
+  function showGame(gameType: 'classify' | 'saving') {
+    // Ocultar selector
+    const selector = document.querySelector('section:has(.game-card)');
+    if (selector) {
+      selector.classList.add('hidden');
+    }
+
+    // Ocultar ambos juegos
+    const classifyGame = document.getElementById('classify-game');
+    const savingGame = document.getElementById('saving-game');
+    
+    if (classifyGame) classifyGame.classList.add('hidden');
+    if (savingGame) savingGame.classList.add('hidden');
+
+    // Mostrar el juego seleccionado
+    if (gameType === 'classify' && classifyGame) {
+      classifyGame.classList.remove('hidden');
+    } else if (gameType === 'saving' && savingGame) {
+      savingGame.classList.remove('hidden');
+    }
+
+    // Scroll suave al juego
+    setTimeout(() => {
+      const gameElement = document.getElementById(`${gameType}-game`);
+      if (gameElement) {
+        gameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+
+  // Hacer la función global
+  (window as any).showGame = showGame;
+</script>
