@@ -292,13 +292,15 @@ const relatedPosts = allPosts
             <div class="grid md:grid-cols-3 gap-6">
               {relatedPosts.map((post) => {
                 const RelatedIcon = categoryIcons[post.data.category] || BookOpen;
+                const relatedImagePath = post.data.image ? `../../assets/blogs/${post.data.image.split('/').pop()}` : null;
+                const relatedPostImage = relatedImagePath && images[relatedImagePath] ? images[relatedImagePath].default.src : null;
                 return (
                   <a href={`/blog/${post.slug}`} class="group">
                     <div class="bg-card rounded-2xl overflow-hidden border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                       <div class="relative overflow-hidden bg-muted h-48">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
                         <img
-                          src={post.data.image || 'https://placehold.co/600x400/14b8a6/ffffff?text=Blog+Post'}
+                          src={relatedPostImage || 'https://placehold.co/600x400/14b8a6/ffffff?text=Blog+Post'}
                           alt={post.data.title}
                           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           loading="lazy"
