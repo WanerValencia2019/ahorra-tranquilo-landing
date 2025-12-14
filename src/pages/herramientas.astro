@@ -14,9 +14,9 @@ import { Button } from '../components/ui/Button.tsx';
   <Navbar />
   <main id="main-content">
     <!-- Hero mejorado -->
-    <section class="relative py-8 md:py-12 overflow-hidden">
+    <section class="relative py-8 md:py-12 overflow-hidden dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       <!-- Background decorativo -->
-      <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-success/5"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-success/5 dark:from-transparent dark:via-transparent dark:to-transparent"></div>
       <div class="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
       <div class="absolute bottom-20 right-10 w-96 h-96 bg-success/10 rounded-full blur-3xl"></div>
 
@@ -63,13 +63,13 @@ import { Button } from '../components/ui/Button.tsx';
     </section>
 
     <!-- Tools Component -->
-    <section class="relative">
+    <section class="relative bg-background d">
       <div class="">
         <!-- Componente de herramientas -->
         <Tools client:load />
 
         <!-- Features de las herramientas -->
-        <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
+        <div class="grid md:grid-cols-3 gap-6 max-w-4xl md:mx-auto mx-4 mt-8 pb-8 ">
           <div class="text-center p-6 rounded-xl bg-card border border-primary/30 hover:border-primary/50 transition-all">
             <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
               <svg class="size-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
