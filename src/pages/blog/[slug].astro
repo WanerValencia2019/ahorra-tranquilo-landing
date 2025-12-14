@@ -64,68 +64,64 @@ const relatedPosts = allPosts
   ogImage={featuredImage?.src || '/og-image.png'}
 >
   <Navbar />
-  <main class="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
-    <!-- Hero Section with Gradient Background -->
+  <main class="min-h-screen bg-background">
+    <!-- Hero Section with Dark Gradient Background -->
     <article>
-      <header class="relative py-8 md:py-10 overflow-hidden">
-        <!-- Animated Background -->
-        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-success/10 to-info/10"></div>
-        <div class="absolute inset-0 opacity-20">
-          <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-          <div class="absolute top-0 right-1/4 w-96 h-96 bg-success rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-          <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-info rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-        </div>
+      <header class="relative py-12 md:py-16 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-background dark:from-slate-950 dark:via-slate-900 dark:to-background">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 dark:bg-primary/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-success/30 dark:bg-success/20 rounded-full blur-3xl"></div>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <!-- Breadcrumb -->
-          <nav class="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <a href="/" class="hover:text-primary transition-colors font-medium">Inicio</a>
-            <span>/</span>
-            <a href="/blog" class="hover:text-primary transition-colors font-medium">Blog</a>
-            <span>/</span>
+          <nav class="flex items-center gap-2 text-sm mb-8">
+            <a href="/" class="text-slate-300 dark:text-slate-400 hover:text-primary transition-colors font-medium">Inicio</a>
+            <span class="text-slate-500">/</span>
+            <a href="/blog" class="text-slate-300 dark:text-slate-400 hover:text-primary transition-colors font-medium">Blog</a>
+            <span class="text-slate-500">/</span>
             <span class="text-foreground font-semibold">{entry.data.category}</span>
           </nav>
 
           <div class="max-w-4xl mx-auto">
             <!-- Category Badge -->
             <div class="flex items-center gap-3 mb-6 animate-fade-in">
-              <Badge client:load variant="default" className="gap-2 text-base px-4 py-2">
+              <Badge client:load variant="default" className="gap-2 text-base px-4 py-2 font-semibold">
                 <Icon className="size-5" />
                 {entry.data.category}
               </Badge>
               {entry.data.featured && (
-                <Badge client:load className="bg-gradient-to-r from-warning to-warning/60 text-primary-foreground border-0 px-4 py-2 text-base">
+                <Badge client:load className="bg-gradient-to-r from-amber-500 to-amber-600 text-white border-0 px-4 py-2 text-base font-semibold">
                   ⭐ Destacado
                 </Badge>
               )}
             </div>
 
-            <!-- Title with Gradient -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent animate-fade-in-up">
+            <!-- Title -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-foreground animate-fade-in-up">
               {entry.data.title}
             </h1>
 
             <!-- Description -->
-            <p class="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
+            <p class="text-xl md:text-2xl text-slate-300 dark:text-slate-400 mb-8 leading-relaxed font-medium animate-fade-in-up animation-delay-200">
               {entry.data.description}
             </p>
 
             <!-- Meta Info with Cards -->
             <div class="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
-              <div class="flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-3 rounded-lg border shadow-sm">
+              <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
                 <User className="size-5 text-primary" />
-                <span class="font-medium">{entry.data.author}</span>
+                <span class="font-medium text-foreground">{entry.data.author}</span>
               </div>
-              <div class="flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-3 rounded-lg border shadow-sm">
+              <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
                 <Calendar className="size-5 text-primary" />
-                <time datetime={entry.data.pubDate.toISOString()}>
+                <time datetime={entry.data.pubDate.toISOString()} class="text-foreground">
                   {formatDate(entry.data.pubDate)}
                 </time>
               </div>
               {entry.data.readTime && (
-                <div class="flex items-center gap-2 bg-card/80 backdrop-blur-sm px-4 py-3 rounded-lg border shadow-sm">
+                <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
                   <Clock className="size-5 text-primary" />
-                  <span>{entry.data.readTime}</span>
+                  <span class="text-foreground">{entry.data.readTime}</span>
                 </div>
               )}
             </div>
@@ -133,9 +129,9 @@ const relatedPosts = allPosts
         </div>
       </header>
 
-      <!-- Featured Image with Parallax Effect -->
+      <!-- Featured Image -->
       {featuredImage && (
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12 relative z-20">
           <div class="max-w-5xl mx-auto">
             <div class="relative overflow-hidden rounded-3xl shadow-2xl group">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
@@ -151,23 +147,23 @@ const relatedPosts = allPosts
       )}
 
       <!-- Article Content with Sidebar Layout -->
-      <section class="pb-8 md:pb-10">
+      <section class="py-12 md:py-16 bg-gradient-to-b from-slate-900/30 via-slate-800/20 to-background dark:from-slate-950/50 dark:via-slate-900/30 dark:to-background">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-[1fr_300px] gap-12">
               <!-- Main Content -->
               <div class="min-w-0">
-                <article class="prose-blog">
+                <article class="prose-blog bg-card/50 dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-10 border border-border/50">
                   <Content />
                 </article>
 
                 <!-- Tags -->
                 {entry.data.tags && entry.data.tags.length > 0 && (
-                  <div class="mt-12">
-                    <h3 class="text-sm font-semibold text-muted-foreground mb-3">Etiquetas</h3>
+                  <div class="mt-8 bg-card/50 dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+                    <h3 class="text-sm font-bold text-foreground mb-3">Etiquetas</h3>
                     <div class="flex flex-wrap gap-2">
                       {entry.data.tags.map((tag) => (
-                        <Badge client:load variant="outline" className="text-sm">
+                        <Badge client:load variant="outline" className="text-sm border-primary/30 text-foreground hover:bg-primary/10">
                           #{tag}
                         </Badge>
                       ))}
@@ -176,8 +172,8 @@ const relatedPosts = allPosts
                 )}
 
                 <!-- Back to Blog -->
-                <div class="mt-12">
-                  <a href="/blog" class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
+                <div class="mt-8">
+                  <a href="/blog" class="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors font-semibold">
                     <ArrowLeft className="size-4" />
                     Volver al blog
                   </a>
@@ -185,10 +181,10 @@ const relatedPosts = allPosts
               </div>
 
               <!-- Sidebar -->
-              <aside class="lg:sticky lg:top-24 lg:self-start space-y-8">
+              <aside class="lg:sticky lg:top-24 lg:self-start space-y-6">
                 <!-- Share Card -->
-                <div class="bg-gradient-to-br from-card to-card/50 backdrop-blur-sm rounded-2xl border p-6 shadow-lg">
-                  <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                <div class="bg-card/80 dark:bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 p-6 shadow-lg">
+                  <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-foreground">
                     <Share2 className="size-5 text-primary" />
                     Compartir
                   </h3>
@@ -196,7 +192,7 @@ const relatedPosts = allPosts
                     <Button 
                       client:load 
                       variant="default"
-                      className="w-full gap-2"
+                      className="w-full gap-2 font-semibold"
                       onClick={() => {
                         const url = window.location.href;
                         const title = encodeURIComponent(document.title);
@@ -220,12 +216,12 @@ const relatedPosts = allPosts
                       Compartir artículo
                     </Button>
                     
-                    <div class="grid grid-cols-3 gap-2 mt-2">
+                    <div class="grid grid-cols-3 gap-2 mt-4">
                       <a
                         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex items-center justify-center p-2 rounded-lg bg-[#1877F2] hover:bg-[#1877F2]/90 text-primary-foreground transition-colors"
+                        class="flex items-center justify-center p-3 rounded-lg bg-[#1877F2] hover:bg-[#1877F2]/90 text-white transition-colors shadow-md hover:shadow-lg"
                         title="Compartir en Facebook"
                       >
                         <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
@@ -237,7 +233,7 @@ const relatedPosts = allPosts
                         href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(entry.data.title)}&url=${encodeURIComponent(Astro.url.href)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex items-center justify-center p-2 rounded-lg bg-black hover:bg-black/90 text-primary-foreground transition-colors"
+                        class="flex items-center justify-center p-3 rounded-lg bg-black hover:bg-black/80 text-white transition-colors shadow-md hover:shadow-lg"
                         title="Compartir en X (Twitter)"
                       >
                         <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
@@ -249,7 +245,7 @@ const relatedPosts = allPosts
                         href={`https://wa.me/?text=${encodeURIComponent(entry.data.title + ' ' + Astro.url.href)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="flex items-center justify-center p-2 rounded-lg bg-[#25D366] hover:bg-[#25D366]/90 text-primary-foreground transition-colors"
+                        class="flex items-center justify-center p-3 rounded-lg bg-[#25D366] hover:bg-[#25D366]/90 text-white transition-colors shadow-md hover:shadow-lg"
                         title="Compartir en WhatsApp"
                       >
                         <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
@@ -261,9 +257,9 @@ const relatedPosts = allPosts
                 </div>
 
                 <!-- CTA Card -->
-                <div class="bg-gradient-to-br from-primary to-success text-primary-foreground rounded-2xl p-6 shadow-xl">
-                  <h3 class="font-bold text-xl mb-3">¿Te gustó este artículo?</h3>
-                  <p class="text-primary-foreground/90 text-sm mb-4">
+                <div class="bg-gradient-to-br from-primary to-success text-white rounded-2xl p-6 shadow-xl">
+                  <h3 class="font-bold text-xl mb-3 text-white">¿Te gustó este artículo?</h3>
+                  <p class="text-white/90 text-sm mb-4">
                     Empieza a gestionar tus finanzas hoy con Ahorra Tranquilo
                   </p>
                   <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer">
@@ -281,8 +277,7 @@ const relatedPosts = allPosts
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (
-      <section class="py-8 md:py-10 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-primary/5 via-success/5 to-background"></div>
+      <section class="py-12 md:py-16 relative overflow-hidden bg-gradient-to-b from-slate-900/20 via-slate-800/10 to-background dark:from-slate-950/30 dark:via-slate-900/20 dark:to-background">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-6xl mx-auto">
             <div class="flex items-center gap-3 mb-8">
