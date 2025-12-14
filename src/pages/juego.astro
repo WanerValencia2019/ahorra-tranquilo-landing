@@ -105,10 +105,32 @@ import SavingRaceGame from '../components/SavingRaceGame.tsx';
 
     <!-- Game Components (Hidden by default) -->
     <div id="classify-game" class="hidden bg-gradient-to-b from-background to-accent/20 dark:from-slate-900 dark:to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <button
+          onclick="backToSelector()"
+          class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4 group"
+        >
+          <svg class="size-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span class="text-sm font-medium">Volver a selección</span>
+        </button>
+      </div>
       <MiniGame client:load />
     </div>
     
     <div id="saving-game" class="hidden bg-gradient-to-b from-background to-accent/20 dark:from-slate-900 dark:to-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+        <button
+          onclick="backToSelector()"
+          class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4 group"
+        >
+          <svg class="size-4 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span class="text-sm font-medium">Volver a selección</span>
+        </button>
+      </div>
       <SavingRaceGame client:load />
     </div>
 
@@ -227,6 +249,29 @@ import SavingRaceGame from '../components/SavingRaceGame.tsx';
     }, 100);
   }
 
-  // Hacer la función global
+  function backToSelector() {
+    // Ocultar ambos juegos
+    const classifyGame = document.getElementById('classify-game');
+    const savingGame = document.getElementById('saving-game');
+    
+    if (classifyGame) classifyGame.classList.add('hidden');
+    if (savingGame) savingGame.classList.add('hidden');
+
+    // Mostrar selector
+    const selector = document.querySelector('section:has(.game-card)');
+    if (selector) {
+      selector.classList.remove('hidden');
+    }
+
+    // Scroll al selector
+    setTimeout(() => {
+      if (selector) {
+        selector.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+
+  // Hacer las funciones globales
   (window as any).showGame = showGame;
+  (window as any).backToSelector = backToSelector;
 </script>
