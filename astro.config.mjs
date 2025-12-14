@@ -7,6 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
+  site: 'https://ahorratranquilo.com',
   integrations: [react(), mdx()],
   vite: {
     plugins: [tailwindcss()],
