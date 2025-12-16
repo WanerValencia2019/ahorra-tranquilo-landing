@@ -6,9 +6,11 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
   site: 'https://ahorratranquilo.com',
-  integrations: [react(), mdx()],
+  integrations: [react(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
