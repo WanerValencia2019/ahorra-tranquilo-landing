@@ -28,9 +28,9 @@ import imgPresupuestos from '../../assets/blogs/telegram/presupuestos-telegram.j
 
 ## 🚀 ¡Nueva Integración Disponible!
 
-¿Te ha pasado que compras algo y olvidas registrarlo? ¿O que estás en la fila del supermercado y no quieres abrir otra app? 
+¿Olvidas registrar tus gastos? ¿No quieres abrir otra app en el supermercado? 
 
-**Ahora puedes controlar tus finanzas directamente desde Telegram**, la app de mensajería que ya usas todos los días.
+**Ahora controla tus finanzas desde Telegram**, la app que ya usas todos los días.
 
 <QuickStats
   stats={[
@@ -45,30 +45,30 @@ import imgPresupuestos from '../../assets/blogs/telegram/presupuestos-telegram.j
 
 ## ¿Qué Puede Hacer el Bot?
 
-Nuestro bot de Telegram es tu **asistente financiero personal** que te permite:
+Tu **asistente financiero personal** en Telegram:
 
 <Callout type="info" title="Funcionalidades Principales">
-- 💸 **Registrar gastos** — En 4 pasos simples con botones interactivos
-- 💵 **Registrar ingresos** — Añade tu salario, freelance o cualquier entrada
-- 🔄 **Hacer transferencias** — Mueve dinero entre tus cuentas al instante
-- 📊 **Consultar saldos** — Ve el estado de todas tus cuentas
-- 🎯 **Revisar metas** — Monitorea tu progreso de ahorro
-- 💳 **Ver presupuestos** — Controla cuánto has gastado vs tu límite
+- 💸 **Registrar gastos** en 4 pasos
+- 💵 **Registrar ingresos** al instante  
+- 🔄 **Hacer transferencias** entre cuentas
+- 📊 **Consultar saldos** de todas tus cuentas
+- 🎯 **Revisar metas** de ahorro
+- 💳 **Ver presupuestos** y cuánto llevas gastado
 </Callout>
 
 <HighlightBox emoji="💡">
-**¿Por qué Telegram?** Porque está siempre abierto, es rápido y no necesitas descargar otra app. Registras un gasto mientras caminas, en el bus o esperando el café.
+**¿Por qué Telegram?** Está siempre abierto, es rápido y no necesitas otra app. Registra gastos mientras caminas o esperas el café.
 </HighlightBox>
 
 ---
 
-## Cómo Vincular tu Cuenta (3 Pasos)
+## Cómo Vincular tu Cuenta
 
-Vincular tu cuenta es **súper fácil y seguro**. Solo necesitas generar un token único desde la app web.
+Vincular es **fácil y seguro**. Solo genera un token desde la app web.
 
-### Paso 1: Genera tu Token de Vinculación
+### Paso 1: Genera tu Token
 
-Entra a [app.ahorratranquilo.com](https://app.ahorratranquilo.com) y ve a la sección de **Perfil** o **Configuración**. Encontrarás la tarjeta del **Bot de Telegram**.
+Entra a [app.ahorratranquilo.com](https://app.ahorratranquilo.com) → **Perfil** → **Bot de Telegram**.
 
 <figure class="my-8">
   <Image src={imgSeccionVinculacion} alt="Sección Bot de Telegram en la app" class="rounded-xl shadow-lg w-full" />
@@ -79,12 +79,12 @@ Entra a [app.ahorratranquilo.com](https://app.ahorratranquilo.com) y ve a la sec
 
 Haz clic en **"Generar token"**. El token dura **5 minutos** y solo sirve una vez.
 
-### Paso 2: Copia el Enlace o Comando
+### Paso 2: Copia el Enlace
 
-Una vez generado, verás dos opciones:
+Verás dos opciones:
 
-- **Enlace directo**: Ábrelo y te lleva directo al bot con el token
-- **Comando /start**: Cópialo si ya tienes el bot abierto
+- **Enlace directo** → Te lleva al bot automáticamente
+- **Comando /start** → Úsalo si ya tienes el bot abierto
 
 <figure class="my-8 max-w-sm mx-auto">
   <Image src={imgTokenGenerado} alt="Token generado con enlace directo y comando" class="rounded-xl shadow-lg w-full" />
@@ -95,7 +95,7 @@ Una vez generado, verás dos opciones:
 
 ### Paso 3: Vincula en Telegram
 
-Abre Telegram, busca **@ahorratranquilo_bot** o usa el enlace directo. El bot te confirmará la vinculación exitosa.
+Busca **@ahorratranquilo_bot** o usa el enlace directo. ¡Listo!
 
 <figure class="my-8 max-w-sm mx-auto">
   <Image src={imgVinculacionExitosa} alt="Confirmación de vinculación exitosa en Telegram" class="rounded-xl shadow-lg w-full" />
@@ -157,14 +157,14 @@ El flujo más usado es registrar gastos. Es **intuitivo y guiado**:
 </figure>
 
 <Callout type="success" title="¡Presupuestos Automáticos!">
-Cuando registras un gasto, el bot **actualiza automáticamente** tus presupuestos relacionados. Si gastas en "Alimentación", tu presupuesto de alimentación se actualiza al instante.
+Cuando registras un gasto, el bot **actualiza automáticamente** tus presupuestos. Gastas en "Alimentación" y tu presupuesto se actualiza al instante.
 </Callout>
 
 ---
 
 ## Consultas Rápidas
 
-Necesitas saber cuánto tienes en tus cuentas? Un comando y listo:
+¿Necesitas saber cuánto tienes? Un comando y listo.
 
 ### Ver Cuentas (`/cuentas`)
 
@@ -177,10 +177,11 @@ Necesitas saber cuánto tienes en tus cuentas? Un comando y listo:
 
 ### Ver Presupuestos (`/presupuestos`)
 
-El bot te muestra tus presupuestos con **indicadores visuales**:
-- ✅ Verde: Vas bien, tienes margen
-- ⚠️ Amarillo: Cerca del límite (>80%)
-- 🚨 Rojo: Excediste el presupuesto
+Indicadores visuales:
+
+- ✅ **Verde**: Vas bien, tienes margen
+- ⚠️ **Amarillo**: Cerca del límite (+80%)
+- 🚨 **Rojo**: Excediste el presupuesto
 
 <figure class="my-8 max-w-sm mx-auto">
   <Image src={imgPresupuestos} alt="Vista del comando /presupuestos en el bot" class="rounded-xl shadow-lg w-full" />
@@ -200,15 +201,15 @@ Tu seguridad financiera es nuestra prioridad:
   <StatsCard number="AES-256" label="Cifrado de datos" color="success" icon="🛡️" />
 </div>
 
-<Callout type="warning" title="Buenas Prácticas de Seguridad">
-- ❌ **Nunca** compartas tu token de vinculación
-- ❌ **No** envíes comandos en grupos públicos
-- ✅ Si sospechas algo raro, desvincula desde la app web
-- ✅ El bot **nunca** te pedirá contraseñas o datos bancarios
+<Callout type="warning" title="Buenas Prácticas">
+- ❌ **Nunca** compartas tu token
+- ❌ **No** uses comandos en grupos públicos
+- ✅ Si algo es raro, desvincula desde la app
+- ✅ El bot **nunca** pide contraseñas
 </Callout>
 
 <HighlightBox emoji="🔒">
-**Dato técnico**: El bot no almacena información financiera en Telegram. Todos los datos viajan encriptados a nuestros servidores seguros y solo se procesan en tiempo real.
+**Dato técnico**: El bot no guarda nada en Telegram. Todo viaja encriptado a nuestros servidores y se procesa en tiempo real.
 </HighlightBox>
 
 ---

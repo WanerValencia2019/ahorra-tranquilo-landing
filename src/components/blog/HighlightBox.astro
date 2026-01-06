@@ -13,12 +13,12 @@ const variants = {
 };
 ---
 
-<div class="my-10 relative group">
-  <div class="absolute -left-3 md:-left-4 top-4 md:top-6 text-4xl md:text-5xl opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300">
+<div class="my-6 md:my-10 relative group">
+  <div class="absolute -left-2 md:-left-4 top-3 md:top-6 text-3xl md:text-5xl opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-300">
     {emoji}
   </div>
-  <div class={`${variants[variant]} rounded-xl md:rounded-r-xl p-6 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300`}>
-    <div class="text-base md:text-lg font-medium leading-relaxed prose prose-slate dark:prose-invert max-w-none">
+  <div class={`${variants[variant]} rounded-xl md:rounded-r-xl p-4 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300`}>
+    <div class="text-sm md:text-lg font-medium leading-relaxed prose prose-slate dark:prose-invert max-w-none">
       <slot />
     </div>
   </div>

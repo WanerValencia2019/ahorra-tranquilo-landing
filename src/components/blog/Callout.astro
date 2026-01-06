@@ -45,17 +45,17 @@ const style = styles[type];
 ---
 
 <div 
-  class={`${style.bg} ${style.border} border-l-4 rounded-xl p-6 my-8 shadow-card hover:shadow-card-hover transition-all duration-300 group`}
+  class={`${style.bg} ${style.border} border-l-4 rounded-xl p-4 md:p-6 my-6 md:my-8 shadow-card hover:shadow-card-hover transition-all duration-300 group`}
   role="note"
   aria-label={title || style.title}
 >
-  <div class="flex items-start gap-4">
-    <div class={`${style.iconBg} ${style.iconColor} rounded-lg p-3 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-      <span class="text-2xl" aria-hidden="true">{style.icon}</span>
+  <div class="flex items-start gap-3 md:gap-4">
+    <div class={`${style.iconBg} ${style.iconColor} rounded-lg p-2 md:p-3 shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+      <span class="text-xl md:text-2xl" aria-hidden="true">{style.icon}</span>
     </div>
     <div class="flex-1 min-w-0">
-      <h4 class="font-semibold text-lg mb-3 text-foreground">{title || style.title}</h4>
-      <div class="text-foreground/80 space-y-2 prose prose-slate dark:prose-invert max-w-none">
+      <h4 class="font-semibold text-base md:text-lg mb-2 md:mb-3 text-foreground">{title || style.title}</h4>
+      <div class="text-sm md:text-base text-foreground/80 space-y-1.5 md:space-y-2 prose prose-slate dark:prose-invert max-w-none [&_li]:leading-relaxed [&_ul]:space-y-2">
         <slot />
       </div>
     </div>
