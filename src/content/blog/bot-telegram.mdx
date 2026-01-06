@@ -1,0 +1,284 @@
+---
+title: "Bot de Telegram: Controla tus Finanzas sin Salir del Chat"
+description: "Aprende a vincular tu cuenta de Ahorra Tranquilo con nuestro bot de Telegram y registra gastos, ingresos y transferencias en segundos. Guía completa paso a paso."
+pubDate: 2026-01-05T00:00:00Z
+author: "Waner Valencia"
+category: "Herramientas"
+tags: ["telegram", "bot", "integración", "automatización", "finanzas personales"]
+image: "../assets/blogs/telegram/hero-bot-telegram.jpg"
+featured: true
+readTime: "6 min"
+---
+
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import ComparisonTable from '../../components/blog/ComparisonTable.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import QuickStats from '../../components/blog/QuickStats.astro';
+import StepByStep from '../../components/blog/StepByStep.astro';
+
+## 🚀 ¡Nueva Integración Disponible!
+
+¿Te ha pasado que compras algo y olvidas registrarlo? ¿O que estás en la fila del supermercado y no quieres abrir otra app? 
+
+**Ahora puedes controlar tus finanzas directamente desde Telegram**, la app de mensajería que ya usas todos los días.
+
+<QuickStats
+  stats={[
+    { value: "11", label: "Comandos disponibles", icon: "⚡", trend: "up" },
+    { value: "<5s", label: "Registrar un gasto", icon: "⏱️", trend: "up" },
+    { value: "100%", label: "Seguro y encriptado", icon: "🔒", trend: "up" }
+  ]}
+  columns={3}
+/>
+
+---
+
+## ¿Qué Puede Hacer el Bot?
+
+Nuestro bot de Telegram es tu **asistente financiero personal** que te permite:
+
+<Callout type="info" title="Funcionalidades Principales">
+- 💸 **Registrar gastos** — En 4 pasos simples con botones interactivos
+- 💵 **Registrar ingresos** — Añade tu salario, freelance o cualquier entrada
+- 🔄 **Hacer transferencias** — Mueve dinero entre tus cuentas al instante
+- 📊 **Consultar saldos** — Ve el estado de todas tus cuentas
+- 🎯 **Revisar metas** — Monitorea tu progreso de ahorro
+- 💳 **Ver presupuestos** — Controla cuánto has gastado vs tu límite
+</Callout>
+
+<HighlightBox emoji="💡">
+**¿Por qué Telegram?** Porque está siempre abierto, es rápido y no necesitas descargar otra app. Registras un gasto mientras caminas, en el bus o esperando el café.
+</HighlightBox>
+
+---
+
+## Cómo Vincular tu Cuenta (3 Pasos)
+
+Vincular tu cuenta es **súper fácil y seguro**. Solo necesitas generar un token único desde la app web.
+
+### Paso 1: Genera tu Token de Vinculación
+
+Entra a [app.ahorratranquilo.com](https://app.ahorratranquilo.com) y ve a la sección de **Metas** o **Configuración**. Encontrarás la tarjeta del **Bot de Telegram**.
+
+{/* PLACEHOLDER: Captura de la sección Bot de Telegram en la app - 800x500px */}
+<figure class="my-8">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[8/5] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">📱</div>
+      <p class="text-sm text-muted-foreground font-medium">bot-telegram-seccion-app.jpg</p>
+      <p class="text-xs text-muted-foreground">800 × 500px — Sección Bot de Telegram en la app</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Encuentra la tarjeta del Bot de Telegram en la sección de Metas
+  </figcaption>
+</figure>
+
+Haz clic en **"Generar token"**. El token dura **5 minutos** y solo sirve una vez.
+
+### Paso 2: Copia el Enlace o Comando
+
+Una vez generado, verás dos opciones:
+
+- **Enlace directo**: Ábrelo y te lleva directo al bot con el token
+- **Comando /start**: Cópialo si ya tienes el bot abierto
+
+{/* PLACEHOLDER: Token generado con enlace y comando - 400x600px (móvil) */}
+<figure class="my-8 max-w-sm mx-auto">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[2/3] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">🔗</div>
+      <p class="text-sm text-muted-foreground font-medium">token-generado.jpg</p>
+      <p class="text-xs text-muted-foreground">400 × 600px — Token listo para copiar</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Copia el enlace directo o el comando /start con tu token
+  </figcaption>
+</figure>
+
+### Paso 3: Vincula en Telegram
+
+Abre Telegram, busca **@ahorratranquilo_bot** o usa el enlace directo. El bot te confirmará la vinculación exitosa.
+
+{/* PLACEHOLDER: Bot de Telegram - Mensaje de bienvenida - 400x800px (móvil) */}
+<figure class="my-8 max-w-sm mx-auto">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[1/2] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">✅</div>
+      <p class="text-sm text-muted-foreground font-medium">bot-vinculacion-exitosa.jpg</p>
+      <p class="text-xs text-muted-foreground">400 × 800px — Confirmación de vinculación</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    ¡Listo! Tu cuenta está vinculada de forma segura
+  </figcaption>
+</figure>
+
+<ProTip>
+**Tip de seguridad**: El token expira en 5 minutos y solo funciona una vez. Si no lo usas a tiempo, simplemente genera uno nuevo.
+</ProTip>
+
+---
+
+## Comandos Disponibles
+
+Una vez vinculado, tienes acceso a **11 comandos** para controlar tus finanzas:
+
+<ComparisonTable title="Lista de Comandos">
+
+| Comando | Descripción |
+|---------|-------------|
+| `/start` | Iniciar bot o vincular cuenta |
+| `/menu` | Mostrar menú principal con botones |
+| `/gasto` | Registrar un gasto rápido |
+| `/ingreso` | Registrar un ingreso |
+| `/transferencia` | Mover dinero entre cuentas |
+| `/cuentas` | Ver todas tus cuentas y saldos |
+| `/metas` | Ver progreso de metas de ahorro |
+| `/presupuestos` | Ver presupuestos activos |
+| `/transacciones` | Ver últimas transacciones |
+| `/help` | Mostrar ayuda |
+| `/cancel` | Cancelar operación actual |
+
+</ComparisonTable>
+
+---
+
+## Cómo Registrar un Gasto
+
+El flujo más usado es registrar gastos. Es **intuitivo y guiado**:
+
+<StepByStep
+  steps={[
+    { title: "Inicia el flujo", description: "Usa /gasto o el botón 'Registrar Gasto' del menú" },
+    { title: "Ingresa el monto", description: "Escribe la cantidad (ej: 50000 o $50,000)" },
+    { title: "Selecciona la cuenta", description: "Elige con botones: Nequi, Bancolombia, Efectivo..." },
+    { title: "Elige la categoría", description: "Alimentación, Transporte, Servicios, etc." },
+    { title: "Asocia a una meta (opcional)", description: "Si el gasto impacta una meta de ahorro" },
+    { title: "Confirma", description: "Revisa el resumen y confirma con un clic" }
+  ]}
+/>
+
+{/* PLACEHOLDER: Flujo de registro de gasto - 400x700px (móvil) */}
+<figure class="my-8 max-w-sm mx-auto">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[4/7] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">💸</div>
+      <p class="text-sm text-muted-foreground font-medium">flujo-registro-gasto.jpg</p>
+      <p class="text-xs text-muted-foreground">400 × 700px — Ejemplo de registro de gasto</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Registrar un gasto toma menos de 10 segundos
+  </figcaption>
+</figure>
+
+<Callout type="success" title="¡Presupuestos Automáticos!">
+Cuando registras un gasto, el bot **actualiza automáticamente** tus presupuestos relacionados. Si gastas en "Alimentación", tu presupuesto de alimentación se actualiza al instante.
+</Callout>
+
+---
+
+## Consultas Rápidas
+
+Necesitas saber cuánto tienes en tus cuentas? Un comando y listo:
+
+### Ver Cuentas (`/cuentas`)
+
+{/* PLACEHOLDER: Consulta de cuentas - 400x600px (móvil) */}
+<figure class="my-8 max-w-sm mx-auto">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[2/3] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">💼</div>
+      <p class="text-sm text-muted-foreground font-medium">consulta-cuentas.jpg</p>
+      <p class="text-xs text-muted-foreground">400 × 600px — Vista de cuentas</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Ve el saldo de todas tus cuentas de un vistazo
+  </figcaption>
+</figure>
+
+### Ver Presupuestos (`/presupuestos`)
+
+El bot te muestra tus presupuestos con **indicadores visuales**:
+- ✅ Verde: Vas bien, tienes margen
+- ⚠️ Amarillo: Cerca del límite (>80%)
+- 🚨 Rojo: Excediste el presupuesto
+
+{/* PLACEHOLDER: Consulta de presupuestos - 400x600px (móvil) */}
+<figure class="my-8 max-w-sm mx-auto">
+  <div class="bg-slate-200 dark:bg-slate-800 rounded-xl aspect-[2/3] flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-slate-600">
+    <div class="text-center p-6">
+      <div class="text-4xl mb-2">💳</div>
+      <p class="text-sm text-muted-foreground font-medium">consulta-presupuestos.jpg</p>
+      <p class="text-xs text-muted-foreground">400 × 600px — Vista de presupuestos</p>
+    </div>
+  </div>
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Monitorea tus presupuestos con indicadores de estado
+  </figcaption>
+</figure>
+
+---
+
+## Seguridad de tu Información
+
+Tu seguridad financiera es nuestra prioridad:
+
+<div class="grid md:grid-cols-2 gap-6 my-8">
+  <StatsCard number="🔐" label="Token único por usuario" color="primary" icon="🔑" />
+  <StatsCard number="AES-256" label="Cifrado de datos" color="success" icon="🛡️" />
+</div>
+
+<Callout type="warning" title="Buenas Prácticas de Seguridad">
+- ❌ **Nunca** compartas tu token de vinculación
+- ❌ **No** envíes comandos en grupos públicos
+- ✅ Si sospechas algo raro, desvincula desde la app web
+- ✅ El bot **nunca** te pedirá contraseñas o datos bancarios
+</Callout>
+
+<HighlightBox emoji="🔒">
+**Dato técnico**: El bot no almacena información financiera en Telegram. Todos los datos viajan encriptados a nuestros servidores seguros y solo se procesan en tiempo real.
+</HighlightBox>
+
+---
+
+## Empieza Ahora
+
+¿Listo para llevar tus finanzas en el bolsillo?
+
+<div class="flex flex-col sm:flex-row gap-4 justify-center my-8">
+  <a href="https://app.ahorratranquilo.com" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>
+    Generar mi Token
+  </a>
+  <a href="https://t.me/ahorratranquilo_bot" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0088cc] text-white font-semibold hover:opacity-90 transition-opacity">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+    Abrir Bot en Telegram
+  </a>
+</div>
+
+<ProTip>
+**¿Tienes dudas?** Usa el comando `/help` en el bot o escríbenos por el [formulario de contacto](/contacto). ¡Estamos para ayudarte!
+</ProTip>
+
+---
+
+## Próximamente
+
+Estamos trabajando en nuevas funcionalidades para el bot:
+
+- 📅 **Transacciones recurrentes** — Programa gastos fijos automáticos
+- 📈 **Resumen semanal** — Recibe un reporte cada domingo
+- 🔔 **Alertas de presupuesto** — Notificaciones cuando te acerques al límite
+- 🤖 **Registro por voz** — "Gasté 30 mil en almuerzo"
+
+¿Tienes ideas? ¡Cuéntanos en el [roadmap](/roadmap)!
