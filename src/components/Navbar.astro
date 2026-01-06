@@ -35,7 +35,9 @@ const currentPath = Astro.url.pathname;
         <svg class="w-4 h-4 mr-1.5 text-primary opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
         </svg>
-        <span>Funcionalidades</span>
+        <span class="flex items-center gap-1.5">Funcionalidades
+          <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-gradient-to-r from-[#D97706] to-[#F59E0B] text-white animate-pulse-slow shadow-sm">NUEVO</span>
+        </span>
       </a>
       <a href="/herramientas" class={`nav-link group ${currentPath === '/herramientas' ? 'nav-link-active' : ''}`}>
         <span class="nav-link-bg"></span>
@@ -150,7 +152,9 @@ const currentPath = Astro.url.pathname;
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
         </svg>
-        <span>Funcionalidades</span>
+        <span class="flex items-center gap-2 flex-1">Funcionalidades
+          <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-primary text-primary-foreground animate-pulse-slow">NUEVO</span>
+        </span>
       </a>
       <a href="/herramientas" class={`mobile-nav-link ${currentPath === '/herramientas' ? 'mobile-nav-link-active' : ''}`}>
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -278,6 +282,19 @@ const currentPath = Astro.url.pathname;
     background-color: hsl(var(--primary) / 0.1);
     color: var(--primary) !important;
     font-weight: 600;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
   }
 </style>
 

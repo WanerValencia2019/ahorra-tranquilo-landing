@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
 
 const footerLinks = {
   producto: [
-    { name: 'Funcionalidades', href: '/funcionalidades' },
+    { name: 'Funcionalidades', href: '/funcionalidades', badge: 'NUEVO' },
     { name: 'Precios', href: '/planes' },
     { name: 'Roadmap', href: '/roadmap' },
     { name: 'Mini Juegos', href: '/juego' },
@@ -100,13 +100,18 @@ const socialLinks = [
                 <li>
                   <a
                     href={link.href}
-                    class={`text-xs sm:text-sm transition-colors ${
+                    class={`text-xs sm:text-sm transition-colors inline-flex items-center gap-1.5 ${
                       isActive
                         ? 'text-primary font-semibold'
                         : 'text-muted-foreground hover:text-primary'
                     }`}
                   >
                     {link.name}
+                    {link.badge && (
+                      <span class="inline-flex items-center px-1.5 py-0.5 rounded-md text-[9px] font-bold bg-primary text-primary-foreground">
+                        {link.badge}
+                      </span>
+                    )}
                   </a>
                 </li>
               );
