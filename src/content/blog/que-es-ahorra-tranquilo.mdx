@@ -1,0 +1,616 @@
+---
+title: "Ahorra Tranquilo: Cómo Funciona la App que Te Da Control de Tu Dinero (Sin Tocarlo)"
+description: "Conoce Ahorra Tranquilo: la herramienta gratuita para organizar tus finanzas personales. Mira cómo funciona, qué puedes hacer y por qué NO manejamos tu dinero."
+pubDate: 2026-01-08T00:00:00Z
+author: "Waner Valencia"
+category: "Herramientas"
+tags: ["ahorra tranquilo", "finanzas personales", "control financiero", "app finanzas", "guía", "tutorial"]
+image: "../../assets/blogs/que-es-ahorra-tranquilo/hero-app-preview.jpg"
+featured: true
+readTime: "10 min"
+---
+
+import { Image } from 'astro:assets';
+import Callout from '../../components/blog/Callout.astro';
+import StatsCard from '../../components/blog/StatsCard.astro';
+import ComparisonTable from '../../components/blog/ComparisonTable.astro';
+import HighlightBox from '../../components/blog/HighlightBox.astro';
+import ProTip from '../../components/blog/ProTip.astro';
+import QuickStats from '../../components/blog/QuickStats.astro';
+import StepByStep from '../../components/blog/StepByStep.astro';
+
+{/* 
+  ============================================================
+  📸 PLACEHOLDERS DE IMÁGENES - Crear en:
+  src/assets/blogs/que-es-ahorra-tranquilo/
+  ============================================================
+  
+  | Archivo                    | Tamaño Recomendado | Descripción                                    |
+  |----------------------------|--------------------|------------------------------------------------|
+  | hero-app-preview.jpg       | 1200x675px (16:9)  | Mockup de la app en laptop/móvil               |
+  | dashboard-completo.jpg     | 1200x800px (3:2)   | Dashboard con balance, gráficos y resumen      |
+  | registro-transaccion.jpg   | 800x600px (4:3)    | Modal/form de registro de gasto o ingreso      |
+  | metas-progreso.jpg         | 1000x600px (5:3)   | Vista de metas con barras de progreso          |
+  | presupuestos-alertas.jpg   | 1000x600px (5:3)   | Presupuestos con indicadores de estado         |
+  | reportes-graficos.jpg      | 1200x700px (12:7)  | Gráficos de gastos por categoría               |
+  | bot-telegram-demo.jpg      | 400x800px (1:2)    | Screenshot vertical de conversación con bot    |
+  | cuentas-multiples.jpg      | 800x500px (8:5)    | Lista de cuentas (Nequi, Bancolombia, etc.)    |
+  
+  Descomentar los imports cuando tengas las imágenes:
+  
+  import imgHero from '../../assets/blogs/que-es-ahorra-tranquilo/hero-app-preview.jpg';
+  import imgDashboard from '../../assets/blogs/que-es-ahorra-tranquilo/dashboard-completo.jpg';
+  import imgRegistro from '../../assets/blogs/que-es-ahorra-tranquilo/registro-transaccion.jpg';
+  import imgMetas from '../../assets/blogs/que-es-ahorra-tranquilo/metas-progreso.jpg';
+  import imgPresupuestos from '../../assets/blogs/que-es-ahorra-tranquilo/presupuestos-alertas.jpg';
+  import imgReportes from '../../assets/blogs/que-es-ahorra-tranquilo/reportes-graficos.jpg';
+  import imgTelegram from '../../assets/blogs/que-es-ahorra-tranquilo/bot-telegram-demo.jpg';
+  import imgCuentas from '../../assets/blogs/que-es-ahorra-tranquilo/cuentas-multiples.jpg';
+*/}
+
+## ¿Sientes que tu dinero "desaparece"?
+
+Ganas tu sueldo, pagas lo necesario, y al final del mes... **no sabes a dónde se fue el resto**.
+
+No estás solo. Es el problema financiero #1 que escuchamos. Y tiene solución.
+
+<div class="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/50 dark:to-emerald-950/50 border-2 border-teal-200 dark:border-teal-800 rounded-2xl p-8 my-8 text-center">
+  <p class="text-2xl md:text-3xl font-bold text-teal-700 dark:text-teal-400 leading-relaxed">
+    Ahorra Tranquilo es tu <span class="underline decoration-4 decoration-teal-500">cuaderno financiero inteligente</span>
+  </p>
+  <p class="text-lg text-teal-600 dark:text-teal-500 mt-3">
+    Organiza, analiza y mejora tus finanzas personales — sin complicaciones.
+  </p>
+</div>
+
+{/* 
+<figure class="my-10">
+  <Image src={imgHero} alt="Ahorra Tranquilo en laptop y móvil mostrando el dashboard financiero" class="rounded-2xl shadow-2xl w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-3">
+    Tu centro de control financiero, disponible en cualquier dispositivo
+  </figcaption>
+</figure>
+*/}
+
+<QuickStats
+  stats={[
+    { value: "100%", label: "Gratis para empezar", icon: "🆓", trend: "up" },
+    { value: "+15", label: "Funcionalidades", icon: "⚡", trend: "up" },
+    { value: "2 min", label: "Para configurar", icon: "⏱️", trend: "up" },
+    { value: "0", label: "Conexiones bancarias", icon: "🔒", trend: "up" }
+  ]}
+  columns={4}
+/>
+
+---
+
+## 🎯 ¿Qué Puedes Hacer con Ahorra Tranquilo?
+
+No es magia. Es **visibilidad + organización + constancia**. Te damos las herramientas para lograrlo:
+
+### 📊 Dashboard: Tu Situación en un Vistazo
+
+Todo lo que necesitas saber sobre tu dinero, **en una sola pantalla**:
+
+- 💰 **Balance total** de todas tus cuentas
+- 📈 **Ingresos vs Gastos** del mes actual
+- 🎯 **Progreso de metas** de ahorro
+- ⚠️ **Alertas** de presupuestos cerca del límite
+
+{/* 
+<figure class="my-8">
+  <Image src={imgDashboard} alt="Dashboard de Ahorra Tranquilo con balance, gráficos y resumen del mes" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Dashboard: Ve tu balance, gastos del mes, metas y alertas en tiempo real
+  </figcaption>
+</figure>
+*/}
+
+<HighlightBox emoji="💡">
+**En 5 segundos sabes:** cuánto tienes, cuánto has gastado y si vas bien con tus metas. Sin buscar en mil lugares.
+</HighlightBox>
+
+---
+
+### 💸 Registro de Ingresos y Gastos
+
+Anotar una transacción toma **menos de 10 segundos**:
+
+<StepByStep
+  steps={[
+    { title: "Elige el tipo", description: "¿Es un gasto, ingreso o transferencia?" },
+    { title: "Ingresa el monto", description: "Escribe la cantidad (acepta formatos como 50000 o $50,000)" },
+    { title: "Selecciona cuenta y categoría", description: "¿De qué cuenta salió? ¿En qué categoría va?" },
+    { title: "¡Listo!", description: "Tu registro se guarda y actualiza todo automáticamente" }
+  ]}
+/>
+
+{/* 
+<figure class="my-8 max-w-lg mx-auto">
+  <Image src={imgRegistro} alt="Formulario de registro de gasto en Ahorra Tranquilo" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Registrar un gasto: simple, rápido y sin fricción
+  </figcaption>
+</figure>
+*/}
+
+<ProTip>
+**¿Te da pereza abrir la app?** Usa nuestro [Bot de Telegram](/blog/bot-telegram) y registra gastos desde el chat en 5 segundos. Más abajo te cuento cómo.
+</ProTip>
+
+---
+
+### 🎯 Metas de Ahorro con Progreso Visual
+
+Define **para qué** estás ahorrando y ve tu progreso en tiempo real:
+
+- 🏖️ **Vacaciones** — $2,000,000 para diciembre
+- 🚨 **Fondo de emergencia** — 3 meses de gastos
+- 💻 **Laptop nueva** — $3,500,000 en 6 meses
+- 🎓 **Curso de programación** — $800,000
+
+{/* 
+<figure class="my-8">
+  <Image src={imgMetas} alt="Vista de metas de ahorro con barras de progreso en Ahorra Tranquilo" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Metas: Define objetivos con fecha límite y ve cuánto te falta para lograrlos
+  </figcaption>
+</figure>
+*/}
+
+<Callout type="success" title="Ahorro con intención">
+No es "ahorrar lo que sobre" (que nunca sobra). Es **definir cuánto necesitas y trabajar hacia eso**.
+</Callout>
+
+---
+
+### 💳 Presupuestos que Te Avisan Antes de Pasarte
+
+Establece límites por categoría y **recibe alertas** cuando te acerques:
+
+<div class="grid md:grid-cols-3 gap-4 my-8">
+  <div class="bg-green-50 dark:bg-green-950/30 rounded-xl p-4 text-center border-2 border-green-200 dark:border-green-800">
+    <span class="text-3xl">✅</span>
+    <p class="font-bold text-green-700 dark:text-green-400 mt-2">Vas bien</p>
+    <p class="text-sm text-green-600 dark:text-green-500">Menos del 80% usado</p>
+  </div>
+  <div class="bg-amber-50 dark:bg-amber-950/30 rounded-xl p-4 text-center border-2 border-amber-200 dark:border-amber-800">
+    <span class="text-3xl">⚠️</span>
+    <p class="font-bold text-amber-700 dark:text-amber-400 mt-2">Cuidado</p>
+    <p class="text-sm text-amber-600 dark:text-amber-500">Entre 80% y 100%</p>
+  </div>
+  <div class="bg-red-50 dark:bg-red-950/30 rounded-xl p-4 text-center border-2 border-red-200 dark:border-red-800">
+    <span class="text-3xl">🚨</span>
+    <p class="font-bold text-red-700 dark:text-red-400 mt-2">Excedido</p>
+    <p class="text-sm text-red-600 dark:text-red-500">Pasaste el límite</p>
+  </div>
+</div>
+
+{/* 
+<figure class="my-8">
+  <Image src={imgPresupuestos} alt="Vista de presupuestos con indicadores de estado verde, amarillo y rojo" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Presupuestos: Ve de un vistazo qué categorías van bien y cuáles necesitan atención
+  </figcaption>
+</figure>
+*/}
+
+---
+
+### 📈 Reportes y Gráficos que Sí Entiendes
+
+Nada de tablas complicadas. **Gráficos visuales** que te muestran:
+
+- 🥧 **¿En qué gastas más?** — Gráfico de torta por categoría
+- 📊 **¿Cómo va el mes?** — Comparativa ingresos vs gastos
+- 📅 **¿Cómo te fue los últimos meses?** — Tendencias y patrones
+- 📥 **Exporta tus datos** — PDF, Excel o CSV cuando lo necesites
+
+{/* 
+<figure class="my-8">
+  <Image src={imgReportes} alt="Gráficos de análisis financiero mostrando gastos por categoría y tendencias" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Reportes: Descubre patrones de gasto que no sabías que tenías
+  </figcaption>
+</figure>
+*/}
+
+---
+
+### 🏦 Múltiples Cuentas en un Solo Lugar
+
+¿Tienes dinero en varios lados? Nosotros también. Por eso puedes registrar:
+
+- 🟣 **Nequi** — Tu billetera del día a día
+- 🟡 **Bancolombia** — Cuenta de ahorros
+- 🟢 **Davivienda** — Cuenta nómina
+- 💵 **Efectivo** — Lo que llevas en la billetera
+- 🐷 **Alcancía** — Tus ahorros físicos
+
+{/* 
+<figure class="my-8 max-w-2xl mx-auto">
+  <Image src={imgCuentas} alt="Lista de cuentas en Ahorra Tranquilo mostrando Nequi, Bancolombia y Efectivo" class="rounded-xl shadow-lg w-full" />
+  <figcaption class="text-center text-sm text-muted-foreground mt-2">
+    Cuentas: Administra todas tus fuentes de dinero desde un solo lugar
+  </figcaption>
+</figure>
+*/}
+
+<HighlightBox emoji="🔄">
+**Transferencias incluidas:** Moviste plata de Nequi a Bancolombia? Regístralo y tus saldos se actualizan automáticamente.
+</HighlightBox>
+
+---
+
+## 🤖 Bonus: Bot de Telegram para Registrar desde el Chat
+
+Esta es nuestra funcionalidad favorita. **Registra gastos sin abrir ninguna app**:
+
+<div class="grid md:grid-cols-2 gap-8 my-10 items-center">
+  <div>
+    <h4 class="text-xl font-bold mb-4">¿Cómo funciona?</h4>
+    <ol class="space-y-3">
+      <li class="flex items-start gap-3">
+        <span class="bg-teal-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold shrink-0">1</span>
+        <span>Vincula tu cuenta con un token único</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="bg-teal-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold shrink-0">2</span>
+        <span>Abre Telegram y escribe <code>/gasto</code></span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="bg-teal-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold shrink-0">3</span>
+        <span>El bot te guía con botones para monto, cuenta y categoría</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="bg-teal-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold shrink-0">4</span>
+        <span>¡Listo! Tu gasto queda registrado en menos de 10 segundos</span>
+      </li>
+    </ol>
+    
+    <div class="mt-6">
+      <a href="/blog/bot-telegram" class="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 font-medium hover:underline">
+        📖 Ver guía completa del Bot de Telegram →
+      </a>
+    </div>
+  </div>
+  
+  <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-4">
+    {/* 
+    <Image src={imgTelegram} alt="Conversación con el bot de Telegram de Ahorra Tranquilo" class="rounded-xl shadow-lg w-full max-w-[280px] mx-auto" />
+    */}
+    <div class="aspect-[1/2] max-w-[280px] mx-auto bg-slate-200 dark:bg-slate-700 rounded-xl flex items-center justify-center">
+      <span class="text-slate-500 dark:text-slate-400 text-sm text-center px-4">
+        📱 Screenshot del Bot de Telegram<br/>
+        <span class="text-xs">(400x800px)</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<Callout type="info" title="11 comandos disponibles">
+`/gasto` · `/ingreso` · `/transferencia` · `/cuentas` · `/metas` · `/presupuestos` · `/transacciones` · `/menu` · `/help` · `/start` · `/cancel`
+</Callout>
+
+---
+
+## 🆚 ¿Por Qué Ahorra Tranquilo y No Otra Cosa?
+
+<ComparisonTable title="Ahorra Tranquilo vs Otras Opciones">
+
+| Característica | 📊 Ahorra Tranquilo | 📝 Excel/Sheets | 🏦 App del Banco |
+|----------------|---------------------|-----------------|------------------|
+| **Fácil de usar** | ✅ Muy fácil | ⚠️ Requiere setup | ✅ Fácil |
+| **Metas de ahorro** | ✅ Con progreso visual | ❌ Manual | ⚠️ Limitado |
+| **Presupuestos** | ✅ Con alertas | ❌ Manual | ⚠️ Básico |
+| **Múltiples cuentas** | ✅ Ilimitadas | ✅ Manual | ❌ Solo la del banco |
+| **Gráficos automáticos** | ✅ En tiempo real | ⚠️ Hay que crearlos | ⚠️ Básicos |
+| **Bot de Telegram** | ✅ Incluido | ❌ No existe | ❌ No existe |
+| **Sin conexión bancaria** | ✅ 100% seguro | ✅ N/A | ❌ Es el banco |
+| **Gratis** | ✅ Plan gratuito | ✅ Gratis | ✅ Gratis |
+
+</ComparisonTable>
+
+---
+
+## 🚨 Aclaremos Algo Importante
+
+Hemos visto que algunas personas tienen dudas sobre qué somos exactamente. Vamos a ser **100% transparentes**:
+
+<div class="bg-red-50 dark:bg-red-950/30 border-2 border-red-200 dark:border-red-800 rounded-2xl p-6 my-8">
+  <h3 class="text-xl font-bold text-red-700 dark:text-red-400 mb-4 flex items-center gap-2">
+    <span class="text-2xl">❌</span> Ahorra Tranquilo NO es:
+  </h3>
+  <ul class="space-y-3 text-red-800 dark:text-red-300">
+    <li class="flex items-start gap-3">
+      <span class="text-red-500 font-bold text-xl">✗</span>
+      <div>
+        <strong>No es un banco</strong>
+        <p class="text-sm opacity-80">No captamos dinero ni damos créditos</p>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-red-500 font-bold text-xl">✗</span>
+      <div>
+        <strong>No es una billetera digital</strong>
+        <p class="text-sm opacity-80">No guardamos tu dinero (como Nequi o Daviplata)</p>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-red-500 font-bold text-xl">✗</span>
+      <div>
+        <strong>No es una plataforma de inversión</strong>
+        <p class="text-sm opacity-80">No prometemos rendimientos ni manejamos inversiones</p>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-red-500 font-bold text-xl">✗</span>
+      <div>
+        <strong>No pedimos transferencias ni tarjetas</strong>
+        <p class="text-sm opacity-80">Nunca te pediremos enviar dinero o datos bancarios</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="bg-teal-50 dark:bg-teal-950/30 border-2 border-teal-200 dark:border-teal-800 rounded-2xl p-6 my-8">
+  <h3 class="text-xl font-bold text-teal-700 dark:text-teal-400 mb-4 flex items-center gap-2">
+    <span class="text-2xl">✅</span> Ahorra Tranquilo SÍ es:
+  </h3>
+  <ul class="space-y-3 text-teal-800 dark:text-teal-300">
+    <li class="flex items-start gap-3">
+      <span class="text-teal-500 font-bold text-xl">✓</span>
+      <div>
+        <strong>Una herramienta de organización financiera</strong>
+        <p class="text-sm opacity-80">Como un cuaderno de finanzas inteligente</p>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-teal-500 font-bold text-xl">✓</span>
+      <div>
+        <strong>Un registro manual que tú controlas</strong>
+        <p class="text-sm opacity-80">Tú decides qué información ingresar</p>
+      </div>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="text-teal-500 font-bold text-xl">✓</span>
+      <div>
+        <strong>100% seguro y privado</strong>
+        <p class="text-sm opacity-80">Tus datos están cifrados y nunca los compartimos</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<HighlightBox emoji="🔑">
+**El mensaje clave:** Tu dinero siempre está donde tú lo tienes (tu banco, billetera, etc.). Nosotros solo te ayudamos a **verlo, organizarlo y controlarlo mejor**.
+</HighlightBox>
+
+---
+
+## 👥 ¿Para Quién es Ahorra Tranquilo?
+
+### ✅ Es para ti si:
+
+<div class="grid md:grid-cols-2 gap-4 my-6">
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">No sabes en qué se te va el dinero cada mes</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">Quieres ahorrar pero "nunca sobra nada"</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">Tienes dinero en varios lugares y pierdes el control</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">Te da pereza llevar cuentas en Excel</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">Quieres entender tus hábitos de gasto</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/30 rounded-xl">
+    <span class="text-2xl">✓</span>
+    <span class="text-green-800 dark:text-green-300">Prefieres herramientas simples que sí uses</span>
+  </div>
+</div>
+
+### ❌ Probablemente NO es para ti si:
+
+<div class="grid md:grid-cols-2 gap-4 my-6">
+  <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-950/30 rounded-xl">
+    <span class="text-2xl">✗</span>
+    <span class="text-red-800 dark:text-red-300">Buscas rendimientos o inversiones automáticas</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-950/30 rounded-xl">
+    <span class="text-2xl">✗</span>
+    <span class="text-red-800 dark:text-red-300">Necesitas enviar o recibir pagos</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-950/30 rounded-xl">
+    <span class="text-2xl">✗</span>
+    <span class="text-red-800 dark:text-red-300">Buscas créditos o préstamos</span>
+  </div>
+  <div class="flex items-start gap-3 p-4 bg-red-50 dark:bg-red-950/30 rounded-xl">
+    <span class="text-2xl">✗</span>
+    <span class="text-red-800 dark:text-red-300">Esperas que tu dinero "trabaje solo"</span>
+  </div>
+</div>
+
+---
+
+## 🎁 ¿Qué Resultados Puedes Esperar?
+
+No te prometemos hacerte rico. Te prometemos **claridad**:
+
+<ComparisonTable title="Tu Vida Financiera: Antes vs Después">
+
+| Antes de Ahorra Tranquilo 😰 | Después de usarlo 😌 |
+|------------------------------|----------------------|
+| "¿En qué se fue mi sueldo?" | Sabes cada peso: dónde entró y dónde salió |
+| Ahorras "lo que sobra" (nada) | Ahorras primero, con metas claras |
+| Gastos impulsivos sin control | Ves el impacto de cada compra al instante |
+| Ansiedad cada fin de mes | Tranquilidad porque sabes qué esperar |
+| Múltiples cuentas = caos | Todo consolidado en un dashboard |
+| "Algún día tendré un fondo de emergencia" | Progreso real hacia tus metas |
+
+</ComparisonTable>
+
+<div class="grid md:grid-cols-4 gap-4 my-10">
+  <StatsCard number="📊" label="Claridad total sobre tu dinero" color="primary" icon="📊" />
+  <StatsCard number="🎯" label="Metas que sí cumples" color="success" icon="🎯" />
+  <StatsCard number="⚡" label="Decisiones informadas" color="warning" icon="⚡" />
+  <StatsCard number="😌" label="Menos estrés financiero" color="primary" icon="😌" />
+</div>
+
+---
+
+## 🔒 Tu Información Está Segura
+
+Entendemos que hablar de finanzas requiere **confianza total**. Por eso:
+
+<div class="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 my-8">
+  <h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
+    <span class="text-2xl">🛡️</span> Nuestro Compromiso de Seguridad
+  </h3>
+  <div class="grid md:grid-cols-2 gap-4">
+    <div class="flex items-start gap-3">
+      <span class="text-teal-500 text-xl">✓</span>
+      <div>
+        <strong class="text-slate-800 dark:text-slate-200">Tus datos son privados</strong>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Nunca vendemos ni compartimos tu información</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-teal-500 text-xl">✓</span>
+      <div>
+        <strong class="text-slate-800 dark:text-slate-200">Tú controlas todo</strong>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Puedes exportar o eliminar tus datos cuando quieras</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-teal-500 text-xl">✓</span>
+      <div>
+        <strong class="text-slate-800 dark:text-slate-200">Sin conexión bancaria</strong>
+        <p class="text-sm text-slate-600 dark:text-slate-400">No accedemos a tus cuentas de banco</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-teal-500 text-xl">✓</span>
+      <div>
+        <strong class="text-slate-800 dark:text-slate-200">Cifrado de datos</strong>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Tu información viaja y se almacena encriptada</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<Callout type="warning" title="Importante">
+**Nunca te pediremos:**
+- Transferencias de dinero
+- Números de tarjeta de crédito/débito
+- Claves bancarias
+- Acceso a tus cuentas
+
+Si alguien te pide esto diciendo ser de Ahorra Tranquilo, **es una estafa**. Repórtalo inmediatamente.
+</Callout>
+
+---
+
+## 🚀 Empieza a Organizar tus Finanzas
+
+¿Listo para tener claridad sobre tu dinero?
+
+<div class="flex flex-col sm:flex-row gap-4 justify-center my-10">
+  <a href="https://app.ahorratranquilo.com/register" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#047857] dark:bg-[#0EA5A4] text-white font-bold text-lg hover:shadow-lg hover:scale-105 transition-all shadow-md" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);">
+    <svg class="w-6 h-6 drop-shadow-md" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    Empieza Gratis
+  </a>
+  <a href="/funcionalidades" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-lg hover:shadow-lg hover:scale-105 transition-all">
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    Ver Funcionalidades
+  </a>
+</div>
+
+<ProTip>
+**Es gratis para empezar.** Crea tu cuenta, explora la herramienta, y cuando veas el valor, decides si el plan premium es para ti. Sin presiones, sin trucos.
+</ProTip>
+
+---
+
+## ❓ Preguntas Frecuentes
+
+<div class="space-y-4 my-8">
+  <details class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 group">
+    <summary class="font-bold text-slate-800 dark:text-slate-200 cursor-pointer list-none flex justify-between items-center">
+      ¿Tengo que conectar mi cuenta bancaria?
+      <span class="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+    </summary>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">
+      No. Ahorra Tranquilo funciona con registro manual. Tú decides qué información ingresar. No accedemos ni nos conectamos a ninguna entidad bancaria.
+    </p>
+  </details>
+
+  <details class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 group">
+    <summary class="font-bold text-slate-800 dark:text-slate-200 cursor-pointer list-none flex justify-between items-center">
+      ¿Mi dinero está seguro?
+      <span class="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+    </summary>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">
+      Tu dinero siempre está donde tú lo tienes (tu banco, billetera, etc.). Nosotros no tocamos, guardamos ni movemos dinero. Solo te ayudamos a organizar la información.
+    </p>
+  </details>
+
+  <details class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 group">
+    <summary class="font-bold text-slate-800 dark:text-slate-200 cursor-pointer list-none flex justify-between items-center">
+      ¿Es gratis?
+      <span class="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+    </summary>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">
+      Sí, tenemos un plan gratuito con funcionalidades básicas. Los planes premium desbloquean más cuentas, metas ilimitadas, reportes avanzados y más. <a href="/planes" class="text-teal-600 dark:text-teal-400 underline">Ver planes</a>.
+    </p>
+  </details>
+
+  <details class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 group">
+    <summary class="font-bold text-slate-800 dark:text-slate-200 cursor-pointer list-none flex justify-between items-center">
+      ¿Puedo usar el bot de Telegram?
+      <span class="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+    </summary>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">
+      ¡Sí! Una vez creas tu cuenta, puedes vincular nuestro bot de Telegram para registrar gastos, ingresos y consultas sin abrir la app. <a href="/blog/bot-telegram" class="text-teal-600 dark:text-teal-400 underline">Ver guía completa</a>.
+    </p>
+  </details>
+
+  <details class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 group">
+    <summary class="font-bold text-slate-800 dark:text-slate-200 cursor-pointer list-none flex justify-between items-center">
+      ¿Qué pasa si quiero eliminar mis datos?
+      <span class="text-teal-500 group-open:rotate-180 transition-transform">▼</span>
+    </summary>
+    <p class="mt-3 text-slate-600 dark:text-slate-400">
+      Puedes exportar o eliminar todos tus datos en cualquier momento desde tu perfil. Sin preguntas, sin trabas. Tus datos son tuyos.
+    </p>
+  </details>
+</div>
+
+---
+
+## 📝 En Resumen
+
+<div class="bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-950/50 dark:to-emerald-950/50 border-2 border-teal-200 dark:border-teal-800 rounded-2xl p-8 my-8 text-center">
+  <p class="text-xl md:text-2xl font-bold text-teal-800 dark:text-teal-300 mb-4">
+    🔑 Lo que debes recordar
+  </p>
+  <p class="text-lg text-teal-700 dark:text-teal-400">
+    <strong>Ahorra Tranquilo no maneja tu dinero.</strong><br/>
+    <span class="text-teal-600 dark:text-teal-500">Te ayuda a manejarlo mejor.</span>
+  </p>
+</div>
+
+¿Tienes más preguntas? Escríbenos por el [formulario de contacto](/contacto) o síguenos en redes sociales. ¡Estamos para ayudarte en tu camino hacia la tranquilidad financiera!
