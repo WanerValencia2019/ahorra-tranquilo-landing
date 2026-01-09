@@ -5,7 +5,7 @@ pubDate: 2026-01-08T00:00:00Z
 author: "Waner Valencia"
 category: "Herramientas"
 tags: ["ahorra tranquilo", "finanzas personales", "control financiero", "app finanzas", "guía", "tutorial"]
-image: "../../assets/blogs/que-es-ahorra-tranquilo/hero-app-preview.jpg"
+image: "../assets/blogs/hero-app-preview.png"
 featured: true
 readTime: "10 min"
 ---
@@ -19,34 +19,14 @@ import ProTip from '../../components/blog/ProTip.astro';
 import QuickStats from '../../components/blog/QuickStats.astro';
 import StepByStep from '../../components/blog/StepByStep.astro';
 
-{/* 
-  ============================================================
-  📸 PLACEHOLDERS DE IMÁGENES - Crear en:
-  src/assets/blogs/que-es-ahorra-tranquilo/
-  ============================================================
-  
-  | Archivo                    | Tamaño Recomendado | Descripción                                    |
-  |----------------------------|--------------------|------------------------------------------------|
-  | hero-app-preview.jpg       | 1200x675px (16:9)  | Mockup de la app en laptop/móvil               |
-  | dashboard-completo.jpg     | 1200x800px (3:2)   | Dashboard con balance, gráficos y resumen      |
-  | registro-transaccion.jpg   | 800x600px (4:3)    | Modal/form de registro de gasto o ingreso      |
-  | metas-progreso.jpg         | 1000x600px (5:3)   | Vista de metas con barras de progreso          |
-  | presupuestos-alertas.jpg   | 1000x600px (5:3)   | Presupuestos con indicadores de estado         |
-  | reportes-graficos.jpg      | 1200x700px (12:7)  | Gráficos de gastos por categoría               |
-  | bot-telegram-demo.jpg      | 400x800px (1:2)    | Screenshot vertical de conversación con bot    |
-  | cuentas-multiples.jpg      | 800x500px (8:5)    | Lista de cuentas (Nequi, Bancolombia, etc.)    |
-  
-  Descomentar los imports cuando tengas las imágenes:
-  
-  import imgHero from '../../assets/blogs/que-es-ahorra-tranquilo/hero-app-preview.jpg';
-  import imgDashboard from '../../assets/blogs/que-es-ahorra-tranquilo/dashboard-completo.jpg';
-  import imgRegistro from '../../assets/blogs/que-es-ahorra-tranquilo/registro-transaccion.jpg';
-  import imgMetas from '../../assets/blogs/que-es-ahorra-tranquilo/metas-progreso.jpg';
-  import imgPresupuestos from '../../assets/blogs/que-es-ahorra-tranquilo/presupuestos-alertas.jpg';
-  import imgReportes from '../../assets/blogs/que-es-ahorra-tranquilo/reportes-graficos.jpg';
-  import imgTelegram from '../../assets/blogs/que-es-ahorra-tranquilo/bot-telegram-demo.jpg';
-  import imgCuentas from '../../assets/blogs/que-es-ahorra-tranquilo/cuentas-multiples.jpg';
-*/}
+import imgHero from '../../assets/blogs/hero-app-preview.png';
+import imgDashboard from '../../assets/blogs/que-es-ahorra-tranquilo/dashboard-completo.png';
+import imgRegistro from '../../assets/blogs/que-es-ahorra-tranquilo/registro-transaccion.png';
+import imgMetas from '../../assets/blogs/que-es-ahorra-tranquilo/metas-progreso.png';
+import imgPresupuestos from '../../assets/blogs/que-es-ahorra-tranquilo/presupuestos-alertas.png';
+import imgReportes from '../../assets/blogs/que-es-ahorra-tranquilo/reportes-graficos.png';
+import imgTelegram from '../../assets/blogs/telegram/vinculacion-exitosa.jpg';
+import imgCuentas from '../../assets/blogs/que-es-ahorra-tranquilo/cuentas-multiples.png';
 
 ## ¿Sientes que tu dinero "desaparece"?
 
@@ -63,14 +43,12 @@ No estás solo. Es el problema financiero #1 que escuchamos. Y tiene solución.
   </p>
 </div>
 
-{/* 
 <figure class="my-10">
   <Image src={imgHero} alt="Ahorra Tranquilo en laptop y móvil mostrando el dashboard financiero" class="rounded-2xl shadow-2xl w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-3">
     Tu centro de control financiero, disponible en cualquier dispositivo
   </figcaption>
 </figure>
-*/}
 
 <QuickStats
   stats={[
@@ -97,14 +75,12 @@ Todo lo que necesitas saber sobre tu dinero, **en una sola pantalla**:
 - 🎯 **Progreso de metas** de ahorro
 - ⚠️ **Alertas** de presupuestos cerca del límite
 
-{/* 
 <figure class="my-8">
   <Image src={imgDashboard} alt="Dashboard de Ahorra Tranquilo con balance, gráficos y resumen del mes" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Dashboard: Ve tu balance, gastos del mes, metas y alertas en tiempo real
   </figcaption>
 </figure>
-*/}
 
 <HighlightBox emoji="💡">
 **En 5 segundos sabes:** cuánto tienes, cuánto has gastado y si vas bien con tus metas. Sin buscar en mil lugares.
@@ -125,14 +101,12 @@ Anotar una transacción toma **menos de 10 segundos**:
   ]}
 />
 
-{/* 
 <figure class="my-8 max-w-lg mx-auto">
   <Image src={imgRegistro} alt="Formulario de registro de gasto en Ahorra Tranquilo" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Registrar un gasto: simple, rápido y sin fricción
   </figcaption>
 </figure>
-*/}
 
 <ProTip>
 **¿Te da pereza abrir la app?** Usa nuestro [Bot de Telegram](/blog/bot-telegram) y registra gastos desde el chat en 5 segundos. Más abajo te cuento cómo.
@@ -149,14 +123,12 @@ Define **para qué** estás ahorrando y ve tu progreso en tiempo real:
 - 💻 **Laptop nueva** — $3,500,000 en 6 meses
 - 🎓 **Curso de programación** — $800,000
 
-{/* 
 <figure class="my-8">
   <Image src={imgMetas} alt="Vista de metas de ahorro con barras de progreso en Ahorra Tranquilo" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Metas: Define objetivos con fecha límite y ve cuánto te falta para lograrlos
   </figcaption>
 </figure>
-*/}
 
 <Callout type="success" title="Ahorro con intención">
 No es "ahorrar lo que sobre" (que nunca sobra). Es **definir cuánto necesitas y trabajar hacia eso**.
@@ -186,14 +158,12 @@ Establece límites por categoría y **recibe alertas** cuando te acerques:
   </div>
 </div>
 
-{/* 
 <figure class="my-8">
   <Image src={imgPresupuestos} alt="Vista de presupuestos con indicadores de estado verde, amarillo y rojo" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Presupuestos: Ve de un vistazo qué categorías van bien y cuáles necesitan atención
   </figcaption>
 </figure>
-*/}
 
 ---
 
@@ -206,14 +176,12 @@ Nada de tablas complicadas. **Gráficos visuales** que te muestran:
 - 📅 **¿Cómo te fue los últimos meses?** — Tendencias y patrones
 - 📥 **Exporta tus datos** — PDF, Excel o CSV cuando lo necesites
 
-{/* 
 <figure class="my-8">
   <Image src={imgReportes} alt="Gráficos de análisis financiero mostrando gastos por categoría y tendencias" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Reportes: Descubre patrones de gasto que no sabías que tenías
   </figcaption>
 </figure>
-*/}
 
 ---
 
@@ -227,14 +195,12 @@ Nada de tablas complicadas. **Gráficos visuales** que te muestran:
 - 💵 **Efectivo** — Lo que llevas en la billetera
 - 🐷 **Alcancía** — Tus ahorros físicos
 
-{/* 
 <figure class="my-8 max-w-2xl mx-auto">
   <Image src={imgCuentas} alt="Lista de cuentas en Ahorra Tranquilo mostrando Nequi, Bancolombia y Efectivo" class="rounded-xl shadow-lg w-full" />
   <figcaption class="text-center text-sm text-muted-foreground mt-2">
     Cuentas: Administra todas tus fuentes de dinero desde un solo lugar
   </figcaption>
 </figure>
-*/}
 
 <HighlightBox emoji="🔄">
 **Transferencias incluidas:** Moviste plata de Nequi a Bancolombia? Regístralo y tus saldos se actualizan automáticamente.
@@ -275,16 +241,8 @@ Esta es nuestra funcionalidad favorita. **Registra gastos sin abrir ninguna app*
     </div>
   </div>
   
-  <div class="bg-slate-100 dark:bg-slate-800 rounded-2xl p-4">
-    {/* 
+  <div class="rounded-2xl p-4">
     <Image src={imgTelegram} alt="Conversación con el bot de Telegram de Ahorra Tranquilo" class="rounded-xl shadow-lg w-full max-w-[280px] mx-auto" />
-    */}
-    <div class="aspect-[1/2] max-w-[280px] mx-auto bg-slate-200 dark:bg-slate-700 rounded-xl flex items-center justify-center">
-      <span class="text-slate-500 dark:text-slate-400 text-sm text-center px-4">
-        📱 Screenshot del Bot de Telegram<br/>
-        <span class="text-xs">(400x800px)</span>
-      </span>
-    </div>
   </div>
 </div>
 
