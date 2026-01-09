@@ -7,7 +7,7 @@ import dashboardMobile from '@/assets/analisis-600x800.png';
 
 <section
   id="hero"
-  class="relative overflow-hidden min-h-screen md:min-h-[90vh] md:max-h-[95vh] flex items-center bg-background pt-16 pb-8 md:pt-8 md:pb-16"
+  class="relative overflow-hidden min-h-[80vh] md:min-h-[90vh] md:max-h-[95vh] flex items-center bg-background pt-8 pb-4 md:pt-8 md:pb-16"
 >
   <!-- Aurora/Mesh Gradient Background -->
   <div class="absolute inset-0 overflow-hidden">
@@ -33,57 +33,76 @@ import dashboardMobile from '@/assets/analisis-600x800.png';
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
       <!-- Content -->
-      <div class="space-y-4 md:space-y-6 animate-fade-in-up">
+      <div class="space-y-2 md:space-y-4 animate-fade-in-up">
         <!-- Title with gradient -->
-        <div class="space-y-1 md:space-y-2">
-          <h1 class="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight">
-            <span class="block text-foreground animate-slide-in-left">Organiza tu</span>
-            <span class="block text-foreground animate-slide-in-left animation-delay-100">dinero.</span>
-            <span class="block bg-gradient-to-r from-primary via-primary/80 to-success bg-clip-text text-transparent animate-slide-in-left animation-delay-200 mt-1 md:mt-2">
-              Ahorra con tranquilidad.
+        <div>
+          <h1 class="text-[1.75rem] font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] sm:leading-tight">
+            <span class="text-foreground animate-slide-in-left">¿No sabes en qué se va tu plata?</span>
+            <span class="block bg-gradient-to-r from-primary via-primary/80 to-success bg-clip-text text-transparent animate-slide-in-left animation-delay-200 mt-0.5 md:mt-2">
+              Nosotros te ayudamos.
             </span>
           </h1>
         </div>
 
-        <!-- Description with better spacing -->
-        <p class="text-base text-muted-foreground sm:text-lg md:text-xl max-w-2xl leading-relaxed animate-fade-in-up animation-delay-300">
-          Tu vida financiera en un solo lugar, <span class="text-foreground font-semibold">simple y sin estrés</span>. 
-          Control total de gastos e ingresos en tiempo real.
+        <!-- Description - more compact -->
+        <p class="text-sm text-muted-foreground sm:text-lg md:text-xl max-w-2xl leading-relaxed animate-fade-in-up animation-delay-300">
+          Registra gastos, <span class="text-foreground font-semibold">crea presupuestos</span> y alcanza tus metas. <span class="hidden sm:inline">Incluye bot de Telegram.</span>
         </p>
 
-        <!-- Stats with better design -->
-        <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-2 md:pt-4 animate-scale-in animation-delay-400">
+        <!-- Social Proof + Benefits - Ultra Compact -->
+        <div class="animate-fade-in-up animation-delay-350">
+          <!-- Single line: stars + benefits -->
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
+            <span class="flex items-center gap-1">
+              <span class="flex text-warning">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </span>
+              <span class="font-medium">+100 usuarios</span>
+            </span>
+            <span class="text-border">|</span>
+            <span class="flex items-center gap-1"><span class="text-success font-bold">✓</span> Gratis</span>
+            <span class="flex items-center gap-1">🇨🇴 Colombia</span>
+            <span class="flex items-center gap-1">🔒 Seguro</span>
+          </div>
+        </div>
+
+        <!-- Stats cards (Desktop only) -->
+        <div class="hidden md:grid grid-cols-3 gap-4 pt-2 animate-scale-in animation-delay-400">
           <div class="relative group">
-            <div class="absolute inset-0 bg-primary/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all">
-              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">100%</div>
+            <div class="absolute inset-0 bg-primary/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all">
+              <div class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">100%</div>
               <div class="text-xs font-medium text-muted-foreground">Gratis</div>
             </div>
           </div>
           <div class="relative group">
-            <div class="absolute inset-0 bg-success/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-success/50 transition-all">
-              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold">🇨🇴</div>
+            <div class="absolute inset-0 bg-success/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-success/50 transition-all">
+              <div class="text-2xl md:text-3xl font-extrabold">🇨🇴</div>
               <div class="text-xs font-medium text-muted-foreground">Colombia</div>
             </div>
           </div>
           <div class="relative group">
-            <div class="absolute inset-0 bg-info/10 rounded-xl md:rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-            <div class="relative text-center space-y-0.5 sm:space-y-1 p-2 sm:p-3 rounded-xl md:rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-info/50 transition-all">
-              <div class="text-xl sm:text-2xl md:text-3xl font-extrabold">🔒</div>
+            <div class="absolute inset-0 bg-info/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+            <div class="relative text-center space-y-1 p-3 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-info/50 transition-all">
+              <div class="text-2xl md:text-3xl font-extrabold">🔒</div>
               <div class="text-xs font-medium text-muted-foreground">Seguro</div>
             </div>
           </div>
         </div>
 
-        <!-- CTAs with better design -->
-        <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-3 md:pt-4 animate-fade-in-up animation-delay-500">
+        <!-- CTAs - Row on mobile -->
+        <div class="flex flex-row gap-2 pt-1 md:pt-3 animate-fade-in-up animation-delay-500">
           <a href="https://app.ahorratranquilo.com" target="_blank" rel="noopener noreferrer" class="flex-1">
-            <Button client:load size="lg" className="w-full group relative overflow-hidden shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
-              <span class="relative z-10 flex items-center justify-center gap-2">
-                <span class="font-semibold">Empieza Gratis</span>
+            <Button client:load size="lg" className="w-full group relative overflow-hidden shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all text-sm sm:text-base px-4 sm:px-8 h-11 sm:h-12">
+              <span class="relative z-10 flex items-center justify-center gap-1.5">
+                <span class="font-bold">Empieza Gratis</span>
                 <svg
-                  class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  class="w-4 h-4 transition-transform group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -98,55 +117,34 @@ import dashboardMobile from '@/assets/analisis-600x800.png';
               <div class="absolute inset-0 bg-gradient-to-r from-primary to-success opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </Button>
           </a>
-          <a href="https://app.ahorratranquilo.com/demo" target="_blank" rel="noopener noreferrer" class="flex-1">
-            <Button client:load size="lg" variant="outline" className="w-full font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-md hover:shadow-lg hover:shadow-primary/30">
-              Probar Demo Gratis
+          <a href="https://app.ahorratranquilo.com/demo" target="_blank" rel="noopener noreferrer">
+            <Button client:load size="lg" variant="outline" className="font-medium border-2 border-primary/50 text-primary hover:bg-primary/10 transition-all h-11 sm:h-12 px-4 sm:px-6">
+              Demo
             </Button>
           </a>
         </div>
 
-        <!-- Trust indicators with icons -->
-        <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 md:pt-3 animate-fade-in-up animation-delay-400">
-          <div class="flex items-center gap-2.5 text-sm font-medium text-foreground group cursor-default">
-            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-success/10 group-hover:bg-success/20 transition-colors">
-              <svg aria-hidden="true" class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <span>Sin tarjeta de crédito</span>
-          </div>
-          <div class="flex items-center gap-2.5 text-sm font-medium text-foreground group cursor-default">
-            <div class="flex items-center justify-center w-6 h-6 rounded-full bg-success/10 group-hover:bg-success/20 transition-colors">
-              <svg aria-hidden="true" class="w-4 h-4 text-success" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <span>Configuración en 2 minutos</span>
-          </div>
-        </div>
+        <!-- Trust indicators - ultra compact -->
+        <p class="text-[11px] sm:text-xs text-muted-foreground/80 animate-fade-in-up animation-delay-400">
+          ✓ Sin tarjeta · ✓ Listo en 2 min
+        </p>
       </div>
 
       <!-- Mockup with enhanced animations -->
       <div class="relative animate-fade-in-up animation-delay-300 mt-6 lg:mt-0">
         <!-- Badge with pulse -->
-        <div class="inline-block animate-bounce-soft mb-4">
-          <Badge client:load variant="default" className="gap-1.5 sm:gap-2 text-xs px-3 py-2 sm:px-4 sm:py-3 shadow-lg shadow-primary/20">
-            <span class="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
+        <div class="inline-block animate-bounce-soft mb-3">
+          <Badge client:load variant="default" className="gap-1.5 text-xs px-3 py-1.5 shadow-lg shadow-primary/20">
+            <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-foreground opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-primary-foreground"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-foreground"></span>
             </span>
-            <span class="font-semibold">100% Gratis • Modo Demo</span>
+            <span class="font-semibold">Demo disponible</span>
           </Badge>
         </div>
         <div class="absolute -inset-4 bg-gradient-to-r from-primary via-success to-info opacity-20 blur-3xl rounded-3xl animate-pulse"></div>
         
-        <div class="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 bg-card backdrop-blur-sm group">
+        <div class="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] border-2 border-border/50 bg-card backdrop-blur-sm group">
           <!-- Mobile: imagen vertical -->
           <img
             src={dashboardMobile.src}
