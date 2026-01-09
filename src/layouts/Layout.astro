@@ -9,7 +9,7 @@ interface Props {
 const {
   title = 'Ahorra Tranquilo - Gestiona tus Finanzas Personales de Forma Inteligente',
   description = 'Control total de gastos, ingresos y presupuestos con análisis en tiempo real. La aplicación financiera más fácil de usar en Colombia.',
-  ogImage = '/og-image.png',
+  ogImage = '/og-image.jpg',
   canonical = Astro.url.pathname,
 } = Astro.props;
 
@@ -47,6 +47,9 @@ import '../styles/globals.css';
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={fullTitle} />
     <meta property="og:site_name" content="Ahorra Tranquilo" />
     <meta property="og:locale" content="es_CO" />
 
@@ -56,6 +59,7 @@ import '../styles/globals.css';
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+    <meta name="twitter:image:alt" content={fullTitle} />
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#0ea5a4" media="(prefers-color-scheme: light)" />
