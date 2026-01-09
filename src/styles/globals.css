@@ -36,7 +36,7 @@
   --secondary: #f1f5f9; /* slate-100 */
   --secondary-foreground: #475569; /* slate-600 */
   --muted: #f8fafc; /* slate-50 */
-  --muted-foreground: #94a3b8; /* slate-400 */
+  --muted-foreground: #64748b; /* slate-500 - Improved contrast 4.6:1 */
   --accent: #f1f5f9; /* slate-100 */
   --accent-foreground: #0f172a;
 
@@ -51,6 +51,7 @@
   --savings-foreground: #ffffff;
   --warning: #d97706; /* amber-600 - Advertencias */
   --warning-foreground: #ffffff;
+  --warning-text: #92400e; /* amber-800 - For text on light backgrounds 5.6:1 */
 
   /* Chart colors */
   --chart-income: #16a34a; /* green-600 */
@@ -120,6 +121,7 @@
   --savings-foreground: #0f172a;
   --warning: #f59e0b; /* amber-500 - Advertencias */
   --warning-foreground: #0f172a;
+  --warning-text: #fbbf24; /* amber-400 - For text on dark backgrounds */
 
   /* Chart colors */
   --chart-income: #22c55e; /* green-500 */
@@ -166,6 +168,7 @@
   --color-savings-foreground: var(--savings-foreground);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
+  --color-warning-text: var(--warning-text);
 
   /* Chart color mappings */
   --color-chart-income: var(--chart-income);

@@ -75,11 +75,11 @@ const relatedPosts = allPosts
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <!-- Breadcrumb -->
           <nav class="flex items-center gap-2 text-sm mb-8">
-            <a href="/" class="text-slate-300 dark:text-slate-400 hover:text-primary transition-colors font-medium">Inicio</a>
+            <a href="/" class="text-slate-300 hover:text-white transition-colors font-medium">Inicio</a>
             <span class="text-slate-500">/</span>
-            <a href="/blog" class="text-slate-300 dark:text-slate-400 hover:text-primary transition-colors font-medium">Blog</a>
+            <a href="/blog" class="text-slate-300 hover:text-white transition-colors font-medium">Blog</a>
             <span class="text-slate-500">/</span>
-            <span class="text-foreground font-semibold">{entry.data.category}</span>
+            <span class="text-white font-semibold">{entry.data.category}</span>
           </nav>
 
           <div class="max-w-4xl mx-auto">
@@ -97,33 +97,34 @@ const relatedPosts = allPosts
             </div>
 
             <!-- Title -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-foreground animate-fade-in-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white animate-fade-in-up">
               {entry.data.title}
             </h1>
 
             <!-- Description -->
-            <p class="text-xl md:text-2xl text-slate-300 dark:text-slate-400 mb-8 leading-relaxed font-medium animate-fade-in-up animation-delay-200">
+            <p class="text-xl md:text-2xl text-slate-200 mb-8 leading-relaxed font-medium animate-fade-in-up animation-delay-200">
               {entry.data.description}
             </p>
 
             <!-- Meta Info with Cards -->
             <div class="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
-              <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
+              <div class="flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700">
                 <User className="size-5 text-primary" />
-                <span class="font-medium text-foreground">{entry.data.author}</span>
+                <span class="font-medium text-white">{entry.data.author}</span>
               </div>
-              <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
+              <div class="flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700">
                 <Calendar className="size-5 text-primary" />
-                <time datetime={entry.data.pubDate.toISOString()} class="text-foreground">
+                <time datetime={entry.data.pubDate.toISOString()} class="text-white">
                   {formatDate(entry.data.pubDate)}
                 </time>
               </div>
               {entry.data.readTime && (
-                <div class="flex items-center gap-2 bg-slate-800/80 dark:bg-slate-900/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700 dark:border-slate-800">
+                <div class="flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-slate-700">
                   <Clock className="size-5 text-primary" />
-                  <span class="text-foreground">{entry.data.readTime}</span>
+                  <span class="text-white">{entry.data.readTime}</span>
                 </div>
               )}
+            </div>
             </div>
           </div>
         </div>
@@ -147,19 +148,19 @@ const relatedPosts = allPosts
       )}
 
       <!-- Article Content with Sidebar Layout -->
-      <section class="py-12 md:py-16 bg-gradient-to-b from-slate-900/30 via-slate-800/20 to-background dark:from-slate-950/50 dark:via-slate-900/30 dark:to-background">
+      <section class="py-12 md:py-16 bg-gradient-to-b from-primary/5 via-background to-background dark:from-slate-950/50 dark:via-slate-900/30 dark:to-background">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-[1fr_300px] gap-12">
               <!-- Main Content -->
               <div class="min-w-0">
-                <article class="prose-blog bg-card/50 dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-10 border border-border/50">
+                <article class="prose-blog bg-card dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 lg:p-10 border border-border shadow-sm">
                   <Content />
                 </article>
 
                 <!-- Tags -->
                 {entry.data.tags && entry.data.tags.length > 0 && (
-                  <div class="mt-8 bg-card/50 dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+                  <div class="mt-8 bg-card dark:bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-border shadow-sm">
                     <h3 class="text-sm font-bold text-foreground mb-3">Etiquetas</h3>
                     <div class="flex flex-wrap gap-2">
                       {entry.data.tags.map((tag) => (
@@ -183,7 +184,7 @@ const relatedPosts = allPosts
               <!-- Sidebar -->
               <aside class="lg:sticky lg:top-24 lg:self-start space-y-6">
                 <!-- Share Card -->
-                <div class="bg-card/80 dark:bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 p-6 shadow-lg">
+                <div class="bg-card dark:bg-card/50 backdrop-blur-sm rounded-2xl border border-border p-6 shadow-lg">
                   <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-foreground">
                     <Share2 className="size-5 text-primary" />
                     Compartir
@@ -262,7 +263,7 @@ const relatedPosts = allPosts
 
     <!-- Related Posts -->
     {relatedPosts.length > 0 && (
-      <section class="py-12 md:py-16 relative overflow-hidden bg-gradient-to-b from-slate-900/20 via-slate-800/10 to-background dark:from-slate-950/30 dark:via-slate-900/20 dark:to-background">
+      <section class="py-12 md:py-16 relative overflow-hidden bg-gradient-to-b from-muted via-background to-background dark:from-slate-950/30 dark:via-slate-900/20 dark:to-background">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-6xl mx-auto">
             <div class="flex items-center gap-3 mb-8">

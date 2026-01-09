@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:a11y": "eslint src/**/*.{ts,tsx} --rule 'jsx-a11y/*: error'"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -24,5 +26,11 @@
     "react-dom": "^19.2.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "eslint": "^9.39.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2"
   }
 }

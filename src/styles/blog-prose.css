@@ -144,7 +144,8 @@
 /* Emphasis/Italic */
 .prose-blog em {
   font-style: italic;
-  color: var(--muted-foreground);
+  color: var(--foreground);
+  opacity: 0.85;
 }
 
 /* Inline code */
@@ -191,7 +192,8 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-style: italic;
-  color: var(--muted-foreground);
+  color: var(--foreground);
+  opacity: 0.9;
   background: var(--muted);
   padding: 1.25rem 1.5rem;
   border-radius: 0 0.5rem 0.5rem 0;

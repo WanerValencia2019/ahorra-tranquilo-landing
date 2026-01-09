@@ -413,7 +413,7 @@ const SavingRaceGame: React.FC<SavingRaceGameProps> = ({ className = '' }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
               <Card className="border-2 border-info/50">
                 <CardContent className="p-2 md:p-4 text-center">
-                  <p className="text-[10px] md:text-xs text-muted-foreground mb-0.5 md:mb-1">Tiempo</p>
+                  <p className="text-xs text-muted-foreground mb-0.5 md:mb-1">Tiempo</p>
                   <p className={`text-lg md:text-2xl font-bold ${timeLeft < 15 ? 'text-destructive' : 'text-info'}`}>
                     {timeLeft}s
                   </p>

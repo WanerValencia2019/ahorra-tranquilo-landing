@@ -232,7 +232,7 @@ const MiniGame: React.FC<MiniGameProps> = ({ className = '' }) => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
               <Card className="border-2 border-primary/50">
                 <CardContent className="p-2 md:p-4 text-center">
-                  <p className="text-[10px] md:text-xs text-muted-foreground mb-0.5 md:mb-1">Puntuación</p>
+                  <p className="text-xs text-muted-foreground mb-0.5 md:mb-1">Puntuación</p>
                   <p className="text-xl md:text-3xl font-bold text-primary">{score}</p>
                 </CardContent>
               </Card>
