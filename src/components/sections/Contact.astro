@@ -1,6 +1,7 @@
 ---
 import { Badge } from '@/components/ui/Badge.tsx';
 import { Card, CardContent } from '@/components/ui/Card.tsx';
+import { ContactForm } from '@/components/ContactForm.tsx';
 import { Mail, MapPin, Phone, Send, Clock, Building2 } from 'lucide-react';
 
 const contactMethods = [
@@ -126,107 +127,10 @@ const contactMethods = [
               <p class="text-muted-foreground">Completa los campos y nos pondremos en contacto contigo</p>
             </div>
             
-            <form class="space-y-6" id="contact-form">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                  <label for="name" class="text-sm font-semibold text-foreground flex items-center gap-2">
-                    <span>Nombre completo</span>
-                    <span class="text-destructive">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    placeholder="Juan Pérez"
-                    class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
-                  />
-                </div>
-
-                <div class="space-y-2">
-                  <label for="email" class="text-sm font-semibold text-foreground flex items-center gap-2">
-                    <span>Email</span>
-                    <span class="text-destructive">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="juan@ejemplo.com"
-                    class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
-                  />
-                </div>
-              </div>
-
-              <div class="space-y-2">
-                <label for="subject" class="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <span>Asunto</span>
-                  <span class="text-destructive">*</span>
-                </label>
-                <input
-                  id="subject"
-                  type="text"
-                  required
-                  placeholder="¿En qué podemos ayudarte?"
-                  class="flex h-11 w-full rounded-lg border-2 border-input bg-background px-4 py-2 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50"
-                />
-              </div>
-
-              <div class="space-y-2">
-                <label for="message" class="text-sm font-semibold text-foreground flex items-center gap-2">
-                  <span>Mensaje</span>
-                  <span class="text-destructive">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows="6"
-                  placeholder="Cuéntanos más detalles sobre tu consulta o comentario..."
-                  class="flex min-h-[150px] w-full rounded-lg border-2 border-input bg-background px-4 py-3 text-base transition-all placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary hover:border-primary/50 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
-                ></textarea>
-              </div>
-
-              <div class="flex items-start gap-3 p-4 rounded-lg bg-muted/50 border">
-                <input
-                  id="privacy"
-                  type="checkbox"
-                  required
-                  class="mt-1 size-4 rounded border-input accent-primary cursor-pointer"
-                />
-                <label for="privacy" class="text-sm text-muted-foreground cursor-pointer">
-                  Acepto la{' '}
-                  <a href="/politicas/politica-de-privacidad" class="text-primary hover:underline font-medium">
-                    política de privacidad
-                  </a>{' '}
-                  y el tratamiento de mis datos personales
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-primary to-primary/90 px-8 py-4 text-base font-semibold text-primary-foreground hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all active:translate-y-0"
-              >
-                <Send class="size-5" />
-                Enviar mensaje
-              </button>
-
-              <div class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                <Clock class="size-4" />
-                <span>Responderemos en menos de 24 horas hábiles</span>
-              </div>
-            </form>
+<ContactForm client:load />
           </CardContent>
         </Card>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert(
-      '¡Gracias por contactarnos! Tu mensaje ha sido enviado. Te responderemos pronto.'
-    );
-    (e.target as HTMLFormElement).reset();
-  });
-</script>
