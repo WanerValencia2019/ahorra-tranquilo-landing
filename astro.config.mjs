@@ -11,7 +11,9 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://ahorratranquilo.com',
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    runtime: 'nodejs22.x',
+  }),
   integrations: [react(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
