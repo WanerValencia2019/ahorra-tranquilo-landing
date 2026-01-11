@@ -12,7 +12,7 @@ export default defineConfig({
   site: 'https://ahorratranquilo.com',
   output: 'server',
   adapter: vercel({
-    runtime: 'nodejs22.x',
+    runtime: 'nodejs20.x',
   }),
   integrations: [react(), mdx(), sitemap()],
   vite: {
