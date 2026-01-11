@@ -9,7 +9,7 @@ import {
 // Rate limiting configuration
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuto
-const RATE_LIMIT_MAX = 3; // 3 requests por minuto
+const RATE_LIMIT_MAX = 2; // 2 requests por minuto
 const MAX_REQUEST_SIZE = 10 * 1024; // 10KB máximo
 
 // Limpiar entradas expiradas cada 5 minutos para evitar memory leaks
