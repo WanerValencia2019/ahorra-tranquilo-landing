@@ -13,6 +13,7 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     edgeMiddleware: true,
+    functionPerRoute: false,
   }),
   integrations: [react(), mdx(), sitemap()],
   vite: {
